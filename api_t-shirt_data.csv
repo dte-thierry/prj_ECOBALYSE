@@ -1,0 +1,190 @@
+description;product;mass;material_id1;share1;material_id2;share2;material_id3;share3;countrySpinning;countryFabric;countryDyeing;countryMaking;airTransportRatio;fabricProcess;business;marketingDuration;numberOfReferences;price;traceability
+Tshirt lin (100g) - France - Mode éthique;tshirt;0.10;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (110g) - France - Mode éthique;tshirt;0.11;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (120g) - France - Mode éthique;tshirt;0.12;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (130g) - France - Mode éthique;tshirt;0.13;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (140g) - France - Mode éthique;tshirt;0.14;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (150g) - France - Mode éthique;tshirt;0.15;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (160g) - France - Mode éthique;tshirt;0.16;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (170g) - France - Mode éthique;tshirt;0.17;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (180g) - France - Mode éthique;tshirt;0.18;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (190g) - France - Mode éthique;tshirt;0.19;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (200g) - France - Mode éthique;tshirt;0.20;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (210g) - France - Mode éthique;tshirt;0.21;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (220g) - France - Mode éthique;tshirt;0.22;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (230g) - France - Mode éthique;tshirt;0.23;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (240g) - France - Mode éthique;tshirt;0.24;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (250g) - France - Mode éthique;tshirt;0.25;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (260g) - France - Mode éthique;tshirt;0.26;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (270g) - France - Mode éthique;tshirt;0.27;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (280g) - France - Mode éthique;tshirt;0.28;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (290g) - France - Mode éthique;tshirt;0.29;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt lin (300g) - France - Mode éthique;tshirt;0.30;ei-lin;1.00;ei-lin;0.00;ei-lin;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (100g) - France - Mode éthique;tshirt;0.10;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (110g) - France - Mode éthique;tshirt;0.11;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (120g) - France - Mode éthique;tshirt;0.12;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (130g) - France - Mode éthique;tshirt;0.13;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (140g) - France - Mode éthique;tshirt;0.14;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (150g) - France - Mode éthique;tshirt;0.15;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (160g) - France - Mode éthique;tshirt;0.16;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (170g) - France - Mode éthique;tshirt;0.17;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (180g) - France - Mode éthique;tshirt;0.18;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (190g) - France - Mode éthique;tshirt;0.19;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (200g) - France - Mode éthique;tshirt;0.20;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (210g) - France - Mode éthique;tshirt;0.21;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (220g) - France - Mode éthique;tshirt;0.22;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (230g) - France - Mode éthique;tshirt;0.23;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (240g) - France - Mode éthique;tshirt;0.24;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (250g) - France - Mode éthique;tshirt;0.25;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (260g) - France - Mode éthique;tshirt;0.26;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (270g) - France - Mode éthique;tshirt;0.27;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (280g) - France - Mode éthique;tshirt;0.28;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (290g) - France - Mode éthique;tshirt;0.29;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt coton bio (300g) - France - Mode éthique;tshirt;0.30;ei-coton-organic;1.00;ei-coton-organic;0.00;ei-coton-organic;0.00;TR;FR;FR;FR;0.00;knitting-mix;small-business;300;200;30.00;true
+Tshirt synthétique (100g) - Asie - Mode ultra fast fashion;tshirt;0.10;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (110g) - Asie - Mode ultra fast fashion;tshirt;0.11;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (120g) - Asie - Mode ultra fast fashion;tshirt;0.12;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (130g) - Asie - Mode ultra fast fashion;tshirt;0.13;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (140g) - Asie - Mode ultra fast fashion;tshirt;0.14;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (150g) - Asie - Mode ultra fast fashion;tshirt;0.15;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (160g) - Asie - Mode ultra fast fashion;tshirt;0.16;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (170g) - Asie - Mode ultra fast fashion;tshirt;0.17;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (180g) - Asie - Mode ultra fast fashion;tshirt;0.18;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (190g) - Asie - Mode ultra fast fashion;tshirt;0.19;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (200g) - Asie - Mode ultra fast fashion;tshirt;0.20;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (210g) - Asie - Mode ultra fast fashion;tshirt;0.21;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (220g) - Asie - Mode ultra fast fashion;tshirt;0.22;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (230g) - Asie - Mode ultra fast fashion;tshirt;0.23;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (240g) - Asie - Mode ultra fast fashion;tshirt;0.24;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (250g) - Asie - Mode ultra fast fashion;tshirt;0.25;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (260g) - Asie - Mode ultra fast fashion;tshirt;0.26;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (270g) - Asie - Mode ultra fast fashion;tshirt;0.27;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (280g) - Asie - Mode ultra fast fashion;tshirt;0.28;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (290g) - Asie - Mode ultra fast fashion;tshirt;0.29;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt synthétique (300g) - Asie - Mode ultra fast fashion;tshirt;0.30;ei-pet;0.95;ei-pp;0.05;ei-pp;0.00;RAS;RAS;RAS;RAS;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (100g) - Pakistan - Mode traditionnelle;tshirt;0.10;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (110g) - Pakistan - Mode traditionnelle;tshirt;0.11;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (120g) - Pakistan - Mode traditionnelle;tshirt;0.12;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (130g) - Pakistan - Mode traditionnelle;tshirt;0.13;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (140g) - Pakistan - Mode traditionnelle;tshirt;0.14;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (150g) - Pakistan - Mode traditionnelle;tshirt;0.15;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (160g) - Pakistan - Mode traditionnelle;tshirt;0.16;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (170g) - Pakistan - Mode traditionnelle;tshirt;0.17;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (180g) - Pakistan - Mode traditionnelle;tshirt;0.18;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (190g) - Pakistan - Mode traditionnelle;tshirt;0.19;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (200g) - Pakistan - Mode traditionnelle;tshirt;0.20;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (210g) - Pakistan - Mode traditionnelle;tshirt;0.21;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (220g) - Pakistan - Mode traditionnelle;tshirt;0.22;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (230g) - Pakistan - Mode traditionnelle;tshirt;0.23;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (240g) - Pakistan - Mode traditionnelle;tshirt;0.24;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (250g) - Pakistan - Mode traditionnelle;tshirt;0.25;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (260g) - Pakistan - Mode traditionnelle;tshirt;0.26;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (270g) - Pakistan - Mode traditionnelle;tshirt;0.27;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (280g) - Pakistan - Mode traditionnelle;tshirt;0.28;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (290g) - Pakistan - Mode traditionnelle;tshirt;0.29;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (300g) - Pakistan - Mode traditionnelle;tshirt;0.30;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;PK;PK;PK;PK;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (100g) - Majorant par défaut;tshirt;0.10;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (110g) - Majorant par défaut;tshirt;0.11;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (120g) - Majorant par défaut;tshirt;0.12;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (130g) - Majorant par défaut;tshirt;0.13;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (140g) - Majorant par défaut;tshirt;0.14;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (150g) - Majorant par défaut;tshirt;0.15;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (160g) - Majorant par défaut;tshirt;0.16;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (170g) - Majorant par défaut;tshirt;0.17;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (180g) - Majorant par défaut;tshirt;0.18;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (190g) - Majorant par défaut;tshirt;0.19;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (200g) - Majorant par défaut;tshirt;0.20;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (210g) - Majorant par défaut;tshirt;0.21;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (220g) - Majorant par défaut;tshirt;0.22;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (230g) - Majorant par défaut;tshirt;0.23;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (240g) - Majorant par défaut;tshirt;0.24;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (250g) - Majorant par défaut;tshirt;0.25;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (260g) - Majorant par défaut;tshirt;0.26;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (270g) - Majorant par défaut;tshirt;0.27;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (280g) - Majorant par défaut;tshirt;0.28;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (290g) - Majorant par défaut;tshirt;0.29;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (300g) - Majorant par défaut;tshirt;0.30;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;---;---;---;---;1.00;knitting-mix;large-business-without-services;65;100000;10.00;false
+Tshirt coton (100g) - France - Mode traditionnelle;tshirt;0.10;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (110g) - France - Mode traditionnelle;tshirt;0.11;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (120g) - France - Mode traditionnelle;tshirt;0.12;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (130g) - France - Mode traditionnelle;tshirt;0.13;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (140g) - France - Mode traditionnelle;tshirt;0.14;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (150g) - France - Mode traditionnelle;tshirt;0.15;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (160g) - France - Mode traditionnelle;tshirt;0.16;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (170g) - France - Mode traditionnelle;tshirt;0.17;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (180g) - France - Mode traditionnelle;tshirt;0.18;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (190g) - France - Mode traditionnelle;tshirt;0.19;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (200g) - France - Mode traditionnelle;tshirt;0.20;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (210g) - France - Mode traditionnelle;tshirt;0.21;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (220g) - France - Mode traditionnelle;tshirt;0.22;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (230g) - France - Mode traditionnelle;tshirt;0.23;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (240g) - France - Mode traditionnelle;tshirt;0.24;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (250g) - France - Mode traditionnelle;tshirt;0.25;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (260g) - France - Mode traditionnelle;tshirt;0.26;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (270g) - France - Mode traditionnelle;tshirt;0.27;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (280g) - France - Mode traditionnelle;tshirt;0.28;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (290g) - France - Mode traditionnelle;tshirt;0.29;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (300g) - France - Mode traditionnelle;tshirt;0.30;ei-coton;1.00;ei-coton;0.00;ei-coton;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;115;2500;30.00;false
+Tshirt coton (100g) - Chine - Mode Fast Fashion;tshirt;0.10;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (110g) - Chine - Mode Fast Fashion;tshirt;0.11;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (120g) - Chine - Mode Fast Fashion;tshirt;0.12;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (130g) - Chine - Mode Fast Fashion;tshirt;0.13;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (140g) - Chine - Mode Fast Fashion;tshirt;0.14;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (150g) - Chine - Mode Fast Fashion;tshirt;0.15;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (160g) - Chine - Mode Fast Fashion;tshirt;0.16;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (170g) - Chine - Mode Fast Fashion;tshirt;0.17;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (180g) - Chine - Mode Fast Fashion;tshirt;0.18;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (190g) - Chine - Mode Fast Fashion;tshirt;0.19;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (200g) - Chine - Mode Fast Fashion;tshirt;0.20;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (210g) - Chine - Mode Fast Fashion;tshirt;0.21;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (220g) - Chine - Mode Fast Fashion;tshirt;0.22;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (230g) - Chine - Mode Fast Fashion;tshirt;0.23;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (240g) - Chine - Mode Fast Fashion;tshirt;0.24;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (250g) - Chine - Mode Fast Fashion;tshirt;0.25;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (260g) - Chine - Mode Fast Fashion;tshirt;0.26;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (270g) - Chine - Mode Fast Fashion;tshirt;0.27;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (280g) - Chine - Mode Fast Fashion;tshirt;0.28;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (290g) - Chine - Mode Fast Fashion;tshirt;0.29;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+Tshirt coton (300g) - Chine - Mode Fast Fashion;tshirt;0.30;ei-coton;0.75;coton-rdp;0.25;coton-rdp;0.00;CN;CN;CN;CN;1.00;knitting-mix;large-business-without-services;115;120000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (100g) - France;tshirt;0.10;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (110g) - France;tshirt;0.11;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (120g) - France;tshirt;0.12;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (130g) - France;tshirt;0.13;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (140g) - France;tshirt;0.14;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (150g) - France;tshirt;0.15;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (160g) - France;tshirt;0.16;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (170g) - France;tshirt;0.17;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (180g) - France;tshirt;0.18;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (190g) - France;tshirt;0.19;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (200g) - France;tshirt;0.20;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (210g) - France;tshirt;0.21;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (220g) - France;tshirt;0.22;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (230g) - France;tshirt;0.23;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (240g) - France;tshirt;0.24;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (250g) - France;tshirt;0.25;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (260g) - France;tshirt;0.26;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (270g) - France;tshirt;0.27;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (280g) - France;tshirt;0.28;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (290g) - France;tshirt;0.29;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 50% coton 45% PET 5% PU (300g) - France;tshirt;0.30;ei-coton;0.50;ei-pet;0.45;ei-viscose;0.05;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;20.00;false
+T-shirt 70% coton 30% polyester (100g) - France;tshirt;0.10;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (110g) - France;tshirt;0.11;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (120g) - France;tshirt;0.12;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (130g) - France;tshirt;0.13;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (140g) - France;tshirt;0.14;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (150g) - France;tshirt;0.15;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (160g) - France;tshirt;0.16;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (170g) - France;tshirt;0.17;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (180g) - France;tshirt;0.18;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (190g) - France;tshirt;0.19;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (200) - France;tshirt;0.20;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (210) - France;tshirt;0.21;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (220g) - France;tshirt;0.22;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (230g) - France;tshirt;0.23;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (240g) - France;tshirt;0.24;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (250g) - France;tshirt;0.25;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (260g) - France;tshirt;0.26;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (270g) - France;tshirt;0.27;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (280g) - France;tshirt;0.28;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (290g) - France;tshirt;0.29;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
+T-shirt 70% coton 30% polyester (300g) - France;tshirt;0.30;ei-coton;0.70;ei-pet;0.30;ei-pet;0.00;TR;FR;FR;FR;0.00;knitting-mix;large-business-with-services;65;100000;30.00;false
