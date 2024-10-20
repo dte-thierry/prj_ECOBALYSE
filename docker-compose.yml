@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ecblextract:
+    build:
+      context: ./extract
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - ecbl-net
+
+networks:
+  ecbl-net:
+
+volumes:
+  logs:
