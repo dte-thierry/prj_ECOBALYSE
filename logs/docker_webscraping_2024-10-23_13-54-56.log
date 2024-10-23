@@ -1,0 +1,13 @@
+Les informations relatives à ces exemples de textiles sont disponibles depuis le lien :
+https://fabrique-numerique.gitbook.io/ecobalyse/textile/exemples
+
+Récupérer les données de l'Explorateur Ecobalyse ...
+DataFrame créé avec succès au bout de : 5.06 secondes.
+                                                 Nom      Categorie   ecs
+0  Tshirt coton (150g) - Chine - Mode "fast fashion"  Tshirt / Polo  1162
+1  Tshirt synthétique (150g) - Asie - Mode "ultra...  Tshirt / Polo  1191
+2          Tshirt coton (150g) - Majorant par défaut  Tshirt / Polo  1851
+3        Tshirt lin (150g) - France - Mode "éthique"  Tshirt / Polo   419
+4  Tshirt coton bio (150g) - France - Mode "éthique"  Tshirt / Polo   482
+
+DataFrame sauvegardé en fichier json, avec succès.

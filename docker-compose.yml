@@ -1,16 +1,21 @@
 version: '3.8'
 
 services:
-  ecblextract:
+  ecblwebscraping:
     build:
-      context: ./extract
+      context: . # contexte de construction à la racine du projet
+      dockerfile: etl/Dockerfile # chemin relatif vers le Dockerfile
+    environment:
+      - SERVICE_NAME=ecblwebscraping # variable d’environnement pour le service
     volumes:
-      - ./logs:/app/logs
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
     networks:
-      - ecbl-net
+      - ecblwebscraping_network # réseau dédié pour le service
 
 networks:
-  ecbl-net:
+  ecblwebscraping_network:
 
 volumes:
   logs:
+  data:

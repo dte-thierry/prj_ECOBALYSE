@@ -1,0 +1,27 @@
+# Utiliser l'image Selenium avec Chrome
+FROM selenium/standalone-chrome:latest
+
+# Installer Python, pip, Xvfb et les dépendances nécessaires
+USER root
+RUN apt-get update && apt-get install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update && apt-get install -y python3.8 python3.8-venv python3.8-dev build-essential xvfb
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY etl/ /app/
+COPY start.sh /app/
+
+# Créer un environnement virtuel Python avec Python 3.8
+RUN python3.8 -m venv venv
+
+# Activer l'environnement virtuel et installer les dépendances Python
+RUN /bin/bash -c "source venv/bin/activate && pip install --no-cache-dir -r /app/requirements.txt"
+
+# Déclarer les volumes pour les répertoires logs et data
+VOLUME ["/app/logs", "/app/data"]
+
+# Définir la commande par défaut pour exécuter le script
+CMD ["bash", "start.sh"]

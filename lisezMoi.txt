@@ -1,0 +1,71 @@
+Fichier de remarques : lisezMoi.txt
+
+# Remarques et Justifications des Choix
+
+## Introduction
+Ce document présente les remarques et justifications des choix effectués pour la mise en place 
+de l'ETL, dans le cadre du pipeline relatif à l'API Ecobalyse.
+
+## 1. Extraction
+
+### Objectif
+Vérifier que ...
+
+### Choix Techniques
+
+#### 1.1. Utilisation de ...
+- **Justification** : ...
+
+#### 1.2. Structure du Script
+- **Justification** : ...
+  - ...
+  - ...
+  - ...
+
+#### 1.3. Gestion des Logs
+- **Justification** : Les résultats de l'ETL sont enregistrés dans différents fichiers de logs (`*.log`). 
+Cela permet de conserver une trace des traitements effectués et de faciliter le débogage.
+
+### DockerFile
+- **Justification** : Le Dockerfile est configuré pour installer les dépendances nécessaires et exécuter le 
+script d'extraction des données. La commande CMD est utilisée pour lancer le script et garder le conteneur 
+actif après l’exécution du script.
+
+### Docker-compose.yml
+- **Justification** : Le fichier docker-compose.yml est configuré pour lancer les différents services. 
+Les volumes et réseaux sont configurés pour permettre la communication entre les conteneurs et le partage 
+des logs.
+
+## Conclusion
+Ce document présente les choix techniques et les justifications pour la mise en place des l'ETL Ecobalyse.
+
+
+
+# Utilisation 
+
+## Exécuter le script initial
+./setup.sh
+
+## Vérifier l’état des conteneurs
+docker-compose ps
+
+## Vérifier les logs
+docker-compose logs ecblextract
+
+## Reconstruire et redémarrer le conteneur Docker
+docker-compose build
+docker-compose up
+
+## vérifier les logs en temps réel
+docker logs -f prj_ecobalyse_ecblextract_1
+
+
+# Exemple de fichier : ./logs/ecbl_extract.log
+
+2024-10-21 13:13:38,018 - Logger is configured and ready to log.
+2024-10-21 13:13:38,019 - Log file path: /app/logs/ecbl_extract.log
+2024-10-21 13:13:38,019 - Starting the Extract Process.
+2024-10-21 13:13:43,019 - ----- Data retrieval took 5.000 seconds to run -----
+2024-10-21 13:13:43,020 - Log file /app/logs/ecbl_extract.log created successfully. 
+
+        
