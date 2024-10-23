@@ -5,6 +5,7 @@ sleep 3
 if grep -q docker /proc/1/cgroup; then
     # Exécution dans un conteneur Docker
     mkdir -p /app/logs
+    mkdir -p /app/data
     echo "Pré-requis nécessaires au lancement par conteneur : "
     echo -e "\tvenv"
     echo -e "\tXvfb"
@@ -14,16 +15,19 @@ if grep -q docker /proc/1/cgroup; then
     # Définir la variable d'environnement DISPLAY
     export DISPLAY=:99
     # Lancer Sélénium
-    python3 /app/extract.py &> /app/logs/docker_webscraping_$(date +"%Y-%m-%d_%H-%M-%S").log
+    python3 /app/extract1.py &> /app/logs/docker_webscraping_$(date +"%Y-%m-%d_%H-%M-%S").log
     echo "DataFrame, fichiers 'log' et 'json' créés avec succès par le conteneur."
 else
     # Exécution en manuel
     mkdir -p logs
+    mkdir -p data
+    sudo chmod -R 777 logs
+    sudo chmod -R 777 data
     echo "Pré-requis nécessaires au lancement manuel du script 'start.sh' : "
     echo -e "\t$(google-chrome --version)" # Afficher la version de Google Chrome
     echo -e "\t$(chromium --version)" # Afficher la version de Chromium
     echo -e "\t$(chromedriver --version)" # Afficher la version de ChromeDriver
     # Lancer Sélénium
-    python3 etl/extract.py &> logs/manual_webscraping_$(date +"%Y-%m-%d_%H-%M-%S").log
+    python3 etl/extract1.py &> logs/manual_webscraping_$(date +"%Y-%m-%d_%H-%M-%S").log
     echo "DataFrame, fichiers 'log' et 'json' créés avec succès manuellement."
 fi

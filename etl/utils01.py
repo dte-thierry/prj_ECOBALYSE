@@ -97,3 +97,198 @@ def get_explorer_url(url, columns):
     df.columns = columns
     
     return df
+
+
+def diviser_nom(ligne):
+    """
+    Divise une chaîne de caractères représentant un nom en plusieurs éléments distincts.
+
+    Cette fonction prend une chaîne de caractères contenant des informations séparées par des tirets
+    et les divise en trois parties : le type, le pays et le mode. Elle traite également les cas où
+    le pays est indiqué comme "Majorant par défaut".
+
+    Paramètres :
+    -----------
+    ligne : str
+        La chaîne de caractères à diviser. Elle est supposée contenir des informations séparées par des tirets.
+
+    Retour :
+    --------
+    pandas.Series
+        Une série contenant trois éléments : le type, le pays et le mode.
+    """
+    # Charger les librairies nécessaires
+    import pandas as pd
+    
+    elements = ligne.rsplit('-', maxsplit=3)  # Divise la chaîne en partant de la droite
+    elements = [e.strip() for e in elements]  # Supprime les espaces superflus
+    # Assignation des éléments aux colonnes en tenant compte de l'ordre inverse
+    type = elements[0]
+    mode = elements[-1]
+    pays = elements[1] if elements[1] != "Majorant par défaut" else "Pays inconnu"
+    
+    return pd.Series([type, pays, mode])
+
+
+def extraire_masse(type):
+    """
+    Extrait la masse d'une chaîne de caractères et la convertit en kilogrammes.
+
+    Cette fonction utilise une expression régulière pour rechercher une masse exprimée en grammes
+    entre parenthèses dans une chaîne de caractères. Si une masse est trouvée, elle est convertie
+    en kilogrammes et retournée. Sinon, la fonction retourne None.
+
+    Paramètres :
+    -----------
+    type : str
+        La chaîne de caractères contenant potentiellement une masse entre parenthèses, suivie de 'g'.
+
+    Retour :
+    --------
+    float or None
+        La masse en kilogrammes si elle est trouvée, sinon None.
+    """
+    # Charger les librairies utiles
+    import re
+
+    # Utiliser une expression régulière pour trouver la masse entre parenthèses
+    mass = re.search(r'\((.*?)g\)', type)
+    # Si une masse est trouvée, la retourner en tant que float
+    if mass:
+        return float(mass.group(1))/1000
+    # Si aucune masse n'est trouvée, retourner None
+    return None
+
+
+def extraire_matiere(type_colonne):
+    """
+    Extrait la matière d'une chaîne de caractères représentant un type de produit.
+
+    Cette fonction utilise une expression régulière pour rechercher des matières spécifiques dans une chaîne de caractères.
+    Si une matière est trouvée, elle est retournée. Sinon, une chaîne vide est retournée.
+
+    Paramètres :
+    -----------
+    type_colonne : str
+        La chaîne de caractères contenant le type de produit.
+
+    Retour :
+    --------
+    str
+        La matière trouvée dans la chaîne de caractères, ou une chaîne vide si aucune matière n'est trouvée.
+    """
+    # Charger les librairies utiles
+    import re
+
+    # Liste des matières possibles. Attention : faute d'orthographe pour 'paysane' au lieu de 'paysanne' !
+    matieres = ['laine paysane', 'synthétique', 'coton bio', 'polyester', 'viscose', 'laine', 'coton', 'lin']
+
+    # Créer une expression régulière à partir de la liste des matières
+    pattern = r'\b(' + '|'.join(re.escape(matiere) for matiere in matieres) + r')\b'
+
+    # Vérifier si 'laine paysane' est dans la chaîne
+    if 'laine paysane' in type_colonne:
+        return 'laine paysane'
+    
+    # Rechercher les autres matières
+    match = re.search(pattern, type_colonne)
+    if match:
+        return match.group(0)
+    
+    return ''
+
+
+def get_ecobalyse_datas(url, columns, json_output_path):
+    """
+    Récupère et traite les données de l'Explorateur Ecobalyse, puis les sauvegarde en fichier JSON.
+
+    Parameters:
+    url (str): L'URL de l'Explorateur Ecobalyse.
+    columns (list): Liste des colonnes à extraire.
+    json_output_path (str): Chemin du fichier JSON où sauvegarder les données.
+
+    Returns:
+    pd.DataFrame: Le DataFrame contenant les données traitées.
+
+    Description:
+    Cette fonction utilise Selenium pour extraire les données de l'Explorateur Ecobalyse à partir de l'URL fournie.
+    Les données sont ensuite traitées pour :
+    - Trier par catégorie et ECS.
+    - Réinitialiser les indices.
+    - Supprimer les espaces en début et fin de chaîne dans la colonne 'Nom'.
+    - Supprimer les colonnes inutiles.
+    - Convertir la colonne 'ecs' en type entier.
+    - Diviser les informations de la colonne 'Nom' en plusieurs colonnes.
+    - Extraire la masse et la matière des colonnes correspondantes.
+    - Renommer et réorganiser les colonnes.
+    Le DataFrame résultant est sauvegardé en fichier JSON et retourné.
+    """
+    # Charger les librairies utiles
+    import pandas as pd
+    import time
+    import re
+    
+    start = time.time()
+
+    # Lien vers la documentation
+    print("Les informations relatives à ces exemples de textiles sont disponibles depuis le lien :\nhttps://fabrique-numerique.gitbook.io/ecobalyse/textile/exemples\n")
+
+    # Extraire via Selenium les données de l'Explorateur [Exemples] et créer un DataFrame
+    print("Récupérer les données de l'Explorateur Ecobalyse ...")
+    df_exemples = get_explorer_url(url, columns)
+
+    # Trier le DataFrame par "Catégorie" en ordre décroissant
+    df_exemples = df_exemples.sort_values(by=['Categorie', 'ecs'], ascending=[False, True])
+
+    # Réinitialiser les indices du DataFrame
+    df_exemples = df_exemples.reset_index(drop=True)
+
+    # Supprimer les espaces de début et fin de chaîne de caractère de la colonne 'Nom'
+    df_exemples['Nom'] = df_exemples['Nom'].str.strip()
+
+    # Supprimer les colonnes '.' et 'pef'
+    df_exemples = df_exemples.drop(columns=['.'])
+    df_exemples = df_exemples.drop(columns=['pef'])
+
+    # Convertir la colonne 'ecs' en type : Integer
+    # regex : remplacer tout caractère non numérique par une chaîne vide
+    df_exemples['ecs'] = df_exemples['ecs'].str.replace(r'\D', '', regex=True).astype(int)
+
+    # Diviser les informations de la colonne 'Nom'
+    df_exemples[['Type', 'Pays', 'Mode']] = df_exemples['Nom'].apply(diviser_nom)
+
+    # Récupérer la masse depuis la colonne 'Type'
+    df_exemples['Masse'] = df_exemples['Type'].apply(extraire_masse)
+
+    # Supprimer la masse de la colonne 'Type'
+    df_exemples['Type'] = df_exemples['Type'].apply(lambda x: re.sub(r'\(.*?g\)', '', x).strip())
+
+    # Récupérer la matière depuis la colonne 'Type'
+    df_exemples['Matiere'] = df_exemples['Type'].apply(extraire_matiere)
+
+    # Supprimer la colonne 'Type'
+    df_exemples = df_exemples.drop(columns=['Type'])
+
+    # Renommer la colonne 'Nom' en 'Libelle'
+    df_exemples = df_exemples.rename(columns={'Nom': 'Libelle'})
+
+    # Calculer le temps de traitement
+    end = time.time()
+    runtime = end - start
+
+    # Afficher le DataFrame
+    if df_exemples is not None and not df_exemples.empty:
+        print(f"DataFrame créé avec succès au bout de : {runtime:.2f} secondes.")
+        
+        # Afficher toutes les colonnes
+        pd.set_option('display.max_columns', None)    
+        print(df_exemples.head())
+        
+        # Sauvegarder le DataFrame Explorateur [Exemples] en fichier JSON
+        df_exemples.to_json(json_output_path, orient='records', lines=True)
+        print("\nDataFrame sauvegardé en fichier json, avec succès.")
+        
+    else:
+        print("Échec de la création du DataFrame ou DataFrame vide.")
+    
+    return df_exemples
