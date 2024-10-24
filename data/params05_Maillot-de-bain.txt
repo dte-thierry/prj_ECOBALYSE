@@ -1,0 +1,16 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée Maillot-de-bain
+params017 = {
+    'libelle': 'Maillot de bain polyester 100g Majorant par defaut',
+    'mass': 0.1,
+    'materials': [{'id': 'ei-pet', 'share': 1}],
+    'product': 'maillot-de-bain',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'airTransportRatio': 1.0,  
+    'business': 'large-business-without-services',    
+    'numberOfReferences': 100000,
+    'price': 15.0,
+    'traceability': False    
+} # ecs = 728 Pts (~ 728 Pts)

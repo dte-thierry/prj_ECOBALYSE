@@ -1,0 +1,124 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée Pull
+params007 = {
+    'libelle': 'Pull laine paysane 550g France Mode ethique',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-laine-nouvelle-filiere', 'share': 1, 'country': 'FR'}],
+    'product': 'pull',
+    'countrySpinning': 'FR',
+    'countryFabric': 'FR',
+    'countryDyeing': 'FR',
+    'countryMaking': 'FR',
+    'business': 'small-business',
+    'numberOfReferences': 200,
+    'price': 95.0,
+    'traceability': True
+} # ecs = 1264 Pts (~ 1402 Pts) , écart = 138 Pts
+
+params008 = {
+    'libelle': 'Pull coton bio 550g France Mode traditionnelle',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-coton-organic', 'share': 1}],
+    'product': 'pull',
+    'countrySpinning': 'IN',
+    'countryFabric': 'FR',
+    'countryDyeing': 'FR',
+    'countryMaking': 'FR',
+    'business': 'large-business-with-services',
+    'numberOfReferences': 2500,
+    'price': 70.0,
+    'traceability': True
+} # ecs = 1434 Pts (~ 1594 Pts) , écart = 160 Pts
+
+params009 = {
+    'libelle': 'Pull viscose 550g Chine Mode fast fashion',
+    'mass': 0.55,
+    'materials': [{"id": "ei-viscose", "share": 0.7}, {"id": "ei-pet", "share": 0.3}],
+    'product': 'pull',
+    'countrySpinning': 'CN',
+    'countryFabric': 'CN',
+    'countryDyeing': 'CN',
+    'countryMaking': 'CN',
+    'airTransportRatio': 1.0,
+    'business': 'large-business-without-services',
+    'numberOfReferences': 12000,
+    'price': 30.0,
+    'traceability': False
+} # ecs = 2970 Pts (~ 2970 Pts)
+
+params010 = {
+    'libelle': 'Pull coton 550g Pakistan Mode traditionnelle',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'pull',
+    'countrySpinning': 'PK',
+    'countryFabric': 'PK',
+    'countryDyeing': 'PK',
+    'countryMaking': 'PK',
+    'business': 'large-business-without-services',
+    'numberOfReferences': 2500,
+    'price': 70.0,
+    'traceability': False
+} # ecs = 3342 Pts (~ 3447 Pts) , écart = 105 Pts
+
+params011 = {
+    'libelle': 'Pull laine 550g France Mode ethique',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-laine-par-defaut', 'share': 1}],
+    'product': 'pull',
+    'countrySpinning': 'CN',
+    'countryFabric': 'FR',
+    'countryDyeing': 'FR',
+    'countryMaking': 'FR',
+    'business': 'small-business',
+    'numberOfReferences': 200,
+    'price': 95.0,
+    'traceability': False
+} # ecs = 3902 Pts (~ 4367 Pts) , écart = 465 Pts
+
+params012 = {
+    'libelle': 'Pull polyester 550g Asie Mode ultra fast fashion',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-pet', 'share': 1}],
+    'product': 'pull',
+    'countrySpinning': 'RAS',
+    'countryFabric': 'RAS',
+    'countryDyeing': 'RAS',
+    'countryMaking': 'RAS',
+    'airTransportRatio': 1.0,    
+    'business': 'large-business-without-services',
+    'numberOfReferences': 100000,
+    'price': 15.0,
+    'traceability': False
+} # ecs = 3937 Pts (~ 3937 Pts)
+
+params013 = {
+    'libelle': 'Pull coton 550g Chine Mode fast fashion',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'pull',
+    'countrySpinning': 'CN',
+    'countryFabric': 'CN',
+    'countryDyeing': 'CN',
+    'countryMaking': 'CN',
+    'airTransportRatio': 1.0,    
+    'business': 'large-business-without-services',
+    'numberOfReferences': 12000,
+    'price': 30.0,
+    'traceability': False
+} # ecs = 4303 Pts (~ 4302 Pts) , écart = 1 Pt
+
+params014 = {
+    'libelle': 'Pull coton 550g Majorant par defaut',
+    'mass': 0.55,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'pull',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'airTransportRatio': 1.0,    
+    'business': 'large-business-without-services',
+    'numberOfReferences': 100000,
+    'price': 15.0,
+    'traceability': False
+} # ecs = 6557 Pts (~ 6557 Pts)

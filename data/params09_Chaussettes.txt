@@ -1,0 +1,16 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée Chaussettes
+params021 = {
+    'libelle': 'Chaussettes coton 40g Majorant par defaut',
+    'mass': 0.04,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'chaussettes',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'airTransportRatio': 1.0,
+    'business': 'large-business-without-services',    
+    'numberOfReferences': 100000,
+    'price': 4.0,
+    'traceability': False    
+} # ecs = 413 Pts (~ 412 Pts) , écart = 1 Pt

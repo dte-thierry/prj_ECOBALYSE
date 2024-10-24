@@ -1,0 +1,16 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée Jean
+params019 = {
+    'libelle': 'Jean coton 450g Majorant par defaut',
+    'mass': 0.45,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'jean',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'fading': True,  
+    'business': 'large-business-without-services',    
+    'numberOfReferences': 100000,
+    'price': 20.0,
+    'traceability': False   
+} # ecs = 6172 Pts (~ 5809 Pts) , écart = 363 Pts

@@ -1,0 +1,125 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée T-shirt / Polo
+params000 = {
+    'libelle': 'Tshirt coton 150g Chine Mode fast fashion',
+    'mass': 0.15,
+    'materials': [{'id': 'ei-coton', 'share': 0.75}, {'id': 'coton-rdp', 'share': 0.25}],
+    'product': 'tshirt',
+    'countrySpinning': 'CN',
+    'countryFabric': 'CN',
+    'countryDyeing': 'CN',
+    'countryMaking': 'CN',
+    'airTransportRatio': 1.0,
+    'business': 'large-business-without-services',
+    'numberOfReferences': 12000,
+    'price': 20.0,
+    'traceability': False
+} # ecs = 1162 Pts (~ 1162 Pts)
+
+params001 = {
+    'libelle': 'Tshirt synthetique 150g Asie Mode ultra fast fashion',
+    'mass': 0.15,
+    'materials': [{"id": "ei-pet", "share": 0.95}, {"id": "ei-pp", "share": 0.05}],
+    'product': 'tshirt',
+    'countrySpinning': 'RAS',
+    'countryFabric': 'RAS',
+    'countryDyeing': 'RAS',
+    'countryMaking': 'RAS',
+    'airTransportRatio': 1.0,
+    'business': 'large-business-without-services',
+    'numberOfReferences': 100000,
+    'price': 10.0,
+    'traceability': False
+} # ecs = 1189 Pts (~ 1188 Pts) , écart = 1 Pt
+
+params002 = {
+    'libelle': 'Tshirt coton 150g Majorant par defaut',
+    'mass': 0.15,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'tshirt',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'airTransportRatio': 1.0,
+    'business': 'large-business-without-services',
+    'numberOfReferences': 100000,
+    'price': 10.0,
+    'traceability': False
+} # ecs = 1869 Pts (~ 1869 Pts)
+
+params003 = {
+    'libelle': 'Tshirt lin 150g France Mode ethique',
+    'mass': 0.15,
+    'materials': [{"id": "ei-lin", 'share': 1}],
+    'product': 'tshirt',
+    'countrySpinning': 'TR',
+    'countryFabric': 'FR',
+    'countryDyeing': 'FR',
+    'countryMaking': 'FR',
+    'business': 'small-business',
+    'numberOfReferences': 200,
+    'price': 30.0,
+    'traceability': True
+} # ecs = 418 Pts (~ 451 Pts) , écart = 33 Pts
+
+params004 = {
+    'libelle': 'Tshirt coton bio 150g France Mode ethique',
+    'mass': 0.15,
+    'materials': [{'id': 'ei-coton-organic', 'share': 1}],
+    'product': 'tshirt',
+    'countrySpinning': 'TR',
+    'countryFabric': 'FR',
+    'countryDyeing': 'FR',
+    'countryMaking': 'FR',
+    'business': 'small-business',
+    'numberOfReferences': 200,
+    'price': 30.0,
+    'traceability': True
+} # ecs = 481 Pts (~ 522 Pts) , écart = 41 Pts
+
+params005 = {
+    'libelle': 'Tshirt coton 150g France Mode traditionnelle',
+    'mass': 0.15,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'tshirt',
+    'countrySpinning': 'TR',
+    'countryFabric': 'FR',
+    'countryDyeing': 'FR',
+    'countryMaking': 'FR',
+    'business': 'large-business-with-services',
+    'numberOfReferences': 2500,
+    'price': 30.0,
+    'traceability': False
+} # ecs = 747 Pts (~ 749 Pts) , écart = 2 Pts
+
+params006 = {
+    'libelle': 'Tshirt coton 150g Pakistan Mode traditionnelle',
+    'mass': 0.15,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'tshirt',
+    'countrySpinning': 'PK',
+    'countryFabric': 'PK',
+    'countryDyeing': 'PK',
+    'countryMaking': 'PK',
+    'business': 'large-business-with-services',
+    'numberOfReferences': 2500,
+    'price': 30.0,
+    'traceability': False
+} # ecs = 930 Pts (~ 956 Pts) , écart = 26 Pts
+
+params006a = {
+    'libelle': 'Tshirt coton 150g Pakistan Mode traditionnelle',
+    'mass': 0.15,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'tshirt',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'business': 'large-business-with-services',
+    'numberOfReferences': 100000,
+    'price': 10.0,
+    'traceability': False,
+	'upcycled': True
+} # ecs = 558 Pts
+

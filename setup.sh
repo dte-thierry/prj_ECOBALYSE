@@ -1,22 +1,8 @@
 #!/bin/bash
 
 # -----------------------------------------------------------------------------
-# tips & tricks  
+# Dockerfile  
 # -----------------------------------------------------------------------------
-
-# Forcer la suppression de tous les conteneurs, images, volumes, et réseaux inutilisés
-# echo "Suppression de tous les conteneurs inutilisés : " 
-# docker system prune -a --volumes -f
-
-# Afficher l'espace disponible
-# echo "Espace disque maintenant disponible : "
-# df -h | egrep '(Filesystem|/dev/root)' | while read line; do
-#     echo -e "\t$line"
-# done
-
-# Afficher la mémoire vive disponible
-# echo "Mémoire vive disponible : "
-# sudo free -h
 
 # construire l'image Docker en spécifiant le chemin du Dockerfile 
 # echo "Construire l'image Docker de web_scraping : "
@@ -31,7 +17,8 @@
 # -----------------------------------------------------------------------------
 
 # Reconstruire et redémarrer les services par 'docker-compose'
-docker-compose up -d --build
+# docker-compose up -d --build
+docker-compose up --build
 
 # Arrêter les services
 docker-compose down

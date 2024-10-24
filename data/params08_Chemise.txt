@@ -1,0 +1,16 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée Chemise
+params020 = {
+    'libelle': 'Chemise coton 250g Majorant par defaut',
+    'mass': 0.25,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'chemise',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'airTransportRatio': 1.0,   
+    'business': 'large-business-without-services',    
+    'numberOfReferences': 100000,
+    'price': 15.0,
+    'traceability': False    
+} # ecs = 3021 Pts (~ 3020 Pts) , écart = 1 Pt

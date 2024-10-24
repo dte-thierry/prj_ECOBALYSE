@@ -105,7 +105,7 @@ def diviser_nom(ligne):
 
     Cette fonction prend une chaîne de caractères contenant des informations séparées par des tirets
     et les divise en trois parties : le type, le pays et le mode. Elle traite également les cas où
-    le pays est indiqué comme "Majorant par défaut".
+    le pays est indiqué comme "Majorant par défaut" ou "Remanufacturé".
 
     Paramètres :
     -----------
@@ -125,7 +125,10 @@ def diviser_nom(ligne):
     # Assignation des éléments aux colonnes en tenant compte de l'ordre inverse
     type = elements[0]
     mode = elements[-1]
-    pays = elements[1] if elements[1] != "Majorant par défaut" else "Pays inconnu"
+    # Remplacer "Majorant par défaut" et "Remanufacturé" par "Pays inconnu"
+    if elements[1] in ["Majorant par défaut", "Remanufacturé"]:
+        elements[1] = "Pays inconnu"
+    pays = elements[1]
     
     return pd.Series([type, pays, mode])
 
@@ -282,13 +285,13 @@ def get_ecobalyse_datas(url, columns, json_output_path):
         
         # Afficher toutes les colonnes
         pd.set_option('display.max_columns', None)    
-        print(df_exemples.head())
+        print(df_exemples.head(7))
         
         # Sauvegarder le DataFrame Explorateur [Exemples] en fichier JSON
         df_exemples.to_json(json_output_path, orient='records', lines=True)
-        print("\nDataFrame sauvegardé en fichier json, avec succès.")
+        print("\nDataFrame sauvegardé en fichier json, avec succès.\n")
         
     else:
-        print("Échec de la création du DataFrame ou DataFrame vide.")
+        print("\nÉchec de la création du DataFrame ou DataFrame vide.")
     
     return df_exemples

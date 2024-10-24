@@ -1,0 +1,16 @@
+# Exemples de base de l'Explorateur Ecobalyse : paramètres d'entrée Pantalon
+params015 = {
+    'libelle': 'Pantalon coton 450g Majorant par defaut',
+    'mass': 0.45,
+    'materials': [{'id': 'ei-coton', 'share': 1}],
+    'product': 'pantalon',
+    'countrySpinning': '---',
+    'countryFabric': '---',
+    'countryDyeing': '---',
+    'countryMaking': '---',
+    'airTransportRatio': 1.0,    
+    'business': 'large-business-without-services',
+    'numberOfReferences': 100000,
+    'price': 20.0,
+    'traceability': False    
+} # ecs = 5562 Pts (~ 5561 Pts) , écart = 1 Pt
