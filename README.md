@@ -28,3 +28,34 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 ## <a name="tdm-05" />Solution technique
 
 ## <a name="tdm-06" />A propos d'Ecobalyse
+__Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
+    
+En lien avec les préoccupations actuelles (l'industrie textile est l'une des plus polluantes au monde), __Écobalyse__ vise à accélérer la mise en place de l'affichage environnemental, pour favoriser un modèle de production plus durable.
+    
+__Voici quelques points clés à propos d'Écobalyse__ :
+    
+- `Objectif` : __Écobalyse__ permet de comprendre et de calculer les impacts écologiques des produits distribués en France.
+
+- `Éco-score` : __Écobalyse__ propose un éco-score pour informer les consommateurs sur l'impact environnemental des produits qu'ils achètent.    
+    
+- `Collaboration ouverte` : __Écobalyse__ est un mode de collaboration ouvert à la critique et aux suggestions, dans le but d'aider à élaborer la future méthode réglementaire française.
+
+- [`API ouverte`](https://api.gouv.fr/les-api/api-ecobalyse) : __Écobalyse__ propose une __interface de programmation applicative__ (__API__) pour connecter le calculateur Écobalyse à d'autres services numériques. L'[__API__](https://api.gouv.fr/les-api/api-ecobalyse) est testée dans le cadre de l'expérimentation Xtex, conformément à la loi Climat et Résilience.
+    
+    Ci-après quelques exemples d'utilisation de l'[__API__](https://api.gouv.fr/les-api/api-ecobalyse) __Écobalyse__ pour estimer les impacts environnementaux des produits textiles : 
+    
+        1. Interroger la base de données des indicateurs d'impacts environnementaux des produits textiles. 
+        Récupérer des informations sur les impacts environnementaux d'un vêtement en fonction de critères tels que 
+        la traçabilité, la matière et le recyclage.
+    
+        2. Calculer les impacts pour chaque produit.
+        Estimer, pour chaque produit textile : l'impact carbone, l'impact sur la couche d'ozone, l'impact sur la 
+        qualité de l'eau, le coût énergétique, l'impact sur l'eutrophisation de l'eau et des terres, l'impact sur 
+        l'acidification terrestre des eaux douces, l'utilisation du sol, l'utilisation de minéraux. 
+    
+        3. Tester le simulateur.
+        Explorer les impacts environnementaux de différents produits textiles.
+    
+Toutes marques, producteurs, ou distributeurs peutvent contribuer à améliorer le calcul d'impacts écologiques, en partageant leurs données et en participant aux travaux collectifs.
+    
+Pour en savoir plus, on peut visiter le site d'__Écobalyse__ [ici](https://ecobalyse.beta.gouv.fr/). 
