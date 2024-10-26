@@ -1,6 +1,6 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
-# Datascientest: projet EcoBalyse (Nov. 2024)
+# Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 
 ## Sommaire
 - [Contexte](#tdm-01)
@@ -28,10 +28,22 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
 
 ## <a name="tdm-03" />Mode d'emploi
+- lancer la machine virtuelle DataScientest, depuis le lien : <br />
+*https://learn.datascientest.com/lesson/349/3682*
+
+- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
+*git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
+
+- au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
+*./start.sh*
+
+<br />
 
 ## <a name="tdm-04" />Etapes du projet
+<br />
 
 ## <a name="tdm-05" />Solution technique
+<br />
 
 ## <a name="tdm-06" />A propos d'Ecobalyse
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
