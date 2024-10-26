@@ -25,7 +25,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - potentiellement, de fournir des recommandations ou des conseils sur des alternatives plus durables
 
 <br />
-<img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
+<img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ## <a name="tdm-03" />Mode d'emploi
 - lancer la machine virtuelle DataScientest, depuis le lien : <br />
@@ -37,10 +37,12 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
 *./start.sh*
 
-<br />
-
 ## <a name="tdm-04" />Etapes du projet
-<br />
+- Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
+- Etape 02 : architecture de la donnée
+- Etape 03 : consommation de la donnée
+- Etape 04 : mise en production
+- Etape 05 : automatisation des flux
 
 ## <a name="tdm-05" />Solution technique
 <br />
@@ -85,4 +87,4 @@ __A voir également :__
 - [Documentation de `API` Écobalyse](https://api.gouv.fr/documentation/api-ecobalyse)
 - [Ademe](https://affichage-environnemental.ademe.fr/)
 
-<img src="img/PRJ-ECOBALYSE-00-IMG1.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
+<img src="img/PRJ-ECOBALYSE-00-IMG1.jpg" alt="A propos" style="width:750px;height:auto;">
