@@ -24,6 +24,9 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - d'obtenir une évaluation de l'impact écologique de textiles courants
 - potentiellement, de fournir des recommandations ou des conseils sur des alternatives plus durables
 
+<br />
+<img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
+
 ## <a name="tdm-03" />Mode d'emploi
 
 ## <a name="tdm-04" />Etapes du projet
@@ -69,3 +72,5 @@ __A voir également :__
 - [Explorateur `Écobalyse`](https://ecobalyse.beta.gouv.fr/#/explore/textile/processes)    
 - [Documentation de `API` Écobalyse](https://api.gouv.fr/documentation/api-ecobalyse)
 - [Ademe](https://affichage-environnemental.ademe.fr/)
+
+<img src="img/PRJ-ECOBALYSE-00-IMG1.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
