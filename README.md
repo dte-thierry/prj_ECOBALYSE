@@ -61,7 +61,7 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 ### Schéma de principe
 
-<img src="img/PRJ-ECOBALYSE-00-IMG3.jpg" alt="Schéma de principe" style="width:750px;height:auto;">
+<img src="img/PRJ-ECOBALYSE-00-IMG3.png" alt="Schéma de principe" style="width:750px;height:auto;">
 
 La solution proposée se compose de : 
 
