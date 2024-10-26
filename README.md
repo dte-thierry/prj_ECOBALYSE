@@ -1,6 +1,6 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
-# Datascientest: projet EcoBalyse (Nov. 2024)
+# Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 
 ## Sommaire
 - [Contexte](#tdm-01)
@@ -25,13 +25,55 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - potentiellement, de fournir des recommandations ou des conseils sur des alternatives plus durables
 
 <br />
-<img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
+<img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ## <a name="tdm-03" />Mode d'emploi
 
+### Pré-requis
+
+- lancer et accéder à la machine virtuelle DataScientest, depuis le lien : <br />
+*https://learn.datascientest.com/lesson/349/3682*
+
+- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
+*git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
+
+<br />
+Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
+
+- au besoin, lancer le script `reset.sh` pour supprimer tous les conteneurs, images, volumes, et réseaux inutilisés, par la commande : <br />
+*./reset.sh*
+
+- au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
+*./start.sh*
+
+### Lancement des services
+- lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
+*./setup.sh*
+
 ## <a name="tdm-04" />Etapes du projet
+- Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
+- Etape 02 : architecture de la donnée
+- Etape 03 : consommation de la donnée
+- Etape 04 : mise en production
+- Etape 05 : automatisation des flux
 
 ## <a name="tdm-05" />Solution technique
+
+### Schéma de principe
+
+<img src="img/PRJ-ECOBALYSE-00-IMG3.jpg" alt="Schéma de principe" style="width:750px;height:auto;">
+
+La solution proposée se compose de : 
+
+* Un ETL qui a la charge de récupérer les contenus d'Ecobalyse.
+
+* Une base de données MongoDB où sont entreprosées les données récupérées.
+
+* Un dashboard Dash.
+
+* Une API FastApi permettant au dashboard de requêter la base de données.
+
+* Un DAG Airflow pour gérer l'orchestration de l'ETL
 
 ## <a name="tdm-06" />A propos d'Ecobalyse
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
@@ -73,4 +115,4 @@ __A voir également :__
 - [Documentation de `API` Écobalyse](https://api.gouv.fr/documentation/api-ecobalyse)
 - [Ademe](https://affichage-environnemental.ademe.fr/)
 
-<img src="img/PRJ-ECOBALYSE-00-IMG1.jpg" alt="Logo DataScientest" style="width:750px;height:auto;">
+<img src="img/PRJ-ECOBALYSE-00-IMG1.jpg" alt="A propos" style="width:750px;height:auto;">
