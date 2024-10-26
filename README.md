@@ -1,3 +1,5 @@
+<img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
+
 # Datascientest: projet EcoBalyse (Nov. 2024)
 
 ## Sommaire
