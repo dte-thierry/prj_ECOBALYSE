@@ -9,7 +9,8 @@
 - [A propos d'Ecobalyse](#tdm-06)
 
 ## <a name="tdm-01" />Contexte :
-Ce projet a été réalisé dans le cadre de la formation continue de Data Engineer, proposée par [Datascientest et l'Ecole des Mines ParisTech](https://datascientest.com/formation-data-engineer). 
+Ce projet a été réalisé dans le cadre de la formation continue de Data Engineer, proposée par :  
+<a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest et l'Ecole des Mines ParisTech</a>.
 
 L'équipe ayant réalisé ce projet se compose de :
 * SERDYUK Alexandra
