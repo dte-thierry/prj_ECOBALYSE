@@ -52,10 +52,16 @@ __Voici quelques points clés à propos d'Écobalyse__ :
         Estimer, pour chaque produit textile : l'impact carbone, l'impact sur la couche d'ozone, l'impact sur la 
         qualité de l'eau, le coût énergétique, l'impact sur l'eutrophisation de l'eau et des terres, l'impact sur 
         l'acidification terrestre des eaux douces, l'utilisation du sol, l'utilisation de minéraux. 
-    
+
         3. Tester le simulateur.
         Explorer les impacts environnementaux de différents produits textiles.
     
 Toutes marques, producteurs, ou distributeurs peutvent contribuer à améliorer le calcul d'impacts écologiques, en partageant leurs données et en participant aux travaux collectifs.
     
 Pour en savoir plus, on peut visiter le site d'__Écobalyse__ [ici](https://ecobalyse.beta.gouv.fr/). 
+
+__A voir également :__
+
+- [GitBook `Écobalyse`](https://fabrique-numerique.gitbook.io/ecobalyse)
+- [Explorateur `Écobalyse`](https://ecobalyse.beta.gouv.fr/#/explore/textile/processes)    
+- [Documentation de `API` Écobalyse](https://api.gouv.fr/documentation/api-ecobalyse)
