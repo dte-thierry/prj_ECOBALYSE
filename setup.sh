@@ -21,4 +21,4 @@
 docker-compose up --build
 
 # Arrêter les services
-docker-compose down
+# docker-compose down

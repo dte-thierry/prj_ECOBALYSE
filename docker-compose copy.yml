@@ -4,7 +4,7 @@ services:
   ecblwebscraping:
     build:
       context: . # contexte de construction à la racine du projet
-      dockerfile: etl/Dockerfile.etl # chemin relatif vers le Dockerfile
+      dockerfile: etl/Dockerfile # chemin relatif vers le Dockerfile
     environment:
       - SERVICE_NAME=ecblwebscraping # variable d’environnement pour le service
     volumes:
@@ -12,18 +12,6 @@ services:
       - ./data:/app/data # répertoire data de l’hôte dans le conteneur
     networks:
       - my_ecobalyse_network # réseau dédié pour le service
-
-  redis:
-    build:
-      context: . # contexte de construction à la racine du projet
-      dockerfile: redis/Dockerfile.redis # chemin relatif vers le Dockerfile pour Redis
-    container_name: redis
-    ports:
-      - "6379:6379"
-    volumes:
-      - ./data/redis:/data
-    networks:
-      - my_ecobalyse_network
 
 networks:
   my_ecobalyse_network:

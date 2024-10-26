@@ -23,3 +23,7 @@ echo "Espace disque maintenant disponible : "
 df -h | egrep '(Filesystem|/dev/root)' | while read line; do
     echo -e "\t$line"
 done
+
+# activer la mémoire overcommit pour redis
+echo "vm.overcommit_memory = 1" | sudo tee /etc/sysctl.conf
+sudo sysctl "vm.overcommit_memory=1"

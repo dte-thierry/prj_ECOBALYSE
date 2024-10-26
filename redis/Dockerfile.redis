@@ -1,0 +1,10 @@
+FROM redis:latest
+
+# Installer procps pour obtenir sysctl
+RUN apt-get update && apt-get install -y procps
+
+COPY init_redis.sh /usr/local/bin/init_redis.sh
+COPY redis.conf /usr/local/etc/redis/redis.conf
+RUN chmod +x /usr/local/bin/init_redis.sh
+
+ENTRYPOINT ["/usr/local/bin/init_redis.sh"]
