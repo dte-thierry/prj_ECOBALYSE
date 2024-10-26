@@ -28,14 +28,27 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ## <a name="tdm-03" />Mode d'emploi
-- lancer la machine virtuelle DataScientest, depuis le lien : <br />
+
+### Pré-requis
+
+- lancer et accéder à la machine virtuelle DataScientest, depuis le lien : <br />
 *https://learn.datascientest.com/lesson/349/3682*
 
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
 *git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
 
+<br />
+Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
+
+- au besoin, lancer le script `reset.sh` pour supprimer tous les conteneurs, images, volumes, et réseaux inutilisés, par la commande : <br />
+*./reset.sh*
+
 - au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
 *./start.sh*
+
+### Lancement des services
+- lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
+*./setup.sh*
 
 ## <a name="tdm-04" />Etapes du projet
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
@@ -45,7 +58,22 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - Etape 05 : automatisation des flux
 
 ## <a name="tdm-05" />Solution technique
-<br />
+
+### Schéma de principe
+
+<img src="img/PRJ-ECOBALYSE-00-IMG3.jpg" alt="Schéma de principe" style="width:750px;height:auto;">
+
+La solution proposée se compose de : 
+
+* Un ETL qui a la charge de récupérer les contenus d'Ecobalyse.
+
+* Une base de données MongoDB où sont entreprosées les données récupérées.
+
+* Un dashboard Dash.
+
+* Une API FastApi permettant au dashboard de requêter la base de données.
+
+* Un DAG Airflow pour gérer l'orchestration de l'ETL
 
 ## <a name="tdm-06" />A propos d'Ecobalyse
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
