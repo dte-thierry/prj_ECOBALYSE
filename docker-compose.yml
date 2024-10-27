@@ -7,6 +7,7 @@ services:
       dockerfile: etl/Dockerfile.etl # chemin relatif vers le Dockerfile
     environment:
       - SERVICE_NAME=ecblwebscraping # variable d’environnement pour le service
+    container_name: ecblwebscraping
     volumes:
       - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
       - ./data:/app/data # répertoire data de l’hôte dans le conteneur
@@ -17,13 +18,33 @@ services:
     build:
       context: . # contexte de construction à la racine du projet
       dockerfile: redis/Dockerfile.redis # chemin relatif vers le Dockerfile pour Redis
-    container_name: redis
+    environment:
+      - SERVICE_NAME=ecblredis # variable d’environnement pour le service
+    container_name: ecblredis
     ports:
       - "6379:6379"
     volumes:
-      - ./data/redis:/data
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
     networks:
       - my_ecobalyse_network
+
+  mongodb:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: mongo/Dockerfile.mongo # chemin relatif vers le Dockerfile pour MongoDB
+    environment:
+      - SERVICE_NAME=ecblmongo # variable d’environnement pour le service
+    container_name: ecblmongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db # répertoire data/mongo de l’hôte dans le conteneur
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+
 
 networks:
   my_ecobalyse_network:

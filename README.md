@@ -31,6 +31,10 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ### Pré-requis
 
+- installer [VS Code](https://code.visualstudio.com/) localement sur votre PC, en fonction de votre système d'exploitation.
+
+- configurer `VS Code` pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
+
 - lancer et accéder à la machine virtuelle DataScientest, depuis le lien : <br />
 *https://learn.datascientest.com/lesson/349/3682*
 
@@ -65,15 +69,15 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 La solution proposée se compose de : 
 
-* Un ETL qui a la charge de récupérer les contenus d'Ecobalyse.
+* Un `ETL` qui a la charge de récupérer les contenus d'Ecobalyse.
 
-* Une base de données MongoDB où sont entreprosées les données récupérées.
+* Une base de données `MongoDB` où sont entreprosées les données récupérées.
 
-* Un dashboard Dash.
+* Un dashboard `Dash`.
 
-* Une API FastApi permettant au dashboard de requêter la base de données.
+* Une API `FastApi` permettant au dashboard de requêter la base de données.
 
-* Un DAG Airflow pour gérer l'orchestration de l'ETL
+* Un DAG `Airflow` pour gérer l'orchestration de l'ETL
 
 ## <a name="tdm-06" />A propos d'Ecobalyse
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 

@@ -1,0 +1,41 @@
+# Utilise l'image officielle de MongoDB comme image de base
+FROM mongo:5.0
+
+# Définir les variables d'environnement nécessaires
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=admin
+
+# Installer Python, pip et le client MongoDB
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv wget gnupg
+
+# Ajouter la clé GPG de MongoDB
+RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
+
+# Ajouter le dépôt MongoDB pour la version 5.0
+RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+
+# Mettre à jour les sources et installer le client MongoDB
+RUN apt-get update && apt-get install -y mongodb-org-shell
+
+# Créer un environnement virtuel
+RUN python3 -m venv /opt/venv
+
+# Activer l'environnement virtuel et installer pymongo
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install pymongo
+
+# Copier les scripts d'initialisation et de test dans le conteneur
+COPY mongo/init_mongo.js /docker-entrypoint-initdb.d/
+COPY mongo/test_mongo.py /app/test_mongo.py
+COPY mongo/init_mongo.sh /usr/local/bin/init_mongo.sh
+COPY mongo/mongo.conf /etc/mongod.conf
+RUN chmod +x /usr/local/bin/init_mongo.sh
+
+# Créer le répertoire de logs
+RUN mkdir -p /app/logs
+
+# Exposer le port MongoDB
+EXPOSE 27017
+
+# Définir le point d'entrée pour exécuter le script d'initialisation
+ENTRYPOINT ["/usr/local/bin/init_mongo.sh"]

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # -----------------------------------------------------------------------------
-# Dockerfile  
+# docker
 # -----------------------------------------------------------------------------
 
 # construire l'image Docker en spécifiant le chemin du Dockerfile 
@@ -13,12 +13,18 @@
 # docker run -v /home/ubuntu/prj_ECOBALYSE/logs:/app/logs -v /home/ubuntu/prj_ECOBALYSE/data:/app/data ecbl-webscraping:extract
 
 # -----------------------------------------------------------------------------
+# redis 
+# -----------------------------------------------------------------------------
+# vérifier les logs pour voir la sortie de test_redis.py
+# docker-compose logs redis 
+
+# -----------------------------------------------------------------------------
 # docker-compose 
 # -----------------------------------------------------------------------------
 
-# Reconstruire et redémarrer les services par 'docker-compose'
-# docker-compose up -d --build
-docker-compose up --build
+# afficher les services Docker et vérifier leur état
+# docker-compose ps
 
-# Arrêter les services
-# docker-compose down
+# Reconstruire et redémarrer les services par 'docker-compose'
+# docker-compose up --build
+docker-compose up -d --build

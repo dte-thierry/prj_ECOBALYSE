@@ -5,10 +5,7 @@ sleep 3
 if grep -q docker /proc/1/cgroup; then
     # Exécution dans un conteneur Docker
     mkdir -p /app/logs
-    mkdir -p /app/data
-    echo "Pré-requis nécessaires au lancement par conteneur : "
-    echo -e "\tvenv"
-    echo -e "\tXvfb"
+    mkdir -p /app/data    
     source /app/venv/bin/activate    
     # Démarrer Xvfb et rediriger les erreurs vers /dev/null
     Xvfb :99 -screen 0 1920x1080x24 2>/dev/null &
@@ -23,10 +20,10 @@ else
     mkdir -p data
     sudo chmod -R 777 logs
     sudo chmod -R 777 data
-    echo "Pré-requis nécessaires au lancement manuel du script 'start.sh' : "
-    echo -e "\t$(google-chrome --version)" # Afficher la version de Google Chrome
-    echo -e "\t$(chromium --version)" # Afficher la version de Chromium
-    echo -e "\t$(chromedriver --version)" # Afficher la version de ChromeDriver
+    # echo "Pré-requis nécessaires au lancement manuel du script 'start.sh' : "
+    # echo -e "\t$(google-chrome --version)" # Afficher la version de Google Chrome
+    # echo -e "\t$(chromium --version)" # Afficher la version de Chromium
+    # echo -e "\t$(chromedriver --version)" # Afficher la version de ChromeDriver
     # Lancer Sélénium
     python3 etl/extract1.py &> logs/manual_webscraping_$(date +"%Y-%m-%d_%H-%M-%S").log
     echo "DataFrame, fichiers 'log' et 'json' créés avec succès manuellement."
