@@ -1,0 +1,9 @@
+# Ignorer les répertoires de données MongoDB
+data/mongo/
+
+# Ignorer les fichiers de logs
+logs/
+
+# Ignorer les fichiers Python compilés
+*.pyc
+__pycache__
