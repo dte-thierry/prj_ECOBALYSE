@@ -44,13 +44,18 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
+- au besoin, lancer le script `stop.sh` pour arrêter les services, par la commande : <br />
+*./stop.sh*
+
 - au besoin, lancer le script `reset.sh` pour supprimer tous les conteneurs, images, volumes, et réseaux inutilisés, par la commande : <br />
 *./reset.sh*
 
-- au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
-*./start.sh*
+#### Facultatif :
 
-### Lancement des services
+- (au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
+*./start.sh*)
+
+### Lancer les services
 - lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
 *./setup.sh*
 
