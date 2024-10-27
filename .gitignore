@@ -2,7 +2,7 @@
 data/mongo/
 
 # Ignorer les fichiers de logs
-logs/
+# logs/
 
 # Ignorer les fichiers Python compilés
 *.pyc
