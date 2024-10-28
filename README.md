@@ -84,6 +84,64 @@ La solution proposée se compose de :
 
 * Un DAG `Airflow` pour gérer l'orchestration de l'ETL
 
+### Arborescence des dossiers et fichiers
+
+prj_ECOBALYSE
+├── CONVENTIONS.md
+├── LICENSE
+├── PRJ-ECOBALYSE-00-FICHE_PROJET.pdf
+├── README.md
+├── data
+│   ├── PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json
+│   ├── mongo
+│   ├── params01_T-shirt.txt
+│   ├── params02_Pull.txt
+│   ├── params03_Pantalon.txt
+│   ├── params04_Manteau.txt
+│   ├── params05_Maillot-de-bain.txt
+│   ├── params06_Jupe.txt
+│   ├── params07_Jean.txt
+│   ├── params08_Chemise.txt
+│   ├── params09_Chaussettes.txt
+│   ├── params10_Calecon.txt
+│   ├── params11_Slip.txt
+│   └── redis
+├── docker-compose.yml
+├── etl
+│   ├── Dockerfile.etl
+│   ├── extract1.py
+│   ├── requirements.txt
+│   ├── utils01.py
+│   ├── utils02.py
+│   └── utils03.py
+├── img
+│   ├── PRJ-ECOBALYSE-00-IMG1.jpg
+│   ├── PRJ-ECOBALYSE-00-IMG2.jpg
+│   ├── PRJ-ECOBALYSE-00-IMG3.png
+│   └── PRJ-ECOBALYSE-00-LOGO.png
+├── logs
+│   ├── docker_testmongo_2024-10-27_18-26-08.log
+│   ├── docker_testredis_2024-10-27_18-26-07.log
+│   └── docker_webscraping_2024-10-27_18-26-00.log
+├── mongo
+│   ├── Dockerfile.mongo
+│   ├── init_mongo.js
+│   ├── init_mongo.sh
+│   ├── mongo.conf
+│   └── test_mongo.py
+├── notebooks
+│   ├── PRJ-ECOBALYSE-00-LOGO.png
+│   ├── PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb
+├── redis
+│   ├── Dockerfile.redis
+│   ├── init_redis.sh
+│   ├── redis.conf
+│   └── test_redis.py
+├── reset.sh
+├── setup.sh
+├── start.sh
+└── stop.sh
+
 ## <a name="tdm-06" />A propos d'Ecobalyse
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
     
