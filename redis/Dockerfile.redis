@@ -1,4 +1,3 @@
-
 # Utiliser l'image officielle de Redis comme image de base
 FROM redis:latest
 
@@ -11,6 +10,7 @@ RUN python3 -m venv /opt/venv
 # Activer l'environnement virtuel et installer les packages nécessaires
 RUN /opt/venv/bin/pip install --upgrade pip
 RUN /opt/venv/bin/pip install redis[hiredis]
+RUN /opt/venv/bin/pip install cerberus
 
 # Créer le répertoire logs
 RUN mkdir -p /app/logs

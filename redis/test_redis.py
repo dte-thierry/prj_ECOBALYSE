@@ -1,5 +1,51 @@
 import redis
 import json
+from cerberus import Validator
+
+# Définir le schéma JSON
+schema = {
+    "Libelle": {"type": "string"},
+    "Categorie": {"type": "string"},
+    "ecs": {"type": "number"},
+    "Pays": {"type": "string"},
+    "Mode": {"type": "string"},
+    "Masse": {"type": "number"},
+    "Matiere": {"type": "string"},
+    "description": {"type": "string"},
+    "business": {"type": "string"},
+    "numberOfReferences": {"type": "number"},
+    "price": {"type": "number"},
+    "traceability": {"type": "boolean"},
+    "product": {"type": "string"},
+    "airTransportRatio": {"type": "number"},
+    "materials": {"type": "string"},
+    "countrySpinning": {"type": "string"},
+    "countryFabric": {"type": "string"},
+    "countryDyeing": {"type": "string"},
+    "countryMaking": {"type": "string"},
+    "durability": {"type": "number"},
+    "ecs_materials": {"type": "number"},
+    "ecs_transformation": {"type": "number"},
+    "ecs_complementsImpacts": {"type": "number"},
+    "ecs_transport": {"type": "number"},
+    "ecs_utilisation": {"type": "number"},
+    "ecs_fin_de_vie": {"type": "number"},
+    "Etapes": {
+        "type": "dict",
+        "schema": {
+            "matieres_premieres": {"type": "number"},
+            "transformation": {"type": "number"},
+            "emballage": {"type": "number"},
+            "transports": {"type": "number"},
+            "distribution": {"type": "number"},
+            "utilisation": {"type": "number"},
+            "fin_de_vie": {"type": "number"}
+        }
+    }
+}
+
+# Initialiser le validateur Cerberus
+v = Validator(schema)
 
 if __name__ == "__main__":
     r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
@@ -11,7 +57,15 @@ if __name__ == "__main__":
     # Lire le fichier JSON ligne par ligne et convertir en tableau JSON
     with open('/app/data/PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json', 'r') as input_file:
         lines = input_file.readlines()
-        libelles = [json.loads(line) for line in lines]
+        libelles = []
+        for line in lines:
+            document = json.loads(line)
+            if v.validate(document):
+                libelles.append(document)
+            else:
+                print(f"\nValidation error for document: {document}")
+                print(v.errors)
+        print("\n")
     
     # Ajouter les données à Redis
     for info in libelles:
@@ -60,6 +114,7 @@ if __name__ == "__main__":
         print("Etapes montrant les impacts intermédiaires (en pourcentage) :")
         for etape, impact in info['Etapes'].items():
             print(f"  {etape}: {impact} %")
+        print("\n")
 
     # Afficher toutes les catégories de textiles avec le libellé, le score ecs maximal, 
     # et l'impact intermédiaire des différentes étapes
@@ -69,3 +124,5 @@ if __name__ == "__main__":
         print("Etapes montrant les impacts intermédiaires (en pourcentage) :")
         for etape, impact in info['Etapes'].items():
             print(f"  {etape}: {impact} %")
+        print("\n")
+

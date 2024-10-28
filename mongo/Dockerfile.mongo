@@ -20,9 +20,10 @@ RUN apt-get update && apt-get install -y mongodb-org-shell
 # Créer un environnement virtuel
 RUN python3 -m venv /opt/venv
 
-# Activer l'environnement virtuel et installer pymongo
+# Activer l'environnement virtuel et installer pymongo et jsonschema
 RUN /opt/venv/bin/pip install --upgrade pip
 RUN /opt/venv/bin/pip install pymongo
+RUN /opt/venv/bin/pip install jsonschema  # Ajout de l'installation de jsonschema
 
 # Copier les scripts d'initialisation et de test dans le conteneur
 COPY mongo/init_mongo.js /docker-entrypoint-initdb.d/

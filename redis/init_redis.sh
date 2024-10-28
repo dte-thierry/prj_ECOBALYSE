@@ -13,7 +13,7 @@ sleep 5
 echo -e "\nTest Redis de récupération JSON : "
 echo -e "Attendre que le fichier JSON soit créé...\n"
 while [ ! -f /app/data/PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json ]; do
-  sleep 5
+  sleep 8
 done
 
 # Exécuter le script de test
