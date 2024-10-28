@@ -41,6 +41,9 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
 *git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
 
+- au besoin, lancer le script `info.sh` pour vérifier que Docker est bien installé, par la commande : <br />
+*./info.sh*
+
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
