@@ -14,7 +14,7 @@ services:
     networks:
       - my_ecobalyse_network # réseau dédié pour le service
 
-  redis:
+  ecblredis:
     build:
       context: . # contexte de construction à la racine du projet
       dockerfile: redis/Dockerfile.redis # chemin relatif vers le Dockerfile pour Redis
@@ -29,13 +29,13 @@ services:
     networks:
       - my_ecobalyse_network
 
-  mongodb:
+  ecblmongodb:
     build:
       context: . # contexte de construction à la racine du projet
       dockerfile: mongo/Dockerfile.mongo # chemin relatif vers le Dockerfile pour MongoDB
     environment:
-      - SERVICE_NAME=ecblmongo # variable d’environnement pour le service
-    container_name: ecblmongo
+      - SERVICE_NAME=ecblmongodb # variable d’environnement pour le service
+    container_name: ecblmongodb
     ports:
       - "27017:27017"
     volumes:
