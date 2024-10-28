@@ -340,6 +340,12 @@ def get_description_datas(df, params_dir, api_token, json_output_path):
         data = create_textile_data(params)
         df = find_description(df, data, api_token)
 
+    # S'assurer que df est une copie de l'original
+    df = df.copy()
+
+    # Supprimer les lignes où la colonne 'description' est NaN
+    df = df.dropna(subset=['description'])
+
     # Calculer le temps de traitement
     end = time.time()
     runtime = end - start
@@ -353,7 +359,7 @@ def get_description_datas(df, params_dir, api_token, json_output_path):
         print(df.head(7))
         
         # Sauvegarder le DataFrame mis à jour en fichier JSON
-        df.to_json(json_output_path, orient='records', lines=True)
+        df.to_json(json_output_path, orient='records', lines=True, force_ascii=False)
         print("\nDataFrame sauvegardé en fichier json, avec succès.")
         
     else:

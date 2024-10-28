@@ -749,7 +749,7 @@ def get_details_datas(df, params_dir, api_token, json_output_path):
         print(df.head(7))
         
         # Sauvegarder le DataFrame mis à jour en fichier JSON
-        df.to_json(json_output_path, orient='records', lines=True)
+        df.to_json(json_output_path, orient='records', lines=True, force_ascii=False)
         print("\nDataFrame sauvegardé en fichier json, avec succès.")
         
     else:

@@ -288,7 +288,7 @@ def get_ecobalyse_datas(url, columns, json_output_path):
         print(df_exemples.head(7))
         
         # Sauvegarder le DataFrame Explorateur [Exemples] en fichier JSON
-        df_exemples.to_json(json_output_path, orient='records', lines=True)
+        df_exemples.to_json(json_output_path, orient='records', lines=True, force_ascii=False)
         print("\nDataFrame sauvegardé en fichier json, avec succès.\n")
         
     else:
