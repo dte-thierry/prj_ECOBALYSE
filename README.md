@@ -135,11 +135,14 @@ prj_ECOBALYSE
 <br />│   ├── init_redis.sh
 <br />│   ├── redis.conf
 <br />│   └── test_redis.py
+<br />├── clear.sh
 <br />├── CONVENTIONS.md
 <br />├── docker-compose.yml
+<br />├── info.sh
 <br />├── LICENSE
 <br />├── PRJ-ECOBALYSE-00-FICHE_PROJET.pdf
 <br />├── README.md
+<br />├── rebuild.sh
 <br />├── reset.sh
 <br />├── setup.sh
 <br />├── start.sh
