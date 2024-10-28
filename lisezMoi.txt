@@ -68,7 +68,7 @@ Ce document présente les choix techniques et les justifications pour la mise en
 ./reset.sh # (supprime et réinitialise les services)
 ./setup.sh # (démarre les services)
 
-./clear.sh # (supprime fichiers log et json)
+./clear.sh # (supprime les fichiers log et json)
 ./rebuild.sh # (relance les services sans les supprimer)
 
 
