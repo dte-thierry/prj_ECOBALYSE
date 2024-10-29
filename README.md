@@ -55,10 +55,15 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 #### Facultatif :
 
-- (au besoin, lancer le script `start.sh` pour vérifier l'extraction des données Ecobalyse, par la commande : <br />
+- (au besoin, lancer le script `start.sh` pour exécuter l'extraction des données Ecobalyse, par la commande : <br />
 *./start.sh*)
 
-### Lancer les services
+- (via VS Code, consulter le contenu du fichier .log  `'manual_webscraping_(date).log' ` pour vérifier l'extraction des données Ecobalyse. <br />
+
+
+### Lancement
+
+#### Lancer les services
 - lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
 *./setup.sh*
 
