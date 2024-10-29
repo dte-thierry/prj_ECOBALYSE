@@ -58,7 +58,7 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 - (au besoin, lancer le script `start.sh` pour exécuter l'extraction des données Ecobalyse, par la commande : <br />
 *./start.sh*)
 
-- (via VS Code, consulter le contenu du fichier .log  `'manual_webscraping_(date).log' ` pour vérifier l'extraction des données Ecobalyse. <br />
+- (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log' ` pour vérifier l'extraction des données Ecobalyse. <br />
 
 
 ### Lancement
