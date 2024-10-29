@@ -44,7 +44,25 @@ services:
       - ./data:/app/data # répertoire data de l’hôte dans le conteneur
     networks:
       - my_ecobalyse_network
-
+  
+  ecblflask:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: flask/Dockerfile.flask # chemin relatif vers le Dockerfile pour Flask
+    environment:
+      - SERVICE_NAME=ecblflask # variable d’environnement pour le service
+      - MONGO_URI=mongodb://ecblmongodb:27017
+      - REDIS_URI=redis://ecblredis:6379
+    container_name: ecblflask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - ecblmongodb
+      - ecblredis
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
 
 networks:
   my_ecobalyse_network:

@@ -1,0 +1,19 @@
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: #fffacd; /* Couleur de fond jaune pâle */
+}
+
+.list-group-item h5 {
+    margin: 0;
+    font-size: 0.9em; /* Police de caractères plus petite */
+}
+
+.list-group-item .db-size {
+    font-size: 0.9em;
+    color: #666;
+}

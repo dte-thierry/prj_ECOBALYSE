@@ -72,6 +72,15 @@ Ce document présente les choix techniques et les justifications pour la mise en
 ./rebuild.sh # (relance les services sans les supprimer)
 
 
+## Lancer Flask
+
+<IP_DE_VOTRE_VM>:5000/
+
+127.0.0.1:5000/testflask, pour lister les BDD MongoDB
+127.0.0.1:5000/testmongo, pour vérifier le contenu Ecobalyse de la BDD MongoDB
+127.0.0.1:5000/testredis, pour vérifier le contenu Ecobalyse de la BDD Redis
+
+
 ## Vérifier l’état des conteneurs
 
 docker-compose ps
@@ -80,8 +89,9 @@ docker-compose ps
 ## Vérifier les logs
 
 docker-compose logs ecblwebscraping
-docker-compose logs ecblredis;
+docker-compose logs ecblredis
 docker-compose logs ecblmongodb
+docker-compose logs ecblflask
 
 
 ## Arrêter, Reconstruire et redémarrer les services
@@ -95,5 +105,5 @@ docker-compose up -d --build
 docker logs -f ecblwebscraping
 docker logs -f ecblredis
 docker logs -f ecblmongodb
-
+docker logs -f ecblflask
         
