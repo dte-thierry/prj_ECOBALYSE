@@ -48,6 +48,7 @@ services:
 
 networks:
   my_ecobalyse_network:
+    name: my_ecobalyse_network
 
 volumes:
   logs:
