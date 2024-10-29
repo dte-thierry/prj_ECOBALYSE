@@ -4,7 +4,7 @@
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 
-## Sommaire
+## [Sommaire](#debut)
 - [Contexte](#tdm-01)
 - [Présentation](#tdm-02)
 - [Mode d'emploi](#tdm-03)
@@ -21,7 +21,7 @@ L'équipe ayant réalisé ce projet se compose de :
 * BENALLEGUE Anis
 * DELIGNE Thierry
 
-## <a name="tdm-02" />Présentation
+## <a name="tdm-02" />[Présentation](#debut)
 Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet permet : 
 - d'obtenir une évaluation de l'impact écologique de textiles courants
 - potentiellement, de fournir des recommandations ou des conseils sur des alternatives plus durables
@@ -29,7 +29,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <br />
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
-## <a name="tdm-03" />Mode d'emploi
+## <a name="tdm-03" />[Mode d'emploi](#debut)
 
 ### Pré-requis
 
@@ -69,14 +69,14 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 - lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
 *./setup.sh*
 
-## <a name="tdm-04" />Etapes du projet
+## <a name="tdm-04" />[Etapes du projet](#debut)
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
 - Etape 02 : architecture de la donnée
 - Etape 03 : consommation de la donnée
 - Etape 04 : mise en production
 - Etape 05 : automatisation des flux
 
-## <a name="tdm-05" />Solution technique
+## <a name="tdm-05" />[Solution technique](#debut)
 
 ### Schéma de principe
 
@@ -155,7 +155,7 @@ prj_ECOBALYSE
 <br />├── start.sh
 <br />└── stop.sh
 
-## <a name="tdm-06" />A propos d'Ecobalyse
+## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
     
 En lien avec les préoccupations actuelles (l'industrie textile est l'une des plus polluantes au monde), __Écobalyse__ vise à accélérer la mise en place de l'affichage environnemental, pour favoriser un modèle de production plus durable.
