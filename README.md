@@ -60,14 +60,21 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 - (au besoin, lancer le script `start.sh` pour exécuter l'extraction des données Ecobalyse, par la commande : <br />
 *./start.sh*)
 
-- (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log' ` pour vérifier l'extraction des données Ecobalyse. <br />
+- (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log'`, pour vérifier l'extraction des données Ecobalyse. <br />
 
 
 ### Lancement
 
 #### Lancer les services
+
 - lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
 *./setup.sh*
+
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
+    - `'docker_webscraping_(date).log'` : vérifier l'extraction des données Ecobalyse, par les services
+    - `'docker_testmongo_(date).log'` : vérifier l'accès à MongoDB et requêtes initiales, par les services
+    - `'docker_testredis_(date).log'` : vérifier l'accès à Redis et requêtes initiales, par les services
+
 
 ## <a name="tdm-04" />[Etapes du projet](#debut)
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
