@@ -43,7 +43,7 @@ mongo /docker-entrypoint-initdb.d/init_mongo.js
 # /opt/venv/bin/python /app/test_mongo.py &> /app/logs/docker_testmongo_$(date +"%Y-%m-%d_%H-%M-%S").log
 /opt/venv/bin/python /app/test_mongo.py &> /app/logs/${MONGODB_LOG_NAMEFILE}_$(date +"%Y-%m-%d_%H-%M-%S").log
 
-# message
+# Message
 echo -e "\nBase De Données MongoDB et fichier 'log' créés avec succès, par le conteneur.\n"
 
 # Garder le conteneur en cours d'exécution

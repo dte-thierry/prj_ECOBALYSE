@@ -20,6 +20,8 @@ function show_logs {
     docker-compose logs ecblmongodb
     echo -e "\nAffichage des logs du conteneur : ecblredis..."
     docker-compose logs ecblredis
+    echo -e "\nAffichage des logs du conteneur : ecblflask..."
+    docker-compose logs ecblflask
 }
 
 # Fonction pour afficher les images Docker disponibles

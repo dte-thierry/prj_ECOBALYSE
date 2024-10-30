@@ -8,6 +8,9 @@ import redis
 import os
 from datetime import datetime
 
+# Récupérer la variable d'environnement
+flask_log_namefile = os.getenv('FLASK_LOG_NAMEFILE', 'default_log_name')
+
 app = Flask(__name__, template_folder="templates", static_folder="stylesheets")
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # Clé secrète pour utiliser flash
 
@@ -29,14 +32,15 @@ class JSONEncoder(json.JSONEncoder):
 if not app.debug:
     if not os.path.exists('logs'):
         os.mkdir('logs')
-    log_filename = f"logs/docker_testflask_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+    # log_filename = f"logs/docker_testflask_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+    log_filename = f"logs/{flask_log_namefile}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
     file_handler = logging.FileHandler(log_filename)
     file_handler.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
     file_handler.setFormatter(formatter)
     app.logger.addHandler(file_handler)
     app.logger.setLevel(logging.INFO)
-    app.logger.info('Flask application startup')
+    app.logger.info("Application Flask active.")
 
 # page d'accueil Flask
 @app.route('/')
