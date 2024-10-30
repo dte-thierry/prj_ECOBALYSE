@@ -92,10 +92,88 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 *./setup.sh*
 
 - via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
-    - `'docker_webscraping_(date).log'` : vérifier l'extraction des données Ecobalyse, par les services
-    - `'docker_testmongodb_(date).log'` : vérifier l'accès à MongoDB et requêtes initiales, par les services
-    - `'docker_testredis_(date).log'` : vérifier l'accès à Redis et requêtes initiales, par les services
+    - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
+    - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB et requêtes initiales, par les services
+    - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis et requêtes initiales, par les services
 
+- lancer le script `info.sh` <b>-logs</b>, pour visualiser les logs des conteneurs actifs, par la commande : <br />
+*./info.sh <b>-logs</b>*
+
+##### Nota :
+
+En lançant le script `info.sh` avec l'option `-logs` <i>(nota: ./info.sh <b>-?</b> renvoie les options disponibles)</i>, vous visualiserez les logs des différents conteneurs, par exemple :
+
+conteneur : ecblwebscraping
+```bash
+Affichage des logs du conteneur : ecblwebscraping...
+Attaching to ecblwebscraping
+ecblwebscraping    | --------------------------------------------------------------
+ecblwebscraping    | ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
+ecblwebscraping    | --------------------------------------------------------------
+ecblwebscraping    | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
+ecblwebscraping    | DataFrame, fichiers 'log' et 'json' créés avec succès, par le conteneur.
+ecblwebscraping    | 
+ecblwebscraping    |
+```
+
+conteneur : ecblmongodb
+```bash
+Affichage des logs du conteneur : ecblmongodb...
+Attaching to ecblmongodb
+ecblmongodb        | ------------------------------------------------------------
+ecblmongodb        | ETAPE 02 : Stockage des Données Ecobalyse v2.4.0 via MongoDB
+ecblmongodb        | ------------------------------------------------------------
+ecblmongodb        | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
+ecblmongodb        | 
+ecblmongodb        | about to fork child process, waiting until server is ready for connections.
+ecblmongodb        | forked process: 15
+ecblmongodb        | child process started successfully, parent exiting
+ecblmongodb        | MongoDB shell version v5.0.30
+ecblmongodb        | connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+ecblmongodb        | Implicit session: session { "id" : UUID("42c41132-a00e-49d8-8fa8-db77bd20c579") }
+ecblmongodb        | MongoDB server version: 5.0.30
+ecblmongodb        | ================
+ecblmongodb        | Warning: the "mongo" shell has been superseded by "mongosh",
+ecblmongodb        | which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+ecblmongodb        | an upcoming release.
+ecblmongodb        | For installation instructions, see
+ecblmongodb        | https://docs.mongodb.com/mongodb-shell/install/
+ecblmongodb        | ================
+ecblmongodb        | switched to db admin
+ecblmongodb        | bye
+ecblmongodb        | MongoDB shell version v5.0.30
+ecblmongodb        | connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+ecblmongodb        | Implicit session: session { "id" : UUID("e09b9ab9-9e34-46b3-9a77-0c3220c68cc7") }
+ecblmongodb        | MongoDB server version: 5.0.30
+ecblmongodb        | 
+ecblmongodb        | Base De Données MongoDB et fichier 'log' créés avec succès, par le conteneur.
+ecblmongodb        | 
+```
+
+conteneur : ecblredis
+```bash
+Affichage des logs du conteneur : ecblredis...
+Attaching to ecblredis
+ecblredis          | ----------------------------------------------------------
+ecblredis          | ETAPE 02 : Stockage des Données Ecobalyse v2.4.0 via Redis
+ecblredis          | ----------------------------------------------------------
+ecblredis          | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
+ecblredis          | 
+ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=13, just started
+ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * Configuration loaded
+ecblredis          | 13:M 30 Oct 2024 15:45:48.652 * monotonic clock: POSIX clock_gettime
+ecblredis          | 13:M 30 Oct 2024 15:45:48.653 * Running mode=standalone, port=6379.
+ecblredis          | 13:M 30 Oct 2024 15:45:48.654 * Server initialized
+ecblredis          | 13:M 30 Oct 2024 15:45:48.654 * Ready to accept connections tcp
+ecblredis          | 
+ecblredis          | Test Redis de récupération JSON : 
+ecblredis          | Attendre que le fichier JSON soit créé...
+ecblredis          | 
+ecblredis          | 
+ecblredis          | Base De Données Redis et fichier 'log' créés avec succès, par le conteneur.
+ecblredis          |
+```
 
 ## <a name="tdm-04" />[Etapes du projet](#debut)
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
