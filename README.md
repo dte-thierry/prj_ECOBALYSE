@@ -93,7 +93,7 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 
 - via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
     - `'docker_webscraping_(date).log'` : vérifier l'extraction des données Ecobalyse, par les services
-    - `'docker_testmongo_(date).log'` : vérifier l'accès à MongoDB et requêtes initiales, par les services
+    - `'docker_testmongodb_(date).log'` : vérifier l'accès à MongoDB et requêtes initiales, par les services
     - `'docker_testredis_(date).log'` : vérifier l'accès à Redis et requêtes initiales, par les services
 
 
