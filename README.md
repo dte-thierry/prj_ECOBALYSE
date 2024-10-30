@@ -43,8 +43,8 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
 *git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
 
-- au besoin, lancer le script `info.sh` pour vérifier que Docker est bien installé, par la commande : <br />
-*./info.sh*
+- au besoin, lancer le script `info.sh` <b>-logs</b>, pour afficher les logs des conteneurs actifs, par la commande : <br />
+*./info.sh <b>-logs</b>* (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
 
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
@@ -64,7 +64,7 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 ##### Nota :
 
-Vous pouvez lancer le script `start.sh`, <b>sans aucune option</b>, par la commande : *./start.sh* <br />
+Vous pouvez lancer le script `start.sh`, <b>sans aucune option</b> <i>(nota: ./start.sh <b>-?</b> renvoie les options disponibles)</i>, par la commande : *./start.sh* <br />
 En lançant le script `start.sh` avec l'option `-i`, vous obtiendrez un message d'avertissement de type :
 
 ```bash
