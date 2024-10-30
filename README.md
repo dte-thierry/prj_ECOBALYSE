@@ -198,9 +198,10 @@ ecblflask          | Press CTRL+C to quit
 
 #### Lancer le Framework Web Flask
 
-Lorsque le Framework Web `Flask` est démarré, on peut y accéder depuis un navigateur Web :
-    - soit par l'adresse locale : 127.0.0.1:5000/
-    - soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
+Lorsque le Framework Web `Flask` est démarré, on peut y accéder depuis un navigateur Web : <br />
+
+- soit par l'adresse locale : 127.0.0.1:5000/
+- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
 
 La page d'accueil `Flask` s'affiche avec les informations :
 
