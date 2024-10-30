@@ -193,12 +193,14 @@ La solution proposée se compose de :
 * Un `ETL` qui a la charge de récupérer les contenus d'Ecobalyse.
 
 * Une base de données `MongoDB` où sont entreprosées les données récupérées.
+  
+* Une base de données `Redis` utilisée comme mémoire cache, afin d'accélérer les requêtes.
 
 * Un dashboard `Dash`.
 
-* Une API `FastApi` permettant au dashboard de requêter la base de données.
+* Un Framework Web `Flask` qui sert d’intermédiaire (API) entre le dashboard `Dash`, les bases de données `MongoDB` / `Redis`, et un modèle `scikit-learn` entraîné pour des prédictions de <b>Machine Learning</b>.
 
-* Un DAG `Airflow` pour gérer l'orchestration de l'ETL
+* Un DAG `Airflow` pour gérer l'orchestration de l'ETL.
 
 ### Arborescence des dossiers et fichiers
 
