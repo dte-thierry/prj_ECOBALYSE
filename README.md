@@ -57,11 +57,32 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 #### Facultatif :
 
-- (au besoin, lancer le script `start.sh` pour exécuter l'extraction des données Ecobalyse, par la commande : <br />
-*./start.sh*)
+- (au besoin, lancer le script `start.sh` <b>-i</b>, pour exécuter une extraction <i>"manuelle"</i> des données Ecobalyse, par la commande : <br />
+*./start.sh <b>-i</b>*)
 
 - (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log'`, pour vérifier l'extraction des données Ecobalyse. <br />
 
+##### Nota :
+
+Vous pouvez lancer le script `start.sh`, <b>sans aucune option</b>, par la commande : *./start.sh* <br />
+En lançant le script `start.sh` avec l'option `-i`, vous obtiendrez un message d'avertissement de type :
+
+```bash
+--------------------------------------------------------------
+ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
+--------------------------------------------------------------
+VM en cours, à l'adresse IP / SSH publique : xxx.xxx.xxx.xxx
+
+Avertissement:
+--------------
+L'API d'Ecobalyse est actuellement non finalisée, toujours en cours de développement.
+Ce projet se base sur l'API d'Ecobalyse : v2.4.0 pour récupérer les données.
+Soyez attentif et vigilant à la récupération des données Ecobalyse obtenues, via l'API.
+Consultez dans le répertoire /logs, le fichier .log : (manual|docker)_webscraping_(aaaa-mm-jj_hh-mn).log.
+Vérifiez qu'aucune description de textile (colonne 'description') ne soit de type : NaN
+
+DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
+```
 
 ### Lancement
 
