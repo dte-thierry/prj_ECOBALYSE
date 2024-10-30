@@ -25,6 +25,18 @@
 # afficher les services Docker et vérifier leur état
 # docker-compose ps
 
+
+# Récupérer l'adresse IP publique de la VM
+Public_IP=$(curl -s http://checkip.amazonaws.com)
+Username=$(whoami)
+SSH_Address="$Public_IP"
+
+# Afficher le message d'accueil
+echo -e "--------------------------------------------------------------------"
+echo -e "./setup.sh : (Re)Configuration et Lancement des conteneurs Docker..."
+echo -e "--------------------------------------------------------------------"
+echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
+
 # Reconstruire et redémarrer les services par 'docker-compose'
 # docker-compose up --build
 docker-compose up -d --build

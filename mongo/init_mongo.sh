@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# Récupérer l'adresse IP publique de la VM
+Public_IP=$(curl -s http://checkip.amazonaws.com)
+Username=$(whoami)
+SSH_Address="$Public_IP"
+
+# Récupérer les constantes dans le conteneur
+ECOBALYSE_VER=$(python3 /app/get_constants1.py ECOBALYSE_VER)
+MONGODB_LOG_NAMEFILE=$(python3 /app/get_constants1.py MONGODB_LOG_NAMEFILE)
+
+# Afficher le message d'accueil
+echo -e "------------------------------------------------------------"
+echo -e "ETAPE 02 : Stockage des Données Ecobalyse $ECOBALYSE_VER via MongoDB"
+echo -e "------------------------------------------------------------"
+echo -e "VM utilisée, à l'adresse IP / SSH publique : $SSH_Address\n"
+
 # Créer le répertoire de logs s'il n'existe pas
 mkdir -p /app/logs
 
@@ -25,7 +40,11 @@ EOF
 mongo /docker-entrypoint-initdb.d/init_mongo.js
 
 # Exécuter le script de test
-/opt/venv/bin/python /app/test_mongo.py &> /app/logs/docker_testmongo_$(date +"%Y-%m-%d_%H-%M-%S").log
+# /opt/venv/bin/python /app/test_mongo.py &> /app/logs/docker_testmongo_$(date +"%Y-%m-%d_%H-%M-%S").log
+/opt/venv/bin/python /app/test_mongo.py &> /app/logs/${MONGODB_LOG_NAMEFILE}_$(date +"%Y-%m-%d_%H-%M-%S").log
+
+# message
+echo -e "\nBase De Données MongoDB et fichier 'log' créés avec succès, par le conteneur.\n"
 
 # Garder le conteneur en cours d'exécution
 tail -f /dev/null

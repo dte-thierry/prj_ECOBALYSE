@@ -10,6 +10,17 @@
 # tips & tricks  
 # -----------------------------------------------------------------------------
 
+# Récupérer l'adresse IP publique de la VM
+Public_IP=$(curl -s http://checkip.amazonaws.com)
+Username=$(whoami)
+SSH_Address="$Public_IP"
+
+# Afficher le message d'accueil
+echo -e "------------------------------------------------------"
+echo -e "./reset.sh : (Ré)Initialisation du projet Ecobalyse..."
+echo -e "------------------------------------------------------"
+echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
+
 # activer la mémoire overcommit pour redis
 echo "vm.overcommit_memory = 1" | sudo tee /etc/sysctl.conf
 sudo sysctl "vm.overcommit_memory=1" || true 
