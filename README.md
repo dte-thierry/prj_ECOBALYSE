@@ -43,8 +43,8 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
 *git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
 
-- au besoin, lancer le script `info.sh` pour vérifier que Docker est bien installé, par la commande : <br />
-*./info.sh*
+- au besoin, lancer le script `info.sh` <b>-logs</b>, pour afficher les logs des conteneurs actifs, par la commande : <br />
+*./info.sh <b>-logs</b>* (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
 
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
@@ -57,11 +57,32 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 #### Facultatif :
 
-- (au besoin, lancer le script `start.sh` pour exécuter l'extraction des données Ecobalyse, par la commande : <br />
-*./start.sh*)
+- (au besoin, lancer le script `start.sh` <b>-i</b>, pour exécuter une extraction <i>"manuelle"</i> des données Ecobalyse, par la commande : <br />
+*./start.sh <b>-i</b>*)
 
 - (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log'`, pour vérifier l'extraction des données Ecobalyse. <br />
 
+##### Nota :
+
+Vous pouvez lancer le script `start.sh`, <b>sans aucune option</b> <i>(nota: ./start.sh <b>-?</b> renvoie les options disponibles)</i>, par la commande : *./start.sh* <br />
+En lançant le script `start.sh` avec l'option `-i`, vous obtiendrez un message d'avertissement de type :
+
+```bash
+--------------------------------------------------------------
+ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
+--------------------------------------------------------------
+VM en cours, à l'adresse IP / SSH publique : xxx.xxx.xxx.xxx
+
+Avertissement:
+--------------
+L'API d'Ecobalyse est actuellement non finalisée, toujours en cours de développement.
+Ce projet se base sur l'API d'Ecobalyse : v2.4.0 pour récupérer les données.
+Soyez attentif et vigilant à la récupération des données Ecobalyse obtenues, via l'API.
+Consultez dans le répertoire /logs, le fichier .log : (manual|docker)_webscraping_(aaaa-mm-jj_hh-mn).log.
+Vérifiez qu'aucune description de textile (colonne 'description') ne soit de type : NaN
+
+DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
+```
 
 ### Lancement
 
@@ -78,8 +99,8 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 ## <a name="tdm-04" />[Etapes du projet](#debut)
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
-- Etape 02 : architecture de la donnée
-- Etape 03 : consommation de la donnée
+- Etape 02 : architecture des données
+- Etape 03 : consommation des données
 - Etape 04 : mise en production
 - Etape 05 : automatisation des flux
 
