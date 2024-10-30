@@ -175,6 +175,52 @@ ecblredis          | Base De Données Redis et fichier 'log' créés avec succè
 ecblredis          |
 ```
 
+conteneur : ecblflask
+```bash
+Attaching to ecblflask
+ecblflask          | --------------------------------------------------------------
+ecblflask          | ETAPE 03 : Consommation des Données Ecobalyse v2.4.0 via Flask
+ecblflask          | --------------------------------------------------------------
+ecblflask          | VM utilisée, à l'adresse IP / SSH publique : 3.252.141.140
+ecblflask          | 
+ecblflask          | Framework Web Flask démarré. Accessible depuis les adresses : 127.0.0.1:5000/ , ou : 3.252.141.140:5000/
+ecblflask          | Fichier 'log' créé avec succès, par le conteneur.
+ecblflask          | 
+ecblflask          | [2024-10-30 18:35:07,105] INFO in test_flask: Application Flask active.
+ecblflask          |  * Serving Flask app 'test_flask.py'
+ecblflask          |  * Debug mode: off
+ecblflask          | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ecblflask          |  * Running on all addresses (0.0.0.0)
+ecblflask          |  * Running on http://127.0.0.1:5000
+ecblflask          |  * Running on http://172.22.0.5:5000
+ecblflask          | Press CTRL+C to quit
+```
+
+#### Lancer le Framework Web Flask
+
+Lorsque le Framework Web `Flask` est démarré, on peut y accéder depuis un navigateur Web : <br />
+
+- soit par l'adresse locale : 127.0.0.1:5000/
+- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
+
+La page d'accueil `Flask` s'affiche avec les informations :
+
+```html
+Accueil
+Bienvenue sur la page d'accueil de votre application Flask !
+
+Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
+
+127.0.0.1:5000/testflask, afin de lister les BDD MongoDB
+127.0.0.1:5000/testmongo, afin de vérifier le contenu Ecobalyse de la BDD MongoDB
+127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
+```
+
+##### Nota :
+
+- lancer le script `info.sh` <b>-logs</b>, permet également d'accéder à Flask, par la commande : <br />
+*./info.sh <b>-logs</b>*
+
 ## <a name="tdm-04" />[Etapes du projet](#debut)
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
 - Etape 02 : architecture des données
