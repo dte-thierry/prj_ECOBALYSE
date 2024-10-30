@@ -99,8 +99,8 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 
 ## <a name="tdm-04" />[Etapes du projet](#debut)
 - Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
-- Etape 02 : architecture de la donnée
-- Etape 03 : consommation de la donnée
+- Etape 02 : architecture des données
+- Etape 03 : consommation des données
 - Etape 04 : mise en production
 - Etape 05 : automatisation des flux
 
