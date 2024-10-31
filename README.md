@@ -140,98 +140,13 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 
 En lançant le script `info.sh` avec l'option `-logs` <i>(nota: ./info.sh <b>-?</b> renvoie les options disponibles)</i>, vous visualiserez les logs des différents conteneurs, par exemple :
 
-conteneur : ecblwebscraping
-```bash
-Affichage des logs du conteneur : ecblwebscraping...
-Attaching to ecblwebscraping
-ecblwebscraping    | --------------------------------------------------------------
-ecblwebscraping    | ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
-ecblwebscraping    | --------------------------------------------------------------
-ecblwebscraping    | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
-ecblwebscraping    | DataFrame, fichiers 'log' et 'json' créés avec succès, par le conteneur.
-ecblwebscraping    | 
-ecblwebscraping    |
-```
 
-conteneur : ecblmongodb
-```bash
-Affichage des logs du conteneur : ecblmongodb...
-Attaching to ecblmongodb
-ecblmongodb        | ------------------------------------------------------------
-ecblmongodb        | ETAPE 02 : Stockage des Données Ecobalyse v2.4.0 via MongoDB
-ecblmongodb        | ------------------------------------------------------------
-ecblmongodb        | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
-ecblmongodb        | 
-ecblmongodb        | about to fork child process, waiting until server is ready for connections.
-ecblmongodb        | forked process: 15
-ecblmongodb        | child process started successfully, parent exiting
-ecblmongodb        | MongoDB shell version v5.0.30
-ecblmongodb        | connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
-ecblmongodb        | Implicit session: session { "id" : UUID("42c41132-a00e-49d8-8fa8-db77bd20c579") }
-ecblmongodb        | MongoDB server version: 5.0.30
-ecblmongodb        | ================
-ecblmongodb        | Warning: the "mongo" shell has been superseded by "mongosh",
-ecblmongodb        | which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
-ecblmongodb        | an upcoming release.
-ecblmongodb        | For installation instructions, see
-ecblmongodb        | https://docs.mongodb.com/mongodb-shell/install/
-ecblmongodb        | ================
-ecblmongodb        | switched to db admin
-ecblmongodb        | bye
-ecblmongodb        | MongoDB shell version v5.0.30
-ecblmongodb        | connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
-ecblmongodb        | Implicit session: session { "id" : UUID("e09b9ab9-9e34-46b3-9a77-0c3220c68cc7") }
-ecblmongodb        | MongoDB server version: 5.0.30
-ecblmongodb        | 
-ecblmongodb        | Base De Données MongoDB et fichier 'log' créés avec succès, par le conteneur.
-ecblmongodb        | 
-```
 
-conteneur : ecblredis
-```bash
-Affichage des logs du conteneur : ecblredis...
-Attaching to ecblredis
-ecblredis          | ----------------------------------------------------------
-ecblredis          | ETAPE 02 : Stockage des Données Ecobalyse v2.4.0 via Redis
-ecblredis          | ----------------------------------------------------------
-ecblredis          | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
-ecblredis          | 
-ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
-ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=13, just started
-ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * Configuration loaded
-ecblredis          | 13:M 30 Oct 2024 15:45:48.652 * monotonic clock: POSIX clock_gettime
-ecblredis          | 13:M 30 Oct 2024 15:45:48.653 * Running mode=standalone, port=6379.
-ecblredis          | 13:M 30 Oct 2024 15:45:48.654 * Server initialized
-ecblredis          | 13:M 30 Oct 2024 15:45:48.654 * Ready to accept connections tcp
-ecblredis          | 
-ecblredis          | Test Redis de récupération JSON : 
-ecblredis          | Attendre que le fichier JSON soit créé...
-ecblredis          | 
-ecblredis          | 
-ecblredis          | Base De Données Redis et fichier 'log' créés avec succès, par le conteneur.
-ecblredis          |
-```
 
-conteneur : ecblflask
-```bash
-Attaching to ecblflask
-ecblflask          | --------------------------------------------------------------
-ecblflask          | ETAPE 03 : Consommation des Données Ecobalyse v2.4.0 via Flask
-ecblflask          | --------------------------------------------------------------
-ecblflask          | VM utilisée, à l'adresse IP / SSH publique : 3.252.141.140
-ecblflask          | 
-ecblflask          | Framework Web Flask démarré. Accessible depuis les adresses : 127.0.0.1:5000/ , ou : 3.252.141.140:5000/
-ecblflask          | Fichier 'log' créé avec succès, par le conteneur.
-ecblflask          | 
-ecblflask          | [2024-10-30 18:35:07,105] INFO in test_flask: Application Flask active.
-ecblflask          |  * Serving Flask app 'test_flask.py'
-ecblflask          |  * Debug mode: off
-ecblflask          | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
-ecblflask          |  * Running on all addresses (0.0.0.0)
-ecblflask          |  * Running on http://127.0.0.1:5000
-ecblflask          |  * Running on http://172.22.0.5:5000
-ecblflask          | Press CTRL+C to quit
-```
+
+
+
+
 
 #### Lancer le Framework Web Flask
 
@@ -284,6 +199,115 @@ prj_ECOBALYSE
 
 
 ## <a name="tdm-07" />[Détails techniques](#debut)
+
+### <a name="tdm-07-01" />ETL
+
+conteneur : ecblwebscraping
+```bash
+Affichage des logs du conteneur : ecblwebscraping...
+Attaching to ecblwebscraping
+ecblwebscraping    | --------------------------------------------------------------
+ecblwebscraping    | ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
+ecblwebscraping    | --------------------------------------------------------------
+ecblwebscraping    | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
+ecblwebscraping    | DataFrame, fichiers 'log' et 'json' créés avec succès, par le conteneur.
+ecblwebscraping    | 
+ecblwebscraping    |
+```
+
+### <a name="tdm-07-02" />MongoDB
+
+conteneur : ecblmongodb
+```bash
+Affichage des logs du conteneur : ecblmongodb...
+Attaching to ecblmongodb
+ecblmongodb        | ------------------------------------------------------------
+ecblmongodb        | ETAPE 02 : Stockage des Données Ecobalyse v2.4.0 via MongoDB
+ecblmongodb        | ------------------------------------------------------------
+ecblmongodb        | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
+ecblmongodb        | 
+ecblmongodb        | about to fork child process, waiting until server is ready for connections.
+ecblmongodb        | forked process: 15
+ecblmongodb        | child process started successfully, parent exiting
+ecblmongodb        | MongoDB shell version v5.0.30
+ecblmongodb        | connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+ecblmongodb        | Implicit session: session { "id" : UUID("42c41132-a00e-49d8-8fa8-db77bd20c579") }
+ecblmongodb        | MongoDB server version: 5.0.30
+ecblmongodb        | ================
+ecblmongodb        | Warning: the "mongo" shell has been superseded by "mongosh",
+ecblmongodb        | which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+ecblmongodb        | an upcoming release.
+ecblmongodb        | For installation instructions, see
+ecblmongodb        | https://docs.mongodb.com/mongodb-shell/install/
+ecblmongodb        | ================
+ecblmongodb        | switched to db admin
+ecblmongodb        | bye
+ecblmongodb        | MongoDB shell version v5.0.30
+ecblmongodb        | connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+ecblmongodb        | Implicit session: session { "id" : UUID("e09b9ab9-9e34-46b3-9a77-0c3220c68cc7") }
+ecblmongodb        | MongoDB server version: 5.0.30
+ecblmongodb        | 
+ecblmongodb        | Base De Données MongoDB et fichier 'log' créés avec succès, par le conteneur.
+ecblmongodb        | 
+```
+
+### <a name="tdm-07-03" />Redis
+
+conteneur : ecblredis
+```bash
+Affichage des logs du conteneur : ecblredis...
+Attaching to ecblredis
+ecblredis          | ----------------------------------------------------------
+ecblredis          | ETAPE 02 : Stockage des Données Ecobalyse v2.4.0 via Redis
+ecblredis          | ----------------------------------------------------------
+ecblredis          | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.14
+ecblredis          | 
+ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * Redis version=7.4.1, bits=64, commit=00000000, modified=0, pid=13, just started
+ecblredis          | 13:C 30 Oct 2024 15:45:48.651 * Configuration loaded
+ecblredis          | 13:M 30 Oct 2024 15:45:48.652 * monotonic clock: POSIX clock_gettime
+ecblredis          | 13:M 30 Oct 2024 15:45:48.653 * Running mode=standalone, port=6379.
+ecblredis          | 13:M 30 Oct 2024 15:45:48.654 * Server initialized
+ecblredis          | 13:M 30 Oct 2024 15:45:48.654 * Ready to accept connections tcp
+ecblredis          | 
+ecblredis          | Test Redis de récupération JSON : 
+ecblredis          | Attendre que le fichier JSON soit créé...
+ecblredis          | 
+ecblredis          | 
+ecblredis          | Base De Données Redis et fichier 'log' créés avec succès, par le conteneur.
+ecblredis          |
+```
+
+### <a name="tdm-07-04" />Flask
+
+conteneur : ecblflask
+```bash
+Attaching to ecblflask
+ecblflask          | --------------------------------------------------------------
+ecblflask          | ETAPE 03 : Consommation des Données Ecobalyse v2.4.0 via Flask
+ecblflask          | --------------------------------------------------------------
+ecblflask          | VM utilisée, à l'adresse IP / SSH publique : 3.252.141.140
+ecblflask          | 
+ecblflask          | Framework Web Flask démarré. Accessible depuis les adresses : 127.0.0.1:5000/ , ou : 3.252.141.140:5000/
+ecblflask          | Fichier 'log' créé avec succès, par le conteneur.
+ecblflask          | 
+ecblflask          | [2024-10-30 18:35:07,105] INFO in test_flask: Application Flask active.
+ecblflask          |  * Serving Flask app 'test_flask.py'
+ecblflask          |  * Debug mode: off
+ecblflask          | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ecblflask          |  * Running on all addresses (0.0.0.0)
+ecblflask          |  * Running on http://127.0.0.1:5000
+ecblflask          |  * Running on http://172.22.0.5:5000
+ecblflask          | Press CTRL+C to quit
+```
+
+### <a name="tdm-07-05" />Dash
+
+Dash ...
+
+### <a name="tdm-07-06" />AirFlow
+
+AirFlow ...
 
 ## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
