@@ -123,39 +123,33 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 
 ### <a name="tdm-03-02" />[Lancement](#tdm-03)
 
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./setup.sh` # (re)construit et (re)démarre les différents services nécessaires au projet 
+> - `./info.sh -logs` # visualise les logs des conteneurs actifs *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
+> - `./web.sh` # accède via un *navigateur Web* au Framework **Flask** 
+
 #### Lancer les services
 
-- lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
-*./setup.sh*
+- lancer le script `./setup.sh` pour activer les différents conteneurs et services nécessaires au projet.
 
 - via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
     - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
     - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB et requêtes initiales, par les services
     - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis et requêtes initiales, par les services
 
-- lancer le script `info.sh` <b>-logs</b>, pour visualiser les logs des conteneurs actifs, par la commande : <br />
-*./info.sh <b>-logs</b>*
+- lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
 
-##### Nota :
+#### Accéder à Flask
 
-En lançant le script `info.sh` avec l'option `-logs` <i>(nota: ./info.sh <b>-?</b> renvoie les options disponibles)</i>, vous visualiserez les logs des différents conteneurs, par exemple :
+- lancer le script `./web.sh` pour lancer `Flask` via un *navigateur Web*. <br />
 
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Flask` est active. <br />
+    - `'docker_testflask_(date).log'` 
 
+<br />
 
-
-
-
-
-
-
-#### Lancer le Framework Web Flask
-
-Lorsque le Framework Web `Flask` est démarré, on peut y accéder depuis un navigateur Web : <br />
-
-- soit par l'adresse locale : 127.0.0.1:5000/
-- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
-
-La page d'accueil `Flask` s'affiche avec les informations :
+La page d'accueil `Flask` s'affiche avec les informations suivantes :
 
 ```html
 Accueil
@@ -168,10 +162,16 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
 ```
 
+#### Accéder à Dash
+
+Dash ...
+
 ##### Nota :
 
-- lancer le script `info.sh` <b>-logs</b>, permet également d'accéder à Flask, par la commande : <br />
-*./info.sh <b>-logs</b>*
+Lorsque le Framework Web `Flask` est démarré, via le conteneur *ecblflask*, on peut y accéder depuis un navigateur Web : <br />
+
+- soit par l'adresse locale : 127.0.0.1:5000/
+- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
 
 ## <a name="tdm-05" />[Solution technique](#debut)
 
