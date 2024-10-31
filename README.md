@@ -33,62 +33,64 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
-<div class="warning" style='background-color:#F3E2A9; color: #886A08; border-left: solid #886A08 4px; border-radius: 4px; padding:0.7em;'>
-<span>
-<p style='margin-top:1em; text-align:center'>
-<b>Constantes utiles pour l'Extraction Des Données Ecobalyse</b></p>
-<p style='margin-left:1em;'>
-    
-- PROG_FULL_MODE = False  
-- ECOBALYSE_VER = "v2.4.0" # en date du 30/10/2024  
-- JSON_BASIC_FILE = "PRJ-ECOBALYSE-TEXTILES_basic.json" 
-
-</p>
-<p style='margin-bottom:1em; margin-right:1em; text-align:right; font-family:Georgia'> <b></b> <i></i>
-</p></span>
-</div>
-
 ### Pré-requis
+
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./info.sh -v` # affiche la version du client Docker installé (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
+> - `./info.sh -i` # affiche la liste des images Docker présentes 
+> - `./info.sh -a` # affiche la liste des conteneurs Docker actifs
+> - `./stop.sh` # arrête tous les conteneurs définis dans le fichier docker-compose.yml
+> - `./reset.sh` # supprime les données et (ré)initialise toute la configuration
 
 - installer [VS Code](https://code.visualstudio.com/) localement sur votre PC, en fonction de votre système d'exploitation.
 
-- configurer `VS Code` pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
+- configurer [VS Code](https://code.visualstudio.com/) pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
 
-- lancer et accéder à la machine virtuelle DataScientest, depuis le lien : <br />
+- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : <br />
 *https://learn.datascientest.com/lesson/349/3682*
 
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
 *git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
 
-- au besoin, lancer le script `info.sh` <b>-logs</b>, pour afficher les logs des conteneurs actifs, par la commande : <br />
-*./info.sh <b>-logs</b>* (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
+- au besoin, utiliser les options du script `./info.sh`, pour afficher les informations du client Docker installé. <br />
+(nota: `./info.sh -?` renvoie les options disponibles)
+
+- au besoin, (ré)installer ou mettre à jour le client **Docker**, depuis le manageur de paquets *apt*, avec les instructions suivantes :
+
+```bash
+VERSION_STRING=5:25.0.3-1~ubuntu.20.04~focal
+sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
+```
 
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
-- au besoin, lancer le script `stop.sh` pour arrêter les services, par la commande : <br />
-*./stop.sh*
+- lancer (si nécessaire) le script `./stop.sh` pour arrêter tous les conteneurs.
 
-- au besoin, lancer le script `reset.sh` pour supprimer tous les conteneurs, images, volumes, et réseaux inutilisés, par la commande : <br />
-*./reset.sh*
+- lancer le script `./reset.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
 
 #### Facultatif :
 
-- (au besoin, lancer le script `start.sh` <b>-i</b>, pour exécuter une extraction <i>"manuelle"</i> des données Ecobalyse, par la commande : <br />
-*./start.sh <b>-i</b>*)
+>> **Résumé du(des) script(s) facultatif(s)**
+>>
+>> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
 
-- (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log'`, pour vérifier l'extraction des données Ecobalyse. <br />
+- au besoin, lancer le script `./start.sh -i` pour exécuter une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+
+- via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
 ##### Nota :
 
-Vous pouvez lancer le script `start.sh`, <b>sans aucune option</b> <i>(nota: ./start.sh <b>-?</b> renvoie les options disponibles)</i>, par la commande : *./start.sh* <br />
-En lançant le script `start.sh` avec l'option `-i`, vous obtiendrez un message d'avertissement de type :
+Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
+
+En lançant le script `./start.sh -i`, vous obtiendrez un message d'avertissement, par exemple :
 
 ```bash
 --------------------------------------------------------------
 ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
 --------------------------------------------------------------
-VM en cours, à l'adresse IP / SSH publique : xxx.xxx.xxx.xxx
+VM en cours, à l'adresse IP / SSH publique : 18.201.106.14
 
 Avertissement:
 --------------
