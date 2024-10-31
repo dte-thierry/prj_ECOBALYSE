@@ -67,18 +67,18 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 - accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : <br />
 *https://learn.datascientest.com/lesson/349/3682*
 
-- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
-*git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
-
-- au besoin, utiliser les options du script `./info.sh`, pour afficher les informations du client Docker installé. <br />
-(nota: `./info.sh -?` renvoie les options disponibles)
-
 - au besoin, (ré)installer ou mettre à jour le client **Docker**, depuis le manageur de paquets *apt*, avec les instructions suivantes :
 
 ```bash
 VERSION_STRING=5:25.0.3-1~ubuntu.20.04~focal
 sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+
+- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
+*git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
+
+- au besoin, utiliser les options du script `./info.sh`, pour afficher les informations du client Docker installé. <br />
+(nota: `./info.sh -?` renvoie les options disponibles)
 
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
@@ -260,7 +260,7 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 
 ## <a name="tdm-05" />[Solution technique](#debut)
 
-### Schéma de principe
+### <a name="tdm-05-01" />[Schéma de principe](#tdm-05)
 
 <img src="img/PRJ-ECOBALYSE-00-IMG3.png" alt="Schéma de principe" style="width:750px;height:auto;">
 
@@ -278,66 +278,10 @@ La solution proposée se compose de :
 
 * Un DAG `Airflow` pour gérer l'orchestration de l'ETL.
 
-### Arborescence des dossiers et fichiers
+### <a name="tdm-05-02" />[Dossiers & Répertoires](#tdm-05)
 
 prj_ECOBALYSE
-<br />├── data
-<br />│   ├── mongo
-<br />│   └── redis
-<br />│   ├── params01_T-shirt.txt
-<br />│   ├── params02_Pull.txt
-<br />│   ├── params03_Pantalon.txt
-<br />│   ├── params04_Manteau.txt
-<br />│   ├── params05_Maillot-de-bain.txt
-<br />│   ├── params06_Jupe.txt
-<br />│   ├── params07_Jean.txt
-<br />│   ├── params08_Chemise.txt
-<br />│   ├── params09_Chaussettes.txt
-<br />│   ├── params10_Calecon.txt
-<br />│   ├── params11_Slip.txt
-<br />│   └── PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json
-<br />├── etl
-<br />│   ├── Dockerfile.etl
-<br />│   ├── extract1.py
-<br />│   ├── requirements.txt
-<br />│   ├── utils01.py
-<br />│   ├── utils02.py
-<br />│   └── utils03.py
-<br />├── img
-<br />│   ├── PRJ-ECOBALYSE-00-IMG1.jpg
-<br />│   ├── PRJ-ECOBALYSE-00-IMG2.jpg
-<br />│   ├── PRJ-ECOBALYSE-00-IMG3.png
-<br />│   └── PRJ-ECOBALYSE-00-LOGO.png
-<br />├── logs
-<br />│   ├── docker_testmongo_2024-10-27_18-26-08.log
-<br />│   ├── docker_testredis_2024-10-27_18-26-07.log
-<br />│   └── docker_webscraping_2024-10-27_18-26-00.log
-<br />├── mongo
-<br />│   ├── Dockerfile.mongo
-<br />│   ├── init_mongo.js
-<br />│   ├── init_mongo.sh
-<br />│   ├── mongo.conf
-<br />│   └── test_mongo.py
-<br />├── notebooks
-<br />│   ├── PRJ-ECOBALYSE-00-LOGO.png
-<br />│   ├── PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb
-<br />├── redis
-<br />│   ├── Dockerfile.redis
-<br />│   ├── init_redis.sh
-<br />│   ├── redis.conf
-<br />│   └── test_redis.py
-<br />├── clear.sh
-<br />├── CONVENTIONS.md
-<br />├── docker-compose.yml
-<br />├── info.sh
-<br />├── LICENSE
-<br />├── PRJ-ECOBALYSE-00-FICHE_PROJET.pdf
-<br />├── README.md
-<br />├── rebuild.sh
-<br />├── reset.sh
-<br />├── setup.sh
-<br />├── start.sh
-<br />└── stop.sh
+
 
 ## <a name="tdm-07" />[Détails techniques](#debut)
 
