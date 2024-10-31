@@ -15,5 +15,5 @@ echo -e "./stop.sh : Arrêt des services Docker..."
 echo -e "----------------------------------------"
 echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
 
-# Arrêter les services
+# arrête tous les conteneurs définis dans le fichier docker-compose.yml
 docker-compose down

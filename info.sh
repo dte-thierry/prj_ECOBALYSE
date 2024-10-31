@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# Fonction pour afficher la version de Docker
+# [-v] : affiche la version du client Docker installé
 function show_version {
-    echo -e "\nVérification de la version de Docker..."
+    echo -e "\nVersion du client Docker installé..."
     docker --version
 }
 
-# Fonction pour afficher les conteneurs Docker en cours d'exécution
+# [-a] : affiche les conteneurs Docker en cours d'exécution
 function show_containers {
-    echo -e "\nListe des conteneurs Docker en cours d'exécution..."
+    echo -e "\nListe les conteneurs Docker en cours d'exécution..."
     docker ps
 }
 
-# Fonction pour afficher les logs des conteneurs
+# [-logs] : affiche les logs des conteneurs 'etl'
 function show_logs {
     echo -e "\nAffichage des logs du conteneur : ecblwebscraping..."
     docker-compose logs ecblwebscraping
@@ -20,16 +20,16 @@ function show_logs {
     docker-compose logs ecblmongodb
     echo -e "\nAffichage des logs du conteneur : ecblredis..."
     docker-compose logs ecblredis
-    echo -e "\nAffichage des logs du conteneur : ecblflask..."
-    docker-compose logs ecblflask
+    # echo -e "\nAffichage des logs du conteneur : ecblflask..."
+    # docker-compose logs ecblflask
 }
 
-# Fonction pour afficher les images Docker disponibles
+# [-i] affiche la liste des images Docker présentes
 function show_images {
-    echo -e "\nListe des images Docker disponibles..."
+    echo -e "\nListe des images Docker présentes..."
     docker images
 
-    # Calcul de la taille totale des images Docker
+    # Calcul de la taille totale des images Docker présentes
     total_size=0
     while read -r size unit; do
         if [ "$unit" == "GB" ]; then
@@ -43,7 +43,7 @@ function show_images {
     # echo -e "\nLa taille totale des images Docker est de ${total_size} GB.\n"
 }
 
-# Fonction pour afficher toutes les informations
+# [-all] : affiche toutes les informations
 function show_all {
     show_version
     show_containers
