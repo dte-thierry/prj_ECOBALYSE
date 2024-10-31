@@ -3,6 +3,7 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
+Dernière Mise A Jour du Document : Jeu. 31/10/2024 - Version : 0.20
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -10,10 +11,11 @@
 - [Mode d'emploi](#tdm-03)
 - [Etapes du projet](#tdm-04)
 - [Solution technique](#tdm-05)
+- [Détails techniques](#tdm-07)
 - [A propos d'Ecobalyse](#tdm-06)
 
-## <a name="tdm-01" />[Contexte :](#debut)
-Ce projet a été réalisé dans le cadre de la formation continue de Data Engineer, proposée par :  
+## <a name="tdm-01" />[Contexte](#debut)
+Ce projet a été réalisé dans le cadre de la formation de Data Engineer, proposée par :  
 <a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest et l'Ecole des Mines ParisTech</a>.
 
 L'équipe ayant réalisé ce projet se compose de :
@@ -30,6 +32,21 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
+
+<div class="warning" style='background-color:#F3E2A9; color: #886A08; border-left: solid #886A08 4px; border-radius: 4px; padding:0.7em;'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>Constantes utiles pour l'Extraction Des Données Ecobalyse</b></p>
+<p style='margin-left:1em;'>
+    
+- PROG_FULL_MODE = False  
+- ECOBALYSE_VER = "v2.4.0" # en date du 30/10/2024  
+- JSON_BASIC_FILE = "PRJ-ECOBALYSE-TEXTILES_basic.json" 
+
+</p>
+<p style='margin-bottom:1em; margin-right:1em; text-align:right; font-family:Georgia'> <b></b> <i></i>
+</p></span>
+</div>
 
 ### Pré-requis
 
@@ -308,6 +325,8 @@ prj_ECOBALYSE
 <br />├── setup.sh
 <br />├── start.sh
 <br />└── stop.sh
+
+## <a name="tdm-07" />[Détails techniques](#debut)
 
 ## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
