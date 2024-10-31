@@ -34,17 +34,17 @@ L'équipe ayant réalisé ce projet se compose de :
 * DELIGNE Thierry
 
 ## <a name="tdm-02" />[Présentation](#debut)
-Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet permet : 
+Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet doit permettre : 
 - d'obtenir une évaluation de l'impact écologique de textiles courants
-- potentiellement, de fournir des recommandations ou des conseils sur des alternatives plus durables
+- de fournir des recommandations ou des conseils sur des alternatives plus durables
 
 <br />
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
-- Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
+- Etape 01 : récolte des données - [Extraction](notebook/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) , [Transformation]((notebook/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb))
 - Etape 02 : architecture des données
-- Etape 03 : consommation des données
+- Etape 03 : consommation des données - [Visualisations](notebook/PRJ-ECOBALYSE-03-ETAPE-03-VISU_v0-20.ipynb) , [Prédictions](notebook/PRJ-ECOBALYSE-04-ETAPE-03-ML_v0-20.ipynb)
 - Etape 04 : mise en production
 - Etape 05 : automatisation des flux
 
@@ -58,7 +58,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 > - `./info.sh -i` # affiche la liste des images Docker présentes 
 > - `./info.sh -a` # affiche la liste des conteneurs Docker actifs
 > - `./stop.sh` # arrête tous les conteneurs définis dans le fichier docker-compose.yml
-> - `./reset.sh` # supprime les données et (ré)initialise toute la configuration
+> - `./reset.sh` # supprime les données et (ré)initialise toute la configuration du projet
 
 - installer [VS Code](https://code.visualstudio.com/) localement sur votre PC, en fonction de votre système d'exploitation.
 
@@ -92,6 +92,7 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 >> **Résumé du(des) script(s) facultatif(s)**
 >>
 >> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
+>> - `./start.sh` # idem : vérifie l'extraction des Données Ecobalyse
 
 - au besoin, lancer le script `./start.sh -i` pour exécuter une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
 
@@ -101,7 +102,7 @@ Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
 
-En lançant le script `./start.sh -i`, vous obtiendrez un message d'avertissement, par exemple :
+En lançant le script `./start.sh -i`, vous obtiendrez le message d'avertissement :
 
 ```bash
 --------------------------------------------------------------
