@@ -196,14 +196,65 @@ La solution proposée se compose de :
 
 ### <a name="tdm-05-02" />[Dossiers & Répertoires](#tdm-05)
 
+```bash
 prj_ECOBALYSE
-
+├── data
+│   ├── mongo
+│   ├── redis
+│   ├── params01_T-shirt.txt
+│   ├── params02_Pull.txt
+│   ├── params03_Pantalon.txt
+│   ├── params04_Manteau.txt
+│   ├── params05_Maillot-de-bain.txt
+│   ├── params06_Jupe.txt
+│   ├── params07_Jean.txt
+│   ├── params08_Chemise.txt
+│   ├── params09_Chaussettes.txt
+│   ├── params10_Calecon.txt
+│   └── params11_Slip.txt
+├── dag
+├── dash
+├── etl
+├── flask
+├── img
+├── logs
+├── mongo
+├── notebooks
+├── redis
+├── PRJ-ECOBALYSE-00-FICHE_PROJET.pdf
+├── LICENSE
+├── CONVENTIONS.md
+├── README.md
+├── docker-compose.yml
+├── clear.sh
+├── info.sh
+├── rebuild.sh
+├── reset.sh
+├── setup.sh
+├── start.sh
+├── stop.sh
+└── web.sh
+```
 
 ## <a name="tdm-07" />[Détails techniques](#debut)
 
 ### <a name="tdm-07-01" />[ETL](#tdm-07)
 
 #### Dossiers & Répertoires
+
+```bash
+.
+├── etl
+│   ├── Dockerfile.etl
+│   ├── constants.py
+│   ├── extract1.py
+│   ├── get_constants.py
+│   ├── requirements.txt
+│   ├── utils01.py
+│   ├── utils02.py
+│   └── utils03.py
+.
+```
 
 #### Logs du conteneur
 
@@ -223,6 +274,19 @@ ecblwebscraping    |
 ### <a name="tdm-07-02" />[MongoDB](#tdm-07)
 
 #### Dossiers & Répertoires
+
+```bash
+.
+├── mongo
+│   ├── Dockerfile.mongo
+│   ├── constants1.py
+│   ├── get_constants1.py
+│   ├── init_mongo.js
+│   ├── init_mongo.sh
+│   ├── mongo.conf
+│   └── test_mongo.py
+.
+```
 
 #### Logs du conteneur
 
@@ -264,6 +328,18 @@ ecblmongodb        |
 
 #### Dossiers & Répertoires
 
+```bash
+.
+├── redis
+│   ├── Dockerfile.redis
+│   ├── constants2.py
+│   ├── get_constants2.py
+│   ├── init_redis.sh
+│   ├── redis.conf
+│   └── test_redis.py
+.
+```
+
 #### Logs du conteneur
 
 conteneur : ecblredis
@@ -295,6 +371,28 @@ ecblredis          |
 
 #### Dossiers & Répertoires
 
+```bash
+.
+├── flask
+│   ├── Dockerfile.flask
+│   ├── constants3.py
+│   ├── get_constants3.py
+│   ├── init_flask.sh
+│   ├── mongo_queries.py
+│   ├── redis_queries.py
+│   ├── requirements.txt
+│   ├── stylesheets
+│   │   ├── listMongoBDD.css
+│   │   └── styles.css
+│   ├── templates
+│   │   ├── bienvenue.html
+│   │   ├── index.html
+│   │   └── listMongoBDD.html
+│   ├── test_flask.py
+│   └── utils.py
+.
+```
+
 #### Logs du conteneur
 
 conteneur : ecblflask
@@ -322,13 +420,21 @@ ecblflask          | Press CTRL+C to quit
 
 #### Dossiers & Répertoires
 
+```bash
+.
 Dash ...
+.
+```
 
 ### <a name="tdm-07-06" />[AirFlow](#tdm-07)
 
 #### Dossiers & Répertoires
 
+```bash
+.
 AirFlow ...
+.
+```
 
 ## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
