@@ -162,16 +162,17 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
 ```
 
-#### Accéder à Dash
-
-Dash ...
-
 ##### Nota :
 
 Lorsque le Framework Web `Flask` est démarré, via le conteneur *ecblflask*, on peut y accéder depuis un navigateur Web : <br />
 
 - soit par l'adresse locale : 127.0.0.1:5000/
 - soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
+
+#### Accéder à Dash
+
+Dash ...
+
 
 ## <a name="tdm-05" />[Solution technique](#debut)
 
