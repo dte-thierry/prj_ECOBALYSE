@@ -41,6 +41,13 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <br />
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
+### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
+- Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
+- Etape 02 : architecture des données
+- Etape 03 : consommation des données
+- Etape 04 : mise en production
+- Etape 05 : automatisation des flux
+
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
 ### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
@@ -249,13 +256,6 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 
 - lancer le script `info.sh` <b>-logs</b>, permet également d'accéder à Flask, par la commande : <br />
 *./info.sh <b>-logs</b>*
-
-## <a name="tdm-04" />[Etapes du projet](#debut)
-- Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
-- Etape 02 : architecture des données
-- Etape 03 : consommation des données
-- Etape 04 : mise en production
-- Etape 05 : automatisation des flux
 
 ## <a name="tdm-05" />[Solution technique](#debut)
 
