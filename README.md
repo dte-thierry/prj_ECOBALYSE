@@ -3,17 +3,29 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
+Dernière Mise A Jour du Document : Jeu. 31/10/2024 - Version : 0.20
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
 - [Présentation](#tdm-02)
+    - [Etapes du projet](#tdm-02-01)
 - [Mode d'emploi](#tdm-03)
-- [Etapes du projet](#tdm-04)
+    - [Pré-requis](#tdm-03-01)
+    - [Lancement](#tdm-03-02)
 - [Solution technique](#tdm-05)
+    - [Schéma de Principe](#tdm-05-01)
+    - [Dossiers & Répertoires](#tdm-05-02)
+- [Détails techniques](#tdm-07)
+    - [ETL](#tdm-07-01)
+    - [MongoDB](#tdm-07-02)
+    - [Redis](#tdm-07-03)
+    - [Flask](#tdm-07-04)
+    - [Dash](#tdm-07-05)
+    - [AirFlow](#tdm-07-06)
 - [A propos d'Ecobalyse](#tdm-06)
 
-## <a name="tdm-01" />[Contexte :](#debut)
-Ce projet a été réalisé dans le cadre de la formation continue de Data Engineer, proposée par :  
+## <a name="tdm-01" />[Contexte](#debut)
+Ce projet a été réalisé dans le cadre de la formation de Data Engineer, proposée par :  
 <a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest et l'Ecole des Mines ParisTech</a>.
 
 L'équipe ayant réalisé ce projet se compose de :
@@ -22,56 +34,81 @@ L'équipe ayant réalisé ce projet se compose de :
 * DELIGNE Thierry
 
 ## <a name="tdm-02" />[Présentation](#debut)
-Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet permet : 
+Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet doit permettre : 
 - d'obtenir une évaluation de l'impact écologique de textiles courants
-- potentiellement, de fournir des recommandations ou des conseils sur des alternatives plus durables
+- de fournir des recommandations ou des conseils sur des alternatives plus durables
 
 <br />
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
+### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
+- Etape 01 : récolte des données - [Extraction](notebook/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) , [Transformation]((notebook/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb))
+- Etape 02 : architecture des données
+- Etape 03 : consommation des données - [Visualisations](notebook/PRJ-ECOBALYSE-03-ETAPE-03-VISU_v0-20.ipynb) , [Prédictions](notebook/PRJ-ECOBALYSE-04-ETAPE-03-ML_v0-20.ipynb)
+- Etape 04 : mise en production
+- Etape 05 : automatisation des flux
+
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
-### Pré-requis
+### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
+
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./info.sh -v` # affiche la version du client Docker installé (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
+> - `./info.sh -i` # affiche la liste des images Docker présentes 
+> - `./info.sh -a` # affiche la liste des conteneurs Docker actifs
+> - `./stop.sh` # arrête tous les conteneurs définis dans le fichier docker-compose.yml
+> - `./reset.sh` # supprime les données et (ré)initialise toute la configuration du projet
 
 - installer [VS Code](https://code.visualstudio.com/) localement sur votre PC, en fonction de votre système d'exploitation.
 
-- configurer `VS Code` pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
+- configurer [VS Code](https://code.visualstudio.com/) pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
 
-- lancer et accéder à la machine virtuelle DataScientest, depuis le lien : <br />
+- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : <br />
 *https://learn.datascientest.com/lesson/349/3682*
+
+- au besoin, (ré)installer ou mettre à jour le client **Docker**, depuis le manageur de paquets *apt*, avec les instructions suivantes :
+
+```bash
+VERSION_STRING=5:25.0.3-1~ubuntu.20.04~focal
+sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
+```
 
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
 *git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
 
-- au besoin, lancer le script `info.sh` <b>-logs</b>, pour afficher les logs des conteneurs actifs, par la commande : <br />
-*./info.sh <b>-logs</b>* (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
+- au besoin, utiliser les options du script `./info.sh`, pour afficher les informations du client Docker installé. <br />
+(nota: `./info.sh -?` renvoie les options disponibles)
 
 <br />
 Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
-- au besoin, lancer le script `stop.sh` pour arrêter les services, par la commande : <br />
-*./stop.sh*
+- lancer (si nécessaire) le script `./stop.sh` pour arrêter tous les conteneurs.
 
-- au besoin, lancer le script `reset.sh` pour supprimer tous les conteneurs, images, volumes, et réseaux inutilisés, par la commande : <br />
-*./reset.sh*
+- lancer le script `./reset.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
 
 #### Facultatif :
 
-- (au besoin, lancer le script `start.sh` <b>-i</b>, pour exécuter une extraction <i>"manuelle"</i> des données Ecobalyse, par la commande : <br />
-*./start.sh <b>-i</b>*)
+>> **Résumé du(des) script(s) facultatif(s)**
+>>
+>> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
+>> - `./start.sh` # idem : vérifie l'extraction des Données Ecobalyse
 
-- (via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log  `'manual_webscraping_(date).log'`, pour vérifier l'extraction des données Ecobalyse. <br />
+- au besoin, lancer le script `./start.sh -i` pour exécuter une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+
+- via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
 ##### Nota :
 
-Vous pouvez lancer le script `start.sh`, <b>sans aucune option</b> <i>(nota: ./start.sh <b>-?</b> renvoie les options disponibles)</i>, par la commande : *./start.sh* <br />
-En lançant le script `start.sh` avec l'option `-i`, vous obtiendrez un message d'avertissement de type :
+Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
+
+En lançant le script `./start.sh -i`, vous obtiendrez le message d'avertissement :
 
 ```bash
 --------------------------------------------------------------
 ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
 --------------------------------------------------------------
-VM en cours, à l'adresse IP / SSH publique : xxx.xxx.xxx.xxx
+VM en cours, à l'adresse IP / SSH publique : 18.201.106.14
 
 Avertissement:
 --------------
@@ -84,24 +121,142 @@ Vérifiez qu'aucune description de textile (colonne 'description') ne soit de ty
 DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 ```
 
-### Lancement
+### <a name="tdm-03-02" />[Lancement](#tdm-03)
+
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./setup.sh` # (re)construit et (re)démarre les différents services nécessaires au projet 
+> - `./info.sh -logs` # visualise les logs des conteneurs actifs *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
+> - `./web.sh` # accède via un *navigateur Web* au Framework **Flask** 
 
 #### Lancer les services
 
-- lancer le script `setup.sh` pour activer les différents conteneurs et services nécessaires au projet, par la commande : <br />
-*./setup.sh*
+- lancer le script `./setup.sh` pour activer les différents conteneurs et services nécessaires au projet.
 
 - via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
     - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
     - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB et requêtes initiales, par les services
     - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis et requêtes initiales, par les services
 
-- lancer le script `info.sh` <b>-logs</b>, pour visualiser les logs des conteneurs actifs, par la commande : <br />
-*./info.sh <b>-logs</b>*
+- lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
+
+#### Accéder à Flask
+
+- lancer le script `./web.sh` pour lancer `Flask` via un *navigateur Web*. <br />
+
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Flask` est active. <br />
+    - `'docker_testflask_(date).log'` 
+
+<br />
+
+La page d'accueil `Flask` s'affiche avec les informations suivantes :
+
+```html
+Accueil
+Bienvenue sur la page d'accueil de votre application Flask !
+
+Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
+
+127.0.0.1:5000/testflask, afin de lister les BDD MongoDB
+127.0.0.1:5000/testmongo, afin de vérifier le contenu Ecobalyse de la BDD MongoDB
+127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
+```
 
 ##### Nota :
 
-En lançant le script `info.sh` avec l'option `-logs` <i>(nota: ./info.sh <b>-?</b> renvoie les options disponibles)</i>, vous visualiserez les logs des différents conteneurs, par exemple :
+Lorsque le Framework Web `Flask` est démarré, via le conteneur *ecblflask*, on peut y accéder depuis un navigateur Web : <br />
+
+- soit par l'adresse locale : 127.0.0.1:5000/
+- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
+
+#### Accéder à Dash
+
+Dash ...
+
+
+## <a name="tdm-05" />[Solution technique](#debut)
+
+### <a name="tdm-05-01" />[Schéma de principe](#tdm-05)
+
+<img src="img/PRJ-ECOBALYSE-00-IMG3.png" alt="Schéma de principe" style="width:750px;height:auto;">
+
+La solution proposée se compose de : 
+
+* Un `ETL` qui a la charge de récupérer les contenus d'Ecobalyse.
+
+* Une base de données `MongoDB` où sont entreprosées les données récupérées.
+  
+* Une base de données `Redis` utilisée comme mémoire cache, afin d'accélérer les requêtes.
+
+* Un dashboard `Dash`.
+
+* Un Framework Web `Flask` qui sert d’intermédiaire (API) entre le dashboard `Dash`, les bases de données `MongoDB` / `Redis`, et un modèle `scikit-learn` entraîné pour des prédictions de <b>Machine Learning</b>.
+
+* Un DAG `Airflow` pour gérer l'orchestration de l'ETL.
+
+### <a name="tdm-05-02" />[Dossiers & Répertoires](#tdm-05)
+
+```bash
+prj_ECOBALYSE
+├── data
+│   ├── mongo
+│   ├── redis
+│   ├── params01_T-shirt.txt
+│   ├── params02_Pull.txt
+│   ├── params03_Pantalon.txt
+│   ├── params04_Manteau.txt
+│   ├── params05_Maillot-de-bain.txt
+│   ├── params06_Jupe.txt
+│   ├── params07_Jean.txt
+│   ├── params08_Chemise.txt
+│   ├── params09_Chaussettes.txt
+│   ├── params10_Calecon.txt
+│   └── params11_Slip.txt
+├── dag
+├── dash
+├── etl
+├── flask
+├── img
+├── logs
+├── mongo
+├── notebooks
+├── redis
+├── PRJ-ECOBALYSE-00-FICHE_PROJET.pdf
+├── LICENSE
+├── CONVENTIONS.md
+├── README.md
+├── docker-compose.yml
+├── clear.sh
+├── info.sh
+├── rebuild.sh
+├── reset.sh
+├── setup.sh
+├── start.sh
+├── stop.sh
+└── web.sh
+```
+
+## <a name="tdm-07" />[Détails techniques](#debut)
+
+### <a name="tdm-07-01" />[ETL](#tdm-07)
+
+#### Dossiers & Répertoires
+
+```bash
+.
+├── etl
+│   ├── Dockerfile.etl
+│   ├── constants.py
+│   ├── extract1.py
+│   ├── get_constants.py
+│   ├── requirements.txt
+│   ├── utils01.py
+│   ├── utils02.py
+│   └── utils03.py
+.
+```
+
+#### Logs du conteneur
 
 conteneur : ecblwebscraping
 ```bash
@@ -115,6 +270,25 @@ ecblwebscraping    | DataFrame, fichiers 'log' et 'json' créés avec succès, p
 ecblwebscraping    | 
 ecblwebscraping    |
 ```
+
+### <a name="tdm-07-02" />[MongoDB](#tdm-07)
+
+#### Dossiers & Répertoires
+
+```bash
+.
+├── mongo
+│   ├── Dockerfile.mongo
+│   ├── constants1.py
+│   ├── get_constants1.py
+│   ├── init_mongo.js
+│   ├── init_mongo.sh
+│   ├── mongo.conf
+│   └── test_mongo.py
+.
+```
+
+#### Logs du conteneur
 
 conteneur : ecblmongodb
 ```bash
@@ -150,6 +324,24 @@ ecblmongodb        | Base De Données MongoDB et fichier 'log' créés avec succ
 ecblmongodb        | 
 ```
 
+### <a name="tdm-07-03" />[Redis](#tdm-07)
+
+#### Dossiers & Répertoires
+
+```bash
+.
+├── redis
+│   ├── Dockerfile.redis
+│   ├── constants2.py
+│   ├── get_constants2.py
+│   ├── init_redis.sh
+│   ├── redis.conf
+│   └── test_redis.py
+.
+```
+
+#### Logs du conteneur
+
 conteneur : ecblredis
 ```bash
 Affichage des logs du conteneur : ecblredis...
@@ -175,6 +367,34 @@ ecblredis          | Base De Données Redis et fichier 'log' créés avec succè
 ecblredis          |
 ```
 
+### <a name="tdm-07-04" />[Flask](#tdm-07)
+
+#### Dossiers & Répertoires
+
+```bash
+.
+├── flask
+│   ├── Dockerfile.flask
+│   ├── constants3.py
+│   ├── get_constants3.py
+│   ├── init_flask.sh
+│   ├── mongo_queries.py
+│   ├── redis_queries.py
+│   ├── requirements.txt
+│   ├── stylesheets
+│   │   ├── listMongoBDD.css
+│   │   └── styles.css
+│   ├── templates
+│   │   ├── bienvenue.html
+│   │   ├── index.html
+│   │   └── listMongoBDD.html
+│   ├── test_flask.py
+│   └── utils.py
+.
+```
+
+#### Logs du conteneur
+
 conteneur : ecblflask
 ```bash
 Attaching to ecblflask
@@ -196,118 +416,25 @@ ecblflask          |  * Running on http://172.22.0.5:5000
 ecblflask          | Press CTRL+C to quit
 ```
 
-#### Lancer le Framework Web Flask
+### <a name="tdm-07-05" />[Dash](#tdm-07)
 
-Lorsque le Framework Web `Flask` est démarré, on peut y accéder depuis un navigateur Web : <br />
+#### Dossiers & Répertoires
 
-- soit par l'adresse locale : 127.0.0.1:5000/
-- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
-
-La page d'accueil `Flask` s'affiche avec les informations :
-
-```html
-Accueil
-Bienvenue sur la page d'accueil de votre application Flask !
-
-Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
-
-127.0.0.1:5000/testflask, afin de lister les BDD MongoDB
-127.0.0.1:5000/testmongo, afin de vérifier le contenu Ecobalyse de la BDD MongoDB
-127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
+```bash
+.
+Dash ...
+.
 ```
 
-##### Nota :
+### <a name="tdm-07-06" />[AirFlow](#tdm-07)
 
-- lancer le script `info.sh` <b>-logs</b>, permet également d'accéder à Flask, par la commande : <br />
-*./info.sh <b>-logs</b>*
+#### Dossiers & Répertoires
 
-## <a name="tdm-04" />[Etapes du projet](#debut)
-- Etape 01 : [récolte des données](notebooks/PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb)
-- Etape 02 : architecture des données
-- Etape 03 : consommation des données
-- Etape 04 : mise en production
-- Etape 05 : automatisation des flux
-
-## <a name="tdm-05" />[Solution technique](#debut)
-
-### Schéma de principe
-
-<img src="img/PRJ-ECOBALYSE-00-IMG3.png" alt="Schéma de principe" style="width:750px;height:auto;">
-
-La solution proposée se compose de : 
-
-* Un `ETL` qui a la charge de récupérer les contenus d'Ecobalyse.
-
-* Une base de données `MongoDB` où sont entreprosées les données récupérées.
-  
-* Une base de données `Redis` utilisée comme mémoire cache, afin d'accélérer les requêtes.
-
-* Un dashboard `Dash`.
-
-* Un Framework Web `Flask` qui sert d’intermédiaire (API) entre le dashboard `Dash`, les bases de données `MongoDB` / `Redis`, et un modèle `scikit-learn` entraîné pour des prédictions de <b>Machine Learning</b>.
-
-* Un DAG `Airflow` pour gérer l'orchestration de l'ETL.
-
-### Arborescence des dossiers et fichiers
-
-prj_ECOBALYSE
-<br />├── data
-<br />│   ├── mongo
-<br />│   └── redis
-<br />│   ├── params01_T-shirt.txt
-<br />│   ├── params02_Pull.txt
-<br />│   ├── params03_Pantalon.txt
-<br />│   ├── params04_Manteau.txt
-<br />│   ├── params05_Maillot-de-bain.txt
-<br />│   ├── params06_Jupe.txt
-<br />│   ├── params07_Jean.txt
-<br />│   ├── params08_Chemise.txt
-<br />│   ├── params09_Chaussettes.txt
-<br />│   ├── params10_Calecon.txt
-<br />│   ├── params11_Slip.txt
-<br />│   └── PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json
-<br />├── etl
-<br />│   ├── Dockerfile.etl
-<br />│   ├── extract1.py
-<br />│   ├── requirements.txt
-<br />│   ├── utils01.py
-<br />│   ├── utils02.py
-<br />│   └── utils03.py
-<br />├── img
-<br />│   ├── PRJ-ECOBALYSE-00-IMG1.jpg
-<br />│   ├── PRJ-ECOBALYSE-00-IMG2.jpg
-<br />│   ├── PRJ-ECOBALYSE-00-IMG3.png
-<br />│   └── PRJ-ECOBALYSE-00-LOGO.png
-<br />├── logs
-<br />│   ├── docker_testmongo_2024-10-27_18-26-08.log
-<br />│   ├── docker_testredis_2024-10-27_18-26-07.log
-<br />│   └── docker_webscraping_2024-10-27_18-26-00.log
-<br />├── mongo
-<br />│   ├── Dockerfile.mongo
-<br />│   ├── init_mongo.js
-<br />│   ├── init_mongo.sh
-<br />│   ├── mongo.conf
-<br />│   └── test_mongo.py
-<br />├── notebooks
-<br />│   ├── PRJ-ECOBALYSE-00-LOGO.png
-<br />│   ├── PRJ-ECOBALYSE-01-WEB_SCRAPING1_v0-20.ipynb
-<br />├── redis
-<br />│   ├── Dockerfile.redis
-<br />│   ├── init_redis.sh
-<br />│   ├── redis.conf
-<br />│   └── test_redis.py
-<br />├── clear.sh
-<br />├── CONVENTIONS.md
-<br />├── docker-compose.yml
-<br />├── info.sh
-<br />├── LICENSE
-<br />├── PRJ-ECOBALYSE-00-FICHE_PROJET.pdf
-<br />├── README.md
-<br />├── rebuild.sh
-<br />├── reset.sh
-<br />├── setup.sh
-<br />├── start.sh
-<br />└── stop.sh
+```bash
+.
+AirFlow ...
+.
+```
 
 ## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
