@@ -43,7 +43,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
-### <a name="tdm-03-01" />Pré-requis
+### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -113,7 +113,7 @@ Vérifiez qu'aucune description de textile (colonne 'description') ne soit de ty
 DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 ```
 
-### <a name="tdm-03-02" />Lancement
+### <a name="tdm-03-02" />[Lancement](#tdm-03)
 
 #### Lancer les services
 
