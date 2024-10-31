@@ -42,7 +42,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
-- Etape 01 : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) , [Transformation]((notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb))
+- Etape 01 : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) , [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb)
 - Etape 02 : architecture des données
 - Etape 03 : consommation des données - [Visualisations](notebooks/PRJ-ECOBALYSE-03-ETAPE-03-VISU_v0-20.ipynb) , [Prédictions](notebooks/PRJ-ECOBALYSE-04-ETAPE-03-ML_v0-20.ipynb)
 - Etape 04 : mise en production
