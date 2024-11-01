@@ -3,7 +3,7 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
-Dernière Mise A Jour du Document : Jeu. 31/10/2024 - Version : 0.20
+Dernière Mise A Jour du Document : Ven. 01/11/2024 - Version : 0.20
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -51,6 +51,10 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
 ### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
+
+| 💬 Avertissement ! Le client **Docker** doit être installé sur la machine virtuelle. |
+|----------|
+| Pour (ré)installer, ou mettre à jour le client **Docker**, consulter le fichier [lisezMoi.txt](./lisezMoi.txt). | 
 
 > **Résumé du(des) script(s) utile(s)**
 >
