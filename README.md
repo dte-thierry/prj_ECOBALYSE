@@ -3,7 +3,7 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
-Dernière Mise A Jour du Document : Jeu. 31/10/2024 - Version : 0.20
+Dernière Mise A Jour du Document : Ven. 01/11/2024 - Version : 0.20
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -11,11 +11,14 @@ Dernière Mise A Jour du Document : Jeu. 31/10/2024 - Version : 0.20
     - [Etapes du projet](#tdm-02-01)
 - [Mode d'emploi](#tdm-03)
     - [Pré-requis](#tdm-03-01)
-    - [Lancement](#tdm-03-02)
+    - [(Ré)Initialiser](#tdm-03-02)
+    - [(Re)Configurer](#tdm-03-03)
+    - [(Re)Charger](#tdm-03-04)
 - [Solution technique](#tdm-05)
     - [Schéma de Principe](#tdm-05-01)
     - [Dossiers & Répertoires](#tdm-05-02)
 - [Détails techniques](#tdm-07)
+    - [Architecture](#tdm-07-07)
     - [ETL](#tdm-07-01)
     - [MongoDB](#tdm-07-02)
     - [Redis](#tdm-07-03)
@@ -52,57 +55,51 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
 
+| 💬 Avertissement ! Le client Docker doit être installé sur la machine virtuelle. |
+|----------|
+| Pour (ré)installer, ou mettre à jour le client **Docker**, consulter le fichier [lisezMoi.txt](./lisezMoi.txt). | 
+
 > **Résumé du(des) script(s) utile(s)**
 >
 > - `./info.sh -v` # affiche la version du client Docker installé (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
 > - `./info.sh -i` # affiche la liste des images Docker présentes 
 > - `./info.sh -a` # affiche la liste des conteneurs Docker actifs
-> - `./stop.sh` # arrête tous les conteneurs définis dans le fichier docker-compose.yml
-> - `./reset.sh` # supprime les données et (ré)initialise toute la configuration du projet
+>
+> **Résumé du(des) script(s) facultatif(s)**
+>
+> - `./starter.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./starter.sh <b>-?</b> renvoie les options disponibles)
+> - `./starter.sh` # idem : vérifie l'extraction des Données Ecobalyse
+
+#### Configurer VS Code
 
 - installer [VS Code](https://code.visualstudio.com/) localement sur votre PC, en fonction de votre système d'exploitation.
 
 - configurer [VS Code](https://code.visualstudio.com/) pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
 
-- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : <br />
-*https://learn.datascientest.com/lesson/349/3682*
+#### Lancer la machine virtuelle
 
-- au besoin, (ré)installer ou mettre à jour le client **Docker**, depuis le manageur de paquets *apt*, avec les instructions suivantes :
+- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : `https://learn.datascientest.com/lesson/349/3682`
 
-```bash
-VERSION_STRING=5:25.0.3-1~ubuntu.20.04~focal
-sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-```
+#### Recopier le dépôt Github
 
-- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
-*git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
+- recopier le dépôt GitHub sur la machine virtuelle, par la commande : `git clone https://github.com/dte-thierry/prj_ECOBALYSE.git`
 
-- au besoin, utiliser les options du script `./info.sh`, pour afficher les informations du client Docker installé. <br />
+#### Vérifier la version Docker
+
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script `./info.sh -v`, pour vérifier la version du client Docker installé. 
 (nota: `./info.sh -?` renvoie les options disponibles)
 
-<br />
-Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
+#### 💬 Facultatif 
 
-- lancer (si nécessaire) le script `./stop.sh` pour arrêter tous les conteneurs.
-
-- lancer le script `./reset.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
-
-#### Facultatif :
-
->> **Résumé du(des) script(s) facultatif(s)**
->>
->> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
->> - `./start.sh` # idem : vérifie l'extraction des Données Ecobalyse
-
-- au besoin, lancer le script `./start.sh -i` pour exécuter une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
 
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
-##### Nota :
+##### 💬 Nota 
 
-Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
+Vous pouvez lancer le script `./starter.sh`, <b>sans aucune option</b>. 
 
-En lançant le script `./start.sh -i`, vous obtiendrez le message d'avertissement :
+En lançant le script `./starter.sh -i`, vous obtiendrez le message d'avertissement :
 
 ```bash
 --------------------------------------------------------------
@@ -121,28 +118,58 @@ Vérifiez qu'aucune description de textile (colonne 'description') ne soit de ty
 DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 ```
 
-### <a name="tdm-03-02" />[Lancement](#tdm-03)
+### <a name="tdm-03-02" />[(Ré)Initialiser](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
-> - `./setup.sh` # (re)construit et (re)démarre les différents services nécessaires au projet 
-> - `./info.sh -logs` # visualise les logs des conteneurs actifs *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
-> - `./web.sh` # accède via un *navigateur Web* au Framework **Flask** 
+> - `./init.sh` # supprime toutes les données (si elles existent) et (ré)initialise totalement la configuration du projet
+
+#### Supprimer les conteneurs
+
+Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
+
+- lancer le script `./init.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
+
+### <a name="tdm-03-03" />[(Re)Configurer](#tdm-03)
+
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./setup.sh` # supprime les fichiers *.log*, et (re)lance les différents conteneurs du projet 
+> - `./info.sh -logs` # visualise les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
+>
+> **Résumé du(des) script(s) facultatif(s)**
+>
+> - `./setup.sh -json` # supprime les fichiers *.log*, **les fichiers *.json*,** et (re)lance les différents conteneurs du projet 
 
 #### Lancer les services
 
-- lancer le script `./setup.sh` pour activer les différents conteneurs et services nécessaires au projet.
+- lancer le script `./setup.sh` pour supprimer les fichiers *.log*, et (re)lancer les différents conteneurs du projet.
 
-- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
+#### Visualiser les logs des conteneurs actifs
+
+- puis, lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs (re)lancés : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
+
+#### Consulter les fichiers .log
+
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'environnement de stockage `MongoDB` / `Redis` est fonctionnel. 
     - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
-    - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB et requêtes initiales, par les services
-    - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis et requêtes initiales, par les services
+    - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB (et requêtes initiales) par les services
+    - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis (et requêtes initiales) par les services
 
-- lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
+#### 💬 Facultatif 
 
-#### Accéder à Flask
+- au besoin, lancer le script `./setup.sh -json` pour supprimer les fichiers *.log*, **les fichiers *.json*,** et (re)lancer les différents conteneurs du projet
 
-- lancer le script `./web.sh` pour lancer `Flask` via un *navigateur Web*. <br />
+
+### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
+
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./load.sh` # accède via un *navigateur Web* au Framework **Flask** 
+
+#### Lancer Flask
+
+- lancer le script `./load.sh` pour lancer `Flask` via un *navigateur Web*. <br />
 
 - via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Flask` est active. <br />
     - `'docker_testflask_(date).log'` 
@@ -162,7 +189,7 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
 ```
 
-##### Nota :
+##### 💬 Nota 
 
 Lorsque le Framework Web `Flask` est démarré, via le conteneur *ecblflask*, on peut y accéder depuis un navigateur Web : <br />
 
@@ -226,17 +253,94 @@ prj_ECOBALYSE
 ├── CONVENTIONS.md
 ├── README.md
 ├── docker-compose.yml
-├── clear.sh
+├── lisezMoi.txt
 ├── info.sh
-├── rebuild.sh
-├── reset.sh
+├── load.sh
 ├── setup.sh
-├── start.sh
-├── stop.sh
-└── web.sh
+├── init.sh
+└── starter.sh
 ```
 
 ## <a name="tdm-07" />[Détails techniques](#debut)
+
+### <a name="tdm-07-07" />[Architecture](#tdm-07)
+
+#### docker-compose.yml
+```bash
+version: '3.8'
+
+services:
+  ecblwebscraping:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: etl/Dockerfile.etl # chemin relatif vers le Dockerfile
+    environment:
+      - SERVICE_NAME=ecblwebscraping # variable d’environnement pour le service
+    container_name: ecblwebscraping
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network # réseau dédié pour le service
+
+  ecblredis:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: redis/Dockerfile.redis # chemin relatif vers le Dockerfile pour Redis
+    environment:
+      - SERVICE_NAME=ecblredis # variable d’environnement pour le service
+    container_name: ecblredis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+
+  ecblmongodb:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: mongo/Dockerfile.mongo # chemin relatif vers le Dockerfile pour MongoDB
+    environment:
+      - SERVICE_NAME=ecblmongodb # variable d’environnement pour le service
+    container_name: ecblmongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db # répertoire data/mongo de l’hôte dans le conteneur
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+  
+  ecblflask:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: flask/Dockerfile.flask # chemin relatif vers le Dockerfile pour Flask
+    environment:
+      - SERVICE_NAME=ecblflask # variable d’environnement pour le service
+      - MONGO_URI=mongodb://ecblmongodb:27017
+      - REDIS_URI=redis://ecblredis:6379
+    container_name: ecblflask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - ecblmongodb
+      - ecblredis
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+
+networks:
+  my_ecobalyse_network:
+    name: my_ecobalyse_network
+
+volumes:
+  logs:
+  data:
+```
 
 ### <a name="tdm-07-01" />[ETL](#tdm-07)
 
@@ -269,6 +373,39 @@ ecblwebscraping    | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.1
 ecblwebscraping    | DataFrame, fichiers 'log' et 'json' créés avec succès, par le conteneur.
 ecblwebscraping    | 
 ecblwebscraping    |
+```
+
+#### Dockerfile
+
+fichier : Dockerfile.etl
+```bash
+# Utiliser l'image Selenium avec Chrome
+FROM selenium/standalone-chrome:latest
+
+# Installer Python, pip, Xvfb et les dépendances nécessaires
+USER root
+RUN apt-get update && apt-get install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update && apt-get install -y python3.8 python3.8-venv python3.8-dev build-essential xvfb
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY etl/ /app/
+COPY starter.sh /app/
+
+# Créer un environnement virtuel Python avec Python 3.8
+RUN python3.8 -m venv venv
+
+# Activer l'environnement virtuel et installer les dépendances Python
+RUN /bin/bash -c "source venv/bin/activate && pip install --no-cache-dir -r /app/requirements.txt"
+
+# Déclarer les volumes pour les répertoires logs et data
+VOLUME ["/app/logs", "/app/data"]
+
+# Définir la commande par défaut pour exécuter le script
+CMD ["bash", "starter.sh"]
 ```
 
 ### <a name="tdm-07-02" />[MongoDB](#tdm-07)
@@ -324,6 +461,61 @@ ecblmongodb        | Base De Données MongoDB et fichier 'log' créés avec succ
 ecblmongodb        | 
 ```
 
+#### Dockerfile
+
+fichier : Dockerfile.mongo
+```bash
+# Utilise l'image officielle de MongoDB comme image de base
+FROM mongo:5.0
+
+# Définir les variables d'environnement nécessaires
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=admin
+
+# Installer Python, pip et le client MongoDB
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv wget gnupg curl
+
+# Ajouter la clé GPG de MongoDB
+RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
+
+# Ajouter le dépôt MongoDB pour la version 5.0
+RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+
+# Mettre à jour les sources et installer le client MongoDB
+RUN apt-get update && apt-get install -y mongodb-org-shell
+
+# Créer un environnement virtuel
+RUN python3 -m venv /opt/venv
+
+# Activer l'environnement virtuel et installer pymongo et jsonschema
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install pymongo
+RUN /opt/venv/bin/pip install jsonschema  # Ajout de l'installation de jsonschema
+
+# Copier les scripts d'initialisation et de test dans le conteneur
+COPY mongo/init_mongo.js /docker-entrypoint-initdb.d/
+COPY mongo/test_mongo.py /app/test_mongo.py
+COPY mongo/init_mongo.sh /usr/local/bin/init_mongo.sh
+COPY mongo/mongo.conf /etc/mongod.conf
+RUN chmod +x /usr/local/bin/init_mongo.sh
+
+# Créer le répertoire de logs
+RUN mkdir -p /app/logs
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY mongo/constants1.py /app/
+COPY mongo/get_constants1.py /app/
+
+# Ajouter /app au PYTHONPATH
+ENV PYTHONPATH="/app"
+
+# Exposer le port MongoDB
+EXPOSE 27017
+
+# Définir le point d'entrée pour exécuter le script d'initialisation
+ENTRYPOINT ["/usr/local/bin/init_mongo.sh"]
+```
+
 ### <a name="tdm-07-03" />[Redis](#tdm-07)
 
 #### Dossiers & Répertoires
@@ -365,6 +557,45 @@ ecblredis          |
 ecblredis          | 
 ecblredis          | Base De Données Redis et fichier 'log' créés avec succès, par le conteneur.
 ecblredis          |
+```
+
+#### Dockerfile
+
+fichier : Dockerfile.redis
+```bash
+# Utiliser l'image officielle de Redis comme image de base
+FROM redis:latest
+
+# Installer procps pour obtenir sysctl et Python avec pip
+RUN apt-get update && apt-get install -y procps python3 python3-pip python3-venv curl
+
+# Créer un environnement virtuel
+RUN python3 -m venv /opt/venv
+
+# Activer l'environnement virtuel et installer les packages nécessaires
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install redis[hiredis]
+RUN /opt/venv/bin/pip install cerberus
+
+# Créer le répertoire logs
+RUN mkdir -p /app/logs
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY redis/constants2.py /app/
+COPY redis/get_constants2.py /app/
+
+# Copier les fichiers de configuration et le script d'initialisation
+COPY redis/redis.conf /usr/local/etc/redis/redis.conf
+COPY redis/init_redis.sh /usr/local/bin/init_redis.sh
+RUN chmod +x /usr/local/bin/init_redis.sh
+
+# Copier le fichier test.py dans le conteneur
+COPY redis/test_redis.py /app/test_redis.py
+
+# Définir le point d'entrée pour exécuter le test
+ENTRYPOINT ["/usr/local/bin/init_redis.sh"]
+CMD ["/opt/venv/bin/python", "/app/test_redis.py"]
+
 ```
 
 ### <a name="tdm-07-04" />[Flask](#tdm-07)
@@ -414,6 +645,37 @@ ecblflask          |  * Running on all addresses (0.0.0.0)
 ecblflask          |  * Running on http://127.0.0.1:5000
 ecblflask          |  * Running on http://172.22.0.5:5000
 ecblflask          | Press CTRL+C to quit
+```
+
+#### Dockerfile
+
+fichier : Dockerfile.flask
+```bash
+# Utiliser l'image Python slim
+FROM python:3.9-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Installer curl et autres dépendances système
+RUN apt-get update && apt-get install -y curl
+
+# Copier le fichier requirements.txt dans l'image Docker
+COPY flask/requirements.txt /app/requirements.txt
+
+# Installer les dépendances Python
+RUN pip install --no-cache-dir -r /app/requirements.txt 
+
+# Copier tous les fichiers du répertoire flask dans l'image Docker
+COPY flask/ /app/
+
+RUN mkdir -p logs
+
+# Rendre le script init_flask.sh exécutable
+RUN chmod +x /app/init_flask.sh
+
+# Définir la commande par défaut pour exécuter le script init_flask.sh
+CMD ["/app/init_flask.sh"]
 ```
 
 ### <a name="tdm-07-05" />[Dash](#tdm-07)
