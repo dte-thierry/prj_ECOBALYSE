@@ -1,5 +1,6 @@
 # Constantes etl
 PROG_FULL_MODE = False
+PROG_ADM_RULE = True
 ECOBALYSE_VER = "v2.4.0" # en date du 30/10/2024
 JSON_BASIC_FILE = "PRJ-ECOBALYSE-TEXTILES_basic.json"
 JSON_FULL_FILE = "PRJ-ECOBALYSE-TEXTILES_full.json"

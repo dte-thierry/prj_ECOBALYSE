@@ -1,15 +1,5 @@
 #!/bin/bash
 
-# -----------------------------------------------------------------------------
-# GitHub
-# -----------------------------------------------------------------------------
-# git clone https://github.com/dte-thierry/prj_ECOBALYSE.git
-
-
-# -----------------------------------------------------------------------------
-# tips & tricks  
-# -----------------------------------------------------------------------------
-
 # Récupérer l'adresse IP publique de la VM
 Public_IP=$(curl -s http://checkip.amazonaws.com)
 Username=$(whoami)
@@ -17,7 +7,7 @@ SSH_Address="$Public_IP"
 
 # Afficher le message d'accueil
 echo -e "------------------------------------------------------"
-echo -e "./reset.sh : (Ré)Initialisation du projet Ecobalyse..."
+echo -e "./init.sh : (Ré)Initialisation du projet Ecobalyse..."
 echo -e "------------------------------------------------------"
 echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
 

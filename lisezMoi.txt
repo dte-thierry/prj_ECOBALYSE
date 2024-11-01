@@ -1,109 +1,22 @@
-Fichier de remarques : lisezMoi.txt
+# Fichier : lisezMoi.txt
+# Installer ou mettre à jour le client Docker
 
-# Remarques et Justifications des Choix
+# Désinstaller les paquets Docker
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
-## Introduction
-Ce document présente les remarques et justifications des choix effectués pour la mise en place 
-de l'ETL, dans le cadre du pipeline relatif à l'API Ecobalyse.
+# Mettre à jour le manageur de paquets apt
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-## 1. Extraction
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
 
-### Objectif
-
-### Choix Techniques
-
-#### 1.1. Utilisation
-
-- **Justification** : 
-
-  - ...
-  - ...
-  - ...
-
-#### 1.2. Structure du Script
-
-- **Justification** : 
-
-  - ...
-  - ...
-  - ...
-
-#### 1.3. Gestion des Logs
-
-- **Justification** : 
-
-  - Les résultats de l'ETL sont enregistrés dans différents fichiers de logs (`*.log`). 
-    Cela permet de conserver une trace des traitements effectués et de faciliter le débogage.
-
-### DockerFile
-
-- **Justification** : 
-
-  - Le Dockerfile est configuré pour installer les dépendances nécessaires et exécuter le 
-    script d'extraction des données. 
-
-  - La commande CMD est utilisée pour lancer le script et garder le conteneur actif après 
-    l’exécution du script.
-
-### Docker-compose.yml
-
-- **Justification** : 
-
-  - Le fichier docker-compose.yml est configuré pour lancer les différents services. 
-  - Les volumes et réseaux sont configurés pour permettre la communication entre les conteneurs et 
-    le partage des logs.
-
-## Conclusion
-
-Ce document présente les choix techniques et les justifications pour la mise en place des l'ETL Ecobalyse.
-
-
-
-# Utilisation 
-
-## Exécuter le(s) script(s) 
-
-./info.sh # (vérifie l'installation de Docker)
-./stop.sh # (arrête les services)
-./reset.sh # (supprime et réinitialise les services)
-./setup.sh # (démarre les services)
-
-./clear.sh # (supprime les fichiers log et json)
-./rebuild.sh # (relance les services sans les supprimer)
-
-
-## Lancer Flask
-
-<IP_DE_VOTRE_VM>:5000/
-
-127.0.0.1:5000/testflask, pour lister les BDD MongoDB
-127.0.0.1:5000/testmongo, pour vérifier le contenu Ecobalyse de la BDD MongoDB
-127.0.0.1:5000/testredis, pour vérifier le contenu Ecobalyse de la BDD Redis
-
-
-## Vérifier l’état des conteneurs
-
-docker-compose ps
-
-
-## Vérifier les logs
-
-docker-compose logs ecblwebscraping
-docker-compose logs ecblredis
-docker-compose logs ecblmongodb
-docker-compose logs ecblflask
-
-
-## Arrêter, Reconstruire et redémarrer les services
-
-docker-compose down
-docker-compose up -d --build
-
-
-## vérifier les logs en temps réel
-
-docker logs -f ecblwebscraping
-docker logs -f ecblredis
-docker logs -f ecblmongodb
-docker logs -f ecblflask
-        
+# Installer la version de Docker
+VERSION_STRING=5:25.0.3-1~ubuntu.20.04~focal
+sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
