@@ -78,11 +78,11 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 #### Lancer la machine virtuelle
 
-- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : `https://learn.datascientest.com/lesson/349/3682`
+- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : <br /> `https://learn.datascientest.com/lesson/349/3682`
 
 #### Recopier le dépôt Github
 
-- recopier le dépôt GitHub sur la machine virtuelle, par la commande : `git clone https://github.com/dte-thierry/prj_ECOBALYSE.git`
+- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br /> `git clone https://github.com/dte-thierry/prj_ECOBALYSE.git`
 
 #### Vérifier la version Docker
 
