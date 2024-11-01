@@ -94,7 +94,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
-##### ❕ Nota 
+##### 💬 Nota 
 
 Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
 
@@ -123,6 +123,8 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 >
 > - `./init.sh` # supprime toutes les données (si elles existent) et (ré)initialise totalement la configuration du projet
 
+#### Supprimer les conteneurs
+
 Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 - lancer le script `./init.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
@@ -133,11 +135,10 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 >
 > - `./setup.sh` # (re)construit et (re)démarre les différents services nécessaires au projet 
 > - `./info.sh -logs` # visualise les logs des conteneurs actifs *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
-> - `./web.sh` # accède via un *navigateur Web* au Framework **Flask** 
 
 #### Lancer les services
 
-- lancer le script `./setup.sh` pour activer les différents conteneurs et services nécessaires au projet.
+- lancer le script `./setup.sh` pour (ré)activer les différents conteneurs et services nécessaires au projet.
 
 #### Visualiser les logs des conteneurs actifs
 
@@ -153,9 +154,13 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 ### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
 
-#### Accéder à Flask
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./load.sh` # accède via un *navigateur Web* au Framework **Flask** 
 
-- lancer le script `./web.sh` pour lancer `Flask` via un *navigateur Web*. <br />
+#### Lancer Flask
+
+- lancer le script `./load.sh` pour lancer `Flask` via un *navigateur Web*. <br />
 
 - via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Flask` est active. <br />
     - `'docker_testflask_(date).log'` 
@@ -175,7 +180,7 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
 ```
 
-##### Nota :
+##### 💬 Nota 
 
 Lorsque le Framework Web `Flask` est démarré, via le conteneur *ecblflask*, on peut y accéder depuis un navigateur Web : <br />
 
