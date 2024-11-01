@@ -134,23 +134,31 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 > **Résumé du(des) script(s) utile(s)**
 >
-> - `./setup.sh` # (re)construit et (re)démarre les différents services nécessaires au projet 
+> - `./setup.sh` # supprime les fichiers *.log*, et (ré)active les différents conteneurs du projet 
 > - `./info.sh -logs` # visualise les logs des conteneurs actifs *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
+>
+> **Résumé du(des) script(s) facultatif(s)**
+>
+> - `./setup.sh -json` # supprime les fichiers *.log*, **les fichiers *.json*,** et (ré)active les différents conteneurs du projet 
 
 #### Lancer les services
 
-- lancer le script `./setup.sh` pour (ré)activer les différents conteneurs et services nécessaires au projet.
+- lancer le script `./setup.sh` pour supprimer les fichiers *.log*, et (ré)activer les différents conteneurs du projet.
 
 #### Visualiser les logs des conteneurs actifs
 
-- lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
+- puis, lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs (ré)activés : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
 
 #### Consulter les fichiers .log
 
-- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'environnement de stockage `MongoDB` / `Redis` est fonctionnel. <br />
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'environnement de stockage `MongoDB` / `Redis` est fonctionnel. 
     - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
     - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB (et requêtes initiales) par les services
     - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis (et requêtes initiales) par les services
+
+#### 💬 Facultatif 
+
+- au besoin, lancer le script `./setup.sh -json` pour supprimer les fichiers *.log*, **les fichiers *.json*,** et (ré)activer les différents conteneurs du projet
 
 
 ### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
