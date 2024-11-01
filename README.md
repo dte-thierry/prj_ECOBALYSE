@@ -457,8 +457,57 @@ ecblmongodb        |
 
 #### Dockerfile
 
-fichier : 
+fichier : Dockerfile.mongo
 ```bash
+# Utilise l'image officielle de MongoDB comme image de base
+FROM mongo:5.0
+
+# Définir les variables d'environnement nécessaires
+ENV MONGO_INITDB_ROOT_USERNAME=admin
+ENV MONGO_INITDB_ROOT_PASSWORD=admin
+
+# Installer Python, pip et le client MongoDB
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv wget gnupg curl
+
+# Ajouter la clé GPG de MongoDB
+RUN wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | apt-key add -
+
+# Ajouter le dépôt MongoDB pour la version 5.0
+RUN echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+
+# Mettre à jour les sources et installer le client MongoDB
+RUN apt-get update && apt-get install -y mongodb-org-shell
+
+# Créer un environnement virtuel
+RUN python3 -m venv /opt/venv
+
+# Activer l'environnement virtuel et installer pymongo et jsonschema
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install pymongo
+RUN /opt/venv/bin/pip install jsonschema  # Ajout de l'installation de jsonschema
+
+# Copier les scripts d'initialisation et de test dans le conteneur
+COPY mongo/init_mongo.js /docker-entrypoint-initdb.d/
+COPY mongo/test_mongo.py /app/test_mongo.py
+COPY mongo/init_mongo.sh /usr/local/bin/init_mongo.sh
+COPY mongo/mongo.conf /etc/mongod.conf
+RUN chmod +x /usr/local/bin/init_mongo.sh
+
+# Créer le répertoire de logs
+RUN mkdir -p /app/logs
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY mongo/constants1.py /app/
+COPY mongo/get_constants1.py /app/
+
+# Ajouter /app au PYTHONPATH
+ENV PYTHONPATH="/app"
+
+# Exposer le port MongoDB
+EXPOSE 27017
+
+# Définir le point d'entrée pour exécuter le script d'initialisation
+ENTRYPOINT ["/usr/local/bin/init_mongo.sh"]
 ```
 
 ### <a name="tdm-07-03" />[Redis](#tdm-07)
@@ -506,8 +555,41 @@ ecblredis          |
 
 #### Dockerfile
 
-fichier : 
+fichier : Dockerfile.redis
 ```bash
+# Utiliser l'image officielle de Redis comme image de base
+FROM redis:latest
+
+# Installer procps pour obtenir sysctl et Python avec pip
+RUN apt-get update && apt-get install -y procps python3 python3-pip python3-venv curl
+
+# Créer un environnement virtuel
+RUN python3 -m venv /opt/venv
+
+# Activer l'environnement virtuel et installer les packages nécessaires
+RUN /opt/venv/bin/pip install --upgrade pip
+RUN /opt/venv/bin/pip install redis[hiredis]
+RUN /opt/venv/bin/pip install cerberus
+
+# Créer le répertoire logs
+RUN mkdir -p /app/logs
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY redis/constants2.py /app/
+COPY redis/get_constants2.py /app/
+
+# Copier les fichiers de configuration et le script d'initialisation
+COPY redis/redis.conf /usr/local/etc/redis/redis.conf
+COPY redis/init_redis.sh /usr/local/bin/init_redis.sh
+RUN chmod +x /usr/local/bin/init_redis.sh
+
+# Copier le fichier test.py dans le conteneur
+COPY redis/test_redis.py /app/test_redis.py
+
+# Définir le point d'entrée pour exécuter le test
+ENTRYPOINT ["/usr/local/bin/init_redis.sh"]
+CMD ["/opt/venv/bin/python", "/app/test_redis.py"]
+
 ```
 
 ### <a name="tdm-07-04" />[Flask](#tdm-07)
@@ -561,8 +643,33 @@ ecblflask          | Press CTRL+C to quit
 
 #### Dockerfile
 
-fichier : 
+fichier : Dockerfile.flask
 ```bash
+# Utiliser l'image Python slim
+FROM python:3.9-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Installer curl et autres dépendances système
+RUN apt-get update && apt-get install -y curl
+
+# Copier le fichier requirements.txt dans l'image Docker
+COPY flask/requirements.txt /app/requirements.txt
+
+# Installer les dépendances Python
+RUN pip install --no-cache-dir -r /app/requirements.txt 
+
+# Copier tous les fichiers du répertoire flask dans l'image Docker
+COPY flask/ /app/
+
+RUN mkdir -p logs
+
+# Rendre le script init_flask.sh exécutable
+RUN chmod +x /app/init_flask.sh
+
+# Définir la commande par défaut pour exécuter le script init_flask.sh
+CMD ["/app/init_flask.sh"]
 ```
 
 ### <a name="tdm-07-05" />[Dash](#tdm-07)
