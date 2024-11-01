@@ -11,7 +11,9 @@ Dernière Mise A Jour du Document : Ven. 01/11/2024 - Version : 0.20
     - [Etapes du projet](#tdm-02-01)
 - [Mode d'emploi](#tdm-03)
     - [Pré-requis](#tdm-03-01)
-    - [Lancement](#tdm-03-02)
+    - [(Ré)Initialiser](#tdm-03-02)
+    - [(Re)Configurer](#tdm-03-03)
+    - [(Re)Charger](#tdm-03-04)
 - [Solution technique](#tdm-05)
     - [Schéma de Principe](#tdm-05-01)
     - [Dossiers & Répertoires](#tdm-05-02)
@@ -52,7 +54,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
 
-| 💬 Avertissement ! Le client **Docker** doit être installé sur la machine virtuelle. |
+| 💬 Avertissement ! Le client Docker doit être installé sur la machine virtuelle. |
 |----------|
 | Pour (ré)installer, ou mettre à jour le client **Docker**, consulter le fichier [lisezMoi.txt](./lisezMoi.txt). | 
 
@@ -61,48 +63,38 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 > - `./info.sh -v` # affiche la version du client Docker installé (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
 > - `./info.sh -i` # affiche la liste des images Docker présentes 
 > - `./info.sh -a` # affiche la liste des conteneurs Docker actifs
-> - `./stop.sh` # arrête tous les conteneurs définis dans le fichier docker-compose.yml
-> - `./reset.sh` # supprime les données et (ré)initialise toute la configuration du projet
+>
+> **Résumé du(des) script(s) facultatif(s)**
+>
+> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
+> - `./start.sh` # idem : vérifie l'extraction des Données Ecobalyse
+
+#### Configurer VS Code
 
 - installer [VS Code](https://code.visualstudio.com/) localement sur votre PC, en fonction de votre système d'exploitation.
 
 - configurer [VS Code](https://code.visualstudio.com/) pour pouvoir accéder, via <i>SSH</i>, à la machine virtuelle DataSientest.
 
-- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : <br />
-*https://learn.datascientest.com/lesson/349/3682*
+#### Lancer la machine virtuelle
 
-- au besoin, (ré)installer ou mettre à jour le client **Docker**, depuis le manageur de paquets *apt*, avec les instructions suivantes :
+- accéder, puis lancer la machine virtuelle DataScientest, depuis le lien : `https://learn.datascientest.com/lesson/349/3682`
 
-```bash
-VERSION_STRING=5:25.0.3-1~ubuntu.20.04~focal
-sudo apt-get install docker-ce=$VERSION_STRING docker-ce-cli=$VERSION_STRING containerd.io docker-buildx-plugin docker-compose-plugin
-```
+#### Recopier le dépôt Github
 
-- recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br />
-*git clone https://github.com/dte-thierry/prj_ECOBALYSE.git*
+- recopier le dépôt GitHub sur la machine virtuelle, par la commande : `git clone https://github.com/dte-thierry/prj_ECOBALYSE.git`
 
-- au besoin, utiliser les options du script `./info.sh`, pour afficher les informations du client Docker installé. <br />
+#### Vérifier la version Docker
+
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script `./info.sh -v`, pour vérifier la version du client Docker installé. 
 (nota: `./info.sh -?` renvoie les options disponibles)
 
-<br />
-Puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
+#### 💬 Facultatif 
 
-- lancer (si nécessaire) le script `./stop.sh` pour arrêter tous les conteneurs.
-
-- lancer le script `./reset.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
-
-#### Facultatif :
-
->> **Résumé du(des) script(s) facultatif(s)**
->>
->> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
->> - `./start.sh` # idem : vérifie l'extraction des Données Ecobalyse
-
-- au besoin, lancer le script `./start.sh -i` pour exécuter une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./start.sh -i` pour tester une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
 
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
-##### Nota :
+##### ❕ Nota 
 
 Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
 
@@ -125,7 +117,17 @@ Vérifiez qu'aucune description de textile (colonne 'description') ne soit de ty
 DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 ```
 
-### <a name="tdm-03-02" />[Lancement](#tdm-03)
+### <a name="tdm-03-02" />[(Ré)Initialiser](#tdm-03)
+
+> **Résumé du(des) script(s) utile(s)**
+>
+> - `./init.sh` # supprime toutes les données (si elles existent) et (ré)initialise totalement la configuration du projet
+
+Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
+
+- lancer le script `./init.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
+
+### <a name="tdm-03-03" />[(Re)Configurer](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -137,12 +139,19 @@ DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 
 - lancer le script `./setup.sh` pour activer les différents conteneurs et services nécessaires au projet.
 
-- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'architecture de stockage `MongoDB` / `Redis` est fonctionnelle. <br />
-    - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
-    - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB et requêtes initiales, par les services
-    - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis et requêtes initiales, par les services
+#### Visualiser les logs des conteneurs actifs
 
 - lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
+
+#### Consulter les fichiers .log
+
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu des fichiers .log, pour vérifier que l'environnement de stockage `MongoDB` / `Redis` est fonctionnel. <br />
+    - `'docker_webscraping_(date).log'` : pour visualiser l'extraction des données Ecobalyse, par les services
+    - `'docker_testmongodb_(date).log'` : pour visualiser l'accès à MongoDB (et requêtes initiales) par les services
+    - `'docker_testredis_(date).log'` : pour visualiser l'accès à Redis (et requêtes initiales) par les services
+
+
+### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
 
 #### Accéder à Flask
 
