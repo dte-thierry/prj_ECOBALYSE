@@ -9,6 +9,19 @@ SSH_Address="$Public_IP"
 ECOBALYSE_VER=$(python3 /app/get_constants2.py ECOBALYSE_VER)
 REDIS_LOG_NAMEFILE=$(python3 /app/get_constants2.py REDIS_LOG_NAMEFILE)
 
+# Vérifier que les variables d'environnement sont définies
+if [ -z "$JSON_BASIC_FILE" ] || [ -z "$JSON_FULL_FILE" ] || [ -z "$PROG_FULL_MODE" ]; then
+  echo "Les variables d'environnement JSON_BASIC_FILE, JSON_FULL_FILE et PROG_FULL_MODE doivent être définies."
+  exit 1
+fi
+
+# Définir le chemin du fichier JSON en fonction du mode
+if [ "$PROG_FULL_MODE" = "True" ]; then
+  json_file_path="/app/data/$JSON_FULL_FILE"
+else
+  json_file_path="/app/data/$JSON_BASIC_FILE"
+fi
+
 # Afficher le message d'accueil
 echo -e "----------------------------------------------------------"
 echo -e "ETAPE 02 : Stockage des Données Ecobalyse $ECOBALYSE_VER via Redis"
@@ -27,7 +40,7 @@ sleep 5
 # Attendre que le fichier JSON soit créé
 echo -e "\nTest Redis de récupération JSON : "
 echo -e "Attendre que le fichier JSON soit créé...\n"
-while [ ! -f /app/data/PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json ]; do
+while [ ! -f "$json_file_path" ]; do
   sleep 8
 done
 

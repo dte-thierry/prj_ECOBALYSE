@@ -1,6 +1,11 @@
 # Utiliser l'image officielle de Redis comme image de base
 FROM redis:latest
 
+# Définir les variables d'environnement pour les fichiers JSON
+ENV JSON_BASIC_FILE=PRJ-ECOBALYSE-TEXTILES_basic.json
+ENV JSON_FULL_FILE=PRJ-ECOBALYSE-TEXTILES_full.json
+ENV PROG_FULL_MODE=False
+
 # Installer procps pour obtenir sysctl et Python avec pip
 RUN apt-get update && apt-get install -y procps python3 python3-pip python3-venv curl
 

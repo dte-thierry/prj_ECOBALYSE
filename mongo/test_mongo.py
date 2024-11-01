@@ -2,6 +2,8 @@ from pymongo import MongoClient
 import json
 from jsonschema import validate, ValidationError
 
+import os
+
 # Connexion à MongoDB
 client = MongoClient('mongodb://admin:admin@localhost:27017/')
 
@@ -62,8 +64,23 @@ schema = {
     "required": ["Libelle", "Categorie", "ecs", "Pays", "Mode", "Masse", "Matiere", "Etapes"]
 }
 
+# Vérifier que les variables d'environnement sont définies
+if not all([os.getenv('JSON_BASIC_FILE'), os.getenv('JSON_FULL_FILE'), os.getenv('PROG_FULL_MODE')]):
+    raise EnvironmentError("Les variables d'environnement JSON_BASIC_FILE, JSON_FULL_FILE, et PROG_FULL_MODE doivent être définies.")
+
+# Récupérer les variables d'environnement
+PROG_FULL_MODE = os.getenv('PROG_FULL_MODE') == 'True'
+JSON_BASIC_FILE = os.getenv('JSON_BASIC_FILE')
+JSON_FULL_FILE = os.getenv('JSON_FULL_FILE')
+
+# Définir le chemin du fichier JSON en fonction du mode
+if PROG_FULL_MODE:
+    json_file_path = os.path.join('/app/data', JSON_FULL_FILE)
+else:
+    json_file_path = os.path.join('/app/data', JSON_BASIC_FILE)
+
 # Lire les données du fichier JSON ligne par ligne
-json_file_path = '/app/data/PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json'
+# json_file_path = '/app/data/PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json'
 with open(json_file_path, 'r') as file:
     for line in file:
         line = line.strip()  # Supprimer les espaces blancs en début et fin de ligne

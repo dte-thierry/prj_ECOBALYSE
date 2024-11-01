@@ -2,6 +2,8 @@ import redis
 import json
 from cerberus import Validator
 
+import os
+
 # Définir le schéma JSON
 schema = {
     "Libelle": {"type": "string"},
@@ -44,6 +46,21 @@ schema = {
     }
 }
 
+# Vérifier que les variables d'environnement sont définies
+if not all([os.getenv('JSON_BASIC_FILE'), os.getenv('JSON_FULL_FILE'), os.getenv('PROG_FULL_MODE')]):
+    raise EnvironmentError("Les variables d'environnement JSON_BASIC_FILE, JSON_FULL_FILE, et PROG_FULL_MODE doivent être définies.")
+
+# Récupérer les variables d'environnement
+PROG_FULL_MODE = os.getenv('PROG_FULL_MODE') == 'True'
+JSON_BASIC_FILE = os.getenv('JSON_BASIC_FILE')
+JSON_FULL_FILE = os.getenv('JSON_FULL_FILE')
+
+# Définir le chemin du fichier JSON en fonction du mode
+if PROG_FULL_MODE:
+    json_file_path = os.path.join('/app/data', JSON_FULL_FILE)
+else:
+    json_file_path = os.path.join('/app/data', JSON_BASIC_FILE)
+
 # Initialiser le validateur Cerberus
 v = Validator(schema)
 
@@ -55,7 +72,7 @@ if __name__ == "__main__":
     r.delete('textiles')
 
     # Lire le fichier JSON ligne par ligne et convertir en tableau JSON
-    with open('/app/data/PRJ-ECOBALYSE-01-WEB_SCRAPING1_temp1.json', 'r') as input_file:
+    with open(json_file_path, 'r') as input_file:
         lines = input_file.readlines()
         libelles = []
         for line in lines:

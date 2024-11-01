@@ -5,6 +5,11 @@ FROM mongo:5.0
 ENV MONGO_INITDB_ROOT_USERNAME=admin
 ENV MONGO_INITDB_ROOT_PASSWORD=admin
 
+# Définir les variables d'environnement pour les fichiers JSON
+ENV JSON_BASIC_FILE=PRJ-ECOBALYSE-TEXTILES_basic.json
+ENV JSON_FULL_FILE=PRJ-ECOBALYSE-TEXTILES_full.json
+ENV PROG_FULL_MODE=False
+
 # Installer Python, pip et le client MongoDB
 RUN apt-get update && apt-get install -y python3 python3-pip python3-venv wget gnupg curl
 

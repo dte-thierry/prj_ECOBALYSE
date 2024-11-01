@@ -9,6 +9,12 @@ SSH_Address="$Public_IP"
 ECOBALYSE_VER=$(python3 /app/get_constants1.py ECOBALYSE_VER)
 MONGODB_LOG_NAMEFILE=$(python3 /app/get_constants1.py MONGODB_LOG_NAMEFILE)
 
+# Vérifier que les variables d'environnement sont définies
+if [ -z "$JSON_BASIC_FILE" ] || [ -z "$JSON_FULL_FILE" ] || [ -z "$PROG_FULL_MODE" ]; then
+  echo "Les variables d'environnement JSON_BASIC_FILE, JSON_FULL_FILE et PROG_FULL_MODE doivent être définies."
+  exit 1
+fi
+
 # Afficher le message d'accueil
 echo -e "------------------------------------------------------------"
 echo -e "ETAPE 02 : Stockage des Données Ecobalyse $ECOBALYSE_VER via MongoDB"
