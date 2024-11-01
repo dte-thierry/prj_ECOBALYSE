@@ -67,8 +67,8 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 >
 > **Résumé du(des) script(s) facultatif(s)**
 >
-> - `./start.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./start.sh <b>-?</b> renvoie les options disponibles)
-> - `./start.sh` # idem : vérifie l'extraction des Données Ecobalyse
+> - `./starter.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./starter.sh <b>-?</b> renvoie les options disponibles)
+> - `./starter.sh` # idem : vérifie l'extraction des Données Ecobalyse
 
 #### Configurer VS Code
 
@@ -91,15 +91,15 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 #### 💬 Facultatif 
 
-- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./start.sh -i` pour tester une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
 
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
 ##### 💬 Nota 
 
-Vous pouvez lancer le script `./start.sh`, <b>sans aucune option</b>. 
+Vous pouvez lancer le script `./starter.sh`, <b>sans aucune option</b>. 
 
-En lançant le script `./start.sh -i`, vous obtiendrez le message d'avertissement :
+En lançant le script `./starter.sh -i`, vous obtiendrez le message d'avertissement :
 
 ```bash
 --------------------------------------------------------------
