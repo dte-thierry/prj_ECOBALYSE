@@ -253,14 +253,12 @@ prj_ECOBALYSE
 ├── CONVENTIONS.md
 ├── README.md
 ├── docker-compose.yml
-├── clear.sh
+├── lisezMoi.txt
 ├── info.sh
-├── rebuild.sh
-├── reset.sh
+├── load.sh
 ├── setup.sh
-├── start.sh
-├── stop.sh
-└── web.sh
+├── init.sh
+└── starter.sh
 ```
 
 ## <a name="tdm-07" />[Détails techniques](#debut)
@@ -395,7 +393,7 @@ WORKDIR /app
 
 # Copier les fichiers nécessaires dans l'image Docker
 COPY etl/ /app/
-COPY start.sh /app/
+COPY starter.sh /app/
 
 # Créer un environnement virtuel Python avec Python 3.8
 RUN python3.8 -m venv venv
@@ -407,7 +405,7 @@ RUN /bin/bash -c "source venv/bin/activate && pip install --no-cache-dir -r /app
 VOLUME ["/app/logs", "/app/data"]
 
 # Définir la commande par défaut pour exécuter le script
-CMD ["bash", "start.sh"]
+CMD ["bash", "starter.sh"]
 ```
 
 ### <a name="tdm-07-02" />[MongoDB](#tdm-07)
