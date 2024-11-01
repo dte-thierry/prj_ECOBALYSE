@@ -18,6 +18,7 @@ Dernière Mise A Jour du Document : Ven. 01/11/2024 - Version : 0.20
     - [Schéma de Principe](#tdm-05-01)
     - [Dossiers & Répertoires](#tdm-05-02)
 - [Détails techniques](#tdm-07)
+    - [Architecture](#tdm-07-07)
     - [ETL](#tdm-07-01)
     - [MongoDB](#tdm-07-02)
     - [Redis](#tdm-07-03)
@@ -256,6 +257,85 @@ prj_ECOBALYSE
 
 ## <a name="tdm-07" />[Détails techniques](#debut)
 
+### <a name="tdm-07-07" />[Architecture](#tdm-07)
+
+#### docker-compose.yml
+```bash
+version: '3.8'
+
+services:
+  ecblwebscraping:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: etl/Dockerfile.etl # chemin relatif vers le Dockerfile
+    environment:
+      - SERVICE_NAME=ecblwebscraping # variable d’environnement pour le service
+    container_name: ecblwebscraping
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network # réseau dédié pour le service
+
+  ecblredis:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: redis/Dockerfile.redis # chemin relatif vers le Dockerfile pour Redis
+    environment:
+      - SERVICE_NAME=ecblredis # variable d’environnement pour le service
+    container_name: ecblredis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+
+  ecblmongodb:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: mongo/Dockerfile.mongo # chemin relatif vers le Dockerfile pour MongoDB
+    environment:
+      - SERVICE_NAME=ecblmongodb # variable d’environnement pour le service
+    container_name: ecblmongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongo:/data/db # répertoire data/mongo de l’hôte dans le conteneur
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+      - ./data:/app/data # répertoire data de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+  
+  ecblflask:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: flask/Dockerfile.flask # chemin relatif vers le Dockerfile pour Flask
+    environment:
+      - SERVICE_NAME=ecblflask # variable d’environnement pour le service
+      - MONGO_URI=mongodb://ecblmongodb:27017
+      - REDIS_URI=redis://ecblredis:6379
+    container_name: ecblflask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - ecblmongodb
+      - ecblredis
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+
+networks:
+  my_ecobalyse_network:
+    name: my_ecobalyse_network
+
+volumes:
+  logs:
+  data:
+```
+
 ### <a name="tdm-07-01" />[ETL](#tdm-07)
 
 #### Dossiers & Répertoires
@@ -287,6 +367,39 @@ ecblwebscraping    | VM utilisée, à l'adresse IP / SSH publique : 18.201.106.1
 ecblwebscraping    | DataFrame, fichiers 'log' et 'json' créés avec succès, par le conteneur.
 ecblwebscraping    | 
 ecblwebscraping    |
+```
+
+#### Dockerfile
+
+fichier : Dockerfile.etl
+```bash
+# Utiliser l'image Selenium avec Chrome
+FROM selenium/standalone-chrome:latest
+
+# Installer Python, pip, Xvfb et les dépendances nécessaires
+USER root
+RUN apt-get update && apt-get install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update && apt-get install -y python3.8 python3.8-venv python3.8-dev build-essential xvfb
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier les fichiers nécessaires dans l'image Docker
+COPY etl/ /app/
+COPY start.sh /app/
+
+# Créer un environnement virtuel Python avec Python 3.8
+RUN python3.8 -m venv venv
+
+# Activer l'environnement virtuel et installer les dépendances Python
+RUN /bin/bash -c "source venv/bin/activate && pip install --no-cache-dir -r /app/requirements.txt"
+
+# Déclarer les volumes pour les répertoires logs et data
+VOLUME ["/app/logs", "/app/data"]
+
+# Définir la commande par défaut pour exécuter le script
+CMD ["bash", "start.sh"]
 ```
 
 ### <a name="tdm-07-02" />[MongoDB](#tdm-07)
@@ -342,6 +455,12 @@ ecblmongodb        | Base De Données MongoDB et fichier 'log' créés avec succ
 ecblmongodb        | 
 ```
 
+#### Dockerfile
+
+fichier : 
+```bash
+```
+
 ### <a name="tdm-07-03" />[Redis](#tdm-07)
 
 #### Dossiers & Répertoires
@@ -383,6 +502,12 @@ ecblredis          |
 ecblredis          | 
 ecblredis          | Base De Données Redis et fichier 'log' créés avec succès, par le conteneur.
 ecblredis          |
+```
+
+#### Dockerfile
+
+fichier : 
+```bash
 ```
 
 ### <a name="tdm-07-04" />[Flask](#tdm-07)
@@ -432,6 +557,12 @@ ecblflask          |  * Running on all addresses (0.0.0.0)
 ecblflask          |  * Running on http://127.0.0.1:5000
 ecblflask          |  * Running on http://172.22.0.5:5000
 ecblflask          | Press CTRL+C to quit
+```
+
+#### Dockerfile
+
+fichier : 
+```bash
 ```
 
 ### <a name="tdm-07-05" />[Dash](#tdm-07)
