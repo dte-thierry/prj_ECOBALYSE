@@ -134,20 +134,20 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 > **Résumé du(des) script(s) utile(s)**
 >
-> - `./setup.sh` # supprime les fichiers *.log*, et (ré)active les différents conteneurs du projet 
-> - `./info.sh -logs` # visualise les logs des conteneurs actifs *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
+> - `./setup.sh` # supprime les fichiers *.log*, et (re)lance les différents conteneurs du projet 
+> - `./info.sh -logs` # visualise les logs des conteneurs actifs : *ecblwebscraping* , *ecblmongodb* , *ecblredis* 
 >
 > **Résumé du(des) script(s) facultatif(s)**
 >
-> - `./setup.sh -json` # supprime les fichiers *.log*, **les fichiers *.json*,** et (ré)active les différents conteneurs du projet 
+> - `./setup.sh -json` # supprime les fichiers *.log*, **les fichiers *.json*,** et (re)lance les différents conteneurs du projet 
 
 #### Lancer les services
 
-- lancer le script `./setup.sh` pour supprimer les fichiers *.log*, et (ré)activer les différents conteneurs du projet.
+- lancer le script `./setup.sh` pour supprimer les fichiers *.log*, et (re)lancer les différents conteneurs du projet.
 
 #### Visualiser les logs des conteneurs actifs
 
-- puis, lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs (ré)activés : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
+- puis, lancer le script `./info.sh -logs` pour visualiser les logs des conteneurs (re)lancés : *ecblwebscraping* , *ecblmongodb* , *ecblredis*.
 
 #### Consulter les fichiers .log
 
@@ -158,7 +158,7 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 #### 💬 Facultatif 
 
-- au besoin, lancer le script `./setup.sh -json` pour supprimer les fichiers *.log*, **les fichiers *.json*,** et (ré)activer les différents conteneurs du projet
+- au besoin, lancer le script `./setup.sh -json` pour supprimer les fichiers *.log*, **les fichiers *.json*,** et (re)lancer les différents conteneurs du projet
 
 
 ### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
