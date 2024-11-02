@@ -3,17 +3,19 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
-Dernière Mise A Jour du Document : Ven. 01/11/2024 - Version : 0.20
+> *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
+
+Dernière Mise A Jour du Document : Sam. 02/11/2024 - Version : 0.20
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
 - [Présentation](#tdm-02)
     - [Etapes du projet](#tdm-02-01)
 - [Mode d'emploi](#tdm-03)
-    - [Pré-requis](#tdm-03-01)
-    - [(Ré)Initialiser](#tdm-03-02)
-    - [(Re)Configurer](#tdm-03-03)
-    - [(Re)Charger](#tdm-03-04)
+    - [Pré-requis (`./info.sh` | `./starter.sh`)](#tdm-03-01)
+    - [(Ré)Initialiser (`./init.sh`)](#tdm-03-02)
+    - [(Re)Configurer (`./setup.sh`)](#tdm-03-03)
+    - [(Re)Charger (`./load.sh`)](#tdm-03-04)
 - [Solution technique](#tdm-05)
     - [Schéma de Principe](#tdm-05-01)
     - [Dossiers & Répertoires](#tdm-05-02)
@@ -53,7 +55,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
-### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
+### <a name="tdm-03-01" />[Pré-requis (`./info.sh` | `./starter.sh`)](#tdm-03)
 
 | 💬 Avertissement ! Le client Docker doit être installé sur la machine virtuelle. |
 |----------|
@@ -86,8 +88,8 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 #### Vérifier la version Docker
 
-- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script `./info.sh -v`, pour vérifier la version du client Docker installé. 
-(nota: `./info.sh -?` renvoie les options disponibles)
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script : <br />
+`./info.sh -v`, pour vérifier la version du client Docker installé. (nota: `./info.sh -?` renvoie les options disponibles)
 
 #### 💬 Facultatif 
 
@@ -118,7 +120,7 @@ Vérifiez qu'aucune description de textile (colonne 'description') ne soit de ty
 DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
 ```
 
-### <a name="tdm-03-02" />[(Ré)Initialiser](#tdm-03)
+### <a name="tdm-03-02" />[(Ré)Initialiser (`./init.sh`)](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -130,7 +132,7 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 - lancer le script `./init.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
 
-### <a name="tdm-03-03" />[(Re)Configurer](#tdm-03)
+### <a name="tdm-03-03" />[(Re)Configurer (`./setup.sh`)](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -161,7 +163,7 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 - au besoin, lancer le script `./setup.sh -json` pour supprimer les fichiers *.log*, **les fichiers *.json*,** et (re)lancer les différents conteneurs du projet
 
 
-### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
+### <a name="tdm-03-04" />[(Re)Charger (`./load.sh`)](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
