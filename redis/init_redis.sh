@@ -8,6 +8,9 @@ SSH_Address="$Public_IP"
 # Récupérer les constantes dans le conteneur
 ECOBALYSE_VER=$(python3 /app/get_constants2.py ECOBALYSE_VER)
 REDIS_LOG_NAMEFILE=$(python3 /app/get_constants2.py REDIS_LOG_NAMEFILE)
+PROG_FULL_MODE=$(python3 /app/get_constants2.py PROG_FULL_MODE)
+JSON_BASIC_FILE=$(python3 /app/get_constants2.py JSON_BASIC_FILE)
+JSON_FULL_FILE=$(python3 /app/get_constants2.py JSON_FULL_FILE)
 
 # Vérifier que les variables d'environnement sont définies
 if [ -z "$JSON_BASIC_FILE" ] || [ -z "$JSON_FULL_FILE" ] || [ -z "$PROG_FULL_MODE" ]; then

@@ -1,6 +1,11 @@
 # Utiliser l'image Selenium avec Chrome
 FROM selenium/standalone-chrome:latest
 
+# Définir les variables d'environnement pour les fichiers JSON
+ENV JSON_BASIC_FILE=$JSON_BASIC_FILE
+ENV JSON_FULL_FILE=$JSON_FULL_FILE
+ENV PROG_FULL_MODE=$PROG_FULL_MODE
+
 # Installer Python, pip, Xvfb et les dépendances nécessaires
 USER root
 RUN apt-get update && apt-get install -y software-properties-common
