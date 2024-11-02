@@ -97,10 +97,10 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 #### 💬 Facultatif 
 
-- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"standard"</i> (hors conteneur **Docker**) des données Ecobalyse.
-  
-- Le mode d'extraction des données (Basic | Complet) **peut être choisi au préalable**, en modifiant la constante [PROG_FULL_MODE](./etl/constants.py) (False | True).
+- Le mode d'extraction des données (Basic | Complet) **peut être choisi au préalable** de l'extraction <i>"standard" des données</i>, en modifiant la constante [PROG_FULL_MODE](./etl/constants.py) (False | True).
 
+- puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester l'extraction <i>"standard"</i> (hors conteneur **Docker**) des données Ecobalyse.
+  
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
 ##### 💬 Nota 
