@@ -5,11 +5,6 @@ FROM mongo:5.0
 ENV MONGO_INITDB_ROOT_USERNAME=admin
 ENV MONGO_INITDB_ROOT_PASSWORD=admin
 
-# Définir les variables d'environnement pour les fichiers JSON
-ENV JSON_BASIC_FILE=$JSON_BASIC_FILE
-ENV JSON_FULL_FILE=$JSON_FULL_FILE
-ENV PROG_FULL_MODE=$PROG_FULL_MODE
-
 # Installer Python, pip et le client MongoDB
 RUN apt-get update && apt-get install -y python3 python3-pip python3-venv wget gnupg curl
 
@@ -28,7 +23,7 @@ RUN python3 -m venv /opt/venv
 # Activer l'environnement virtuel et installer pymongo et jsonschema
 RUN /opt/venv/bin/pip install --upgrade pip
 RUN /opt/venv/bin/pip install pymongo
-RUN /opt/venv/bin/pip install jsonschema  # Ajout de l'installation de jsonschema
+RUN /opt/venv/bin/pip install jsonschema  # Ajout installation jsonschema
 
 # Copier les scripts d'initialisation et de test dans le conteneur
 COPY mongo/init_mongo.js /docker-entrypoint-initdb.d/
@@ -40,9 +35,8 @@ RUN chmod +x /usr/local/bin/init_mongo.sh
 # Créer le répertoire de logs
 RUN mkdir -p /app/logs
 
-# Copier les fichiers nécessaires dans l'image Docker
-COPY mongo/constants1.py /app/
-COPY mongo/get_constants1.py /app/
+# Copier le répertoire etl dans l'image Docker
+COPY ../etl /app/etl
 
 # Ajouter /app au PYTHONPATH
 ENV PYTHONPATH="/app"

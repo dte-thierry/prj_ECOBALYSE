@@ -5,12 +5,19 @@ Public_IP=$(curl -s http://checkip.amazonaws.com)
 Username=$(whoami)
 SSH_Address="$Public_IP"
 
-# Récupérer les constantes dans le conteneur
-ECOBALYSE_VER=$(python3 /app/get_constants1.py ECOBALYSE_VER)
-MONGODB_LOG_NAMEFILE=$(python3 /app/get_constants1.py MONGODB_LOG_NAMEFILE)
-PROG_FULL_MODE=$(python3 /app/get_constants1.py PROG_FULL_MODE)
-JSON_BASIC_FILE=$(python3 /app/get_constants1.py JSON_BASIC_FILE)
-JSON_FULL_FILE=$(python3 /app/get_constants1.py JSON_FULL_FILE)
+# Récupérer les constantes depuis etl/constants.py
+ECOBALYSE_VER=$(python3 -c "from etl.constants import ECOBALYSE_VER; print(ECOBALYSE_VER)")
+MONGODB_LOG_NAMEFILE=$(python3 -c "from etl.constants import MONGODB_LOG_NAMEFILE; print(MONGODB_LOG_NAMEFILE)")
+PROG_FULL_MODE=$(python3 -c "from etl.constants import PROG_FULL_MODE; print(PROG_FULL_MODE)")
+JSON_BASIC_FILE=$(python3 -c "from etl.constants import JSON_BASIC_FILE; print(JSON_BASIC_FILE)")
+JSON_FULL_FILE=$(python3 -c "from etl.constants import JSON_FULL_FILE; print(JSON_FULL_FILE)")
+
+# Exporter les valeurs pour qu'elles soient accessibles dans le script
+export ECOBALYSE_VER
+export MONGODB_LOG_NAMEFILE
+export PROG_FULL_MODE
+export JSON_BASIC_FILE
+export JSON_FULL_FILE
 
 # Vérifier que les variables d'environnement sont définies
 if [ -z "$JSON_BASIC_FILE" ] || [ -z "$JSON_FULL_FILE" ] || [ -z "$PROG_FULL_MODE" ]; then
@@ -23,6 +30,15 @@ echo -e "------------------------------------------------------------"
 echo -e "ETAPE 02 : Stockage des Données Ecobalyse $ECOBALYSE_VER via MongoDB"
 echo -e "------------------------------------------------------------"
 echo -e "VM utilisée, à l'adresse IP / SSH publique : $SSH_Address\n"
+
+# Vérifier la valeur de PROG_FULL_MODE et préciser le fichier JSON à créer
+if [ "$PROG_FULL_MODE" = "False" ]; then
+    echo -e "Mode d'Extraction Des Données : Basic. \nFichier JSON utilisé : $JSON_BASIC_FILE\n"
+elif [ "$PROG_FULL_MODE" = "True" ]; then
+    echo -e "Mode d'Extraction Des Données : Complet, avec ajout et transformation de données aléatoires. \nFichier JSON utilisé : $JSON_FULL_FILE\n"
+else
+    echo -e "La valeur de PROG_FULL_MODE n'est pas valide. Veuillez vérifier votre paramétrage MongoDB."
+fi
 
 # Créer le répertoire de logs s'il n'existe pas
 mkdir -p /app/logs

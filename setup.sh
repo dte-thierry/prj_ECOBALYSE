@@ -28,6 +28,13 @@ function docker_up {
     echo -e "\nArrête, reconstruit, et redémarre les services ..."
     docker-compose down
     docker-compose up -d --build
+    # Afficher l'espace disque disponible
+    echo -e "\nEspace disque maintenant disponible : "
+    df -h | egrep '(Filesystem|/dev/root)' | while read line; do
+        echo -e "\t$line"
+    done
+
+
 }
 
 # Afficher le message d'utilisation

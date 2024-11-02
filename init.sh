@@ -18,6 +18,9 @@ sudo sysctl "vm.overcommit_memory=1" || true
 # Forcer la suppression de tous les conteneurs, images, volumes, et réseaux inutilisés
 echo "Suppression de tous les conteneurs inutilisés : " 
 docker system prune -a --volumes -f
+docker stop $(docker ps -q)  # Arrêter tous les conteneurs en cours d'exécution
+docker rm $(docker ps -a -q)  # Supprimer tous les conteneurs
+docker rmi $(docker images -q)  # Supprimer toutes les images
 
 # Supprimer les anciennes données Redis
 echo "Suppression des anciennes données Redis"
@@ -39,7 +42,7 @@ find ./logs -type f -name "*.log" -exec rm -f {} \;
 echo "Mémoire vive disponible : "
 sudo free -h
 
-# Afficher l'espace disponible
+# Afficher l'espace disque disponible
 echo "Espace disque maintenant disponible : "
 df -h | egrep '(Filesystem|/dev/root)' | while read line; do
     echo -e "\t$line"

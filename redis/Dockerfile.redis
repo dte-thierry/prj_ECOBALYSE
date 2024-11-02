@@ -1,11 +1,6 @@
 # Utiliser l'image officielle de Redis comme image de base
 FROM redis:latest
 
-# Définir les variables d'environnement pour les fichiers JSON
-ENV JSON_BASIC_FILE=$JSON_BASIC_FILE
-ENV JSON_FULL_FILE=$JSON_FULL_FILE
-ENV PROG_FULL_MODE=$PROG_FULL_MODE
-
 # Installer procps pour obtenir sysctl et Python avec pip
 RUN apt-get update && apt-get install -y procps python3 python3-pip python3-venv curl
 
@@ -20,9 +15,11 @@ RUN /opt/venv/bin/pip install cerberus
 # Créer le répertoire logs
 RUN mkdir -p /app/logs
 
-# Copier les fichiers nécessaires dans l'image Docker
-COPY redis/constants2.py /app/
-COPY redis/get_constants2.py /app/
+# Copier le répertoire etl dans l'image Docker
+COPY ../etl /app/etl
+
+# Ajouter /app au PYTHONPATH
+ENV PYTHONPATH="/app"
 
 # Copier les fichiers de configuration et le script d'initialisation
 COPY redis/redis.conf /usr/local/etc/redis/redis.conf
