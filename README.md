@@ -3,17 +3,19 @@
 <img src="img/PRJ-ECOBALYSE-00-LOGO.png" alt="Logo DataScientest" style="width:250px;height:auto;">
 
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
-Dernière Mise A Jour du Document : Ven. 01/11/2024 - Version : 0.20
+> *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
+
+Dernière Mise A Jour du Document : Sam. 02/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
 - [Présentation](#tdm-02)
     - [Etapes du projet](#tdm-02-01)
 - [Mode d'emploi](#tdm-03)
-    - [Pré-requis](#tdm-03-01)
-    - [(Ré)Initialiser](#tdm-03-02)
-    - [(Re)Configurer](#tdm-03-03)
-    - [(Re)Charger](#tdm-03-04)
+    - [Pré-requis (`./info.sh` | `./starter.sh`)](#tdm-03-01)
+    - [(Ré)Initialiser (`./init.sh`)](#tdm-03-02)
+    - [(Re)Configurer (`./setup.sh`)](#tdm-03-03)
+    - [(Re)Charger (`./load.sh`)](#tdm-03-04)
 - [Solution technique](#tdm-05)
     - [Schéma de Principe](#tdm-05-01)
     - [Dossiers & Répertoires](#tdm-05-02)
@@ -53,11 +55,15 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
-### <a name="tdm-03-01" />[Pré-requis](#tdm-03)
+### <a name="tdm-03-01" />[Pré-requis (`./info.sh` | `./starter.sh`)](#tdm-03)
 
 | 💬 Avertissement ! Le client Docker doit être installé sur la machine virtuelle. |
 |----------|
 | Pour (ré)installer, ou mettre à jour le client **Docker**, consulter le fichier [lisezMoi.txt](./lisezMoi.txt). | 
+
+> 💬 **Nota : action préalable possible à l'initialisation du projet** <br />
+> Une fois le dépôt GitHub recopié, vous pouvez modifier le **mode d'extraction des données** (Basic | Complet) depuis la constante :
+> [PROG_FULL_MODE](./etl/constants.py) (False | True).
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -86,12 +92,14 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 #### Vérifier la version Docker
 
-- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script `./info.sh -v`, pour vérifier la version du client Docker installé. 
-(nota: `./info.sh -?` renvoie les options disponibles)
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script : <br />
+`./info.sh -v`, pour vérifier la version du client Docker installé. (nota: `./info.sh -?` renvoie les options disponibles)
 
 #### 💬 Facultatif 
 
-- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"standard"</i> (hors conteneur **Docker**) des données Ecobalyse.
+  
+- Le mode d'extraction des données (Basic | Complet) **peut être choisi au préalable**, en modifiant la constante [PROG_FULL_MODE](./etl/constants.py) (False | True).
 
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
@@ -99,13 +107,18 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 Vous pouvez lancer le script `./starter.sh`, <b>sans aucune option</b>. 
 
-En lançant le script `./starter.sh -i`, vous obtiendrez le message d'avertissement :
+En lançant le script `./starter.sh -i`, en fonction du **mode d'extraction des données** (Basic | Complet), vous obtiendrez les messages d'avertissement suivants :
+
+###### Mode Basic
 
 ```bash
 --------------------------------------------------------------
 ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
 --------------------------------------------------------------
-VM en cours, à l'adresse IP / SSH publique : 18.201.106.14
+VM utilisée, à l'adresse IP / SSH publique : 54.154.13.241
+
+Mode d'Extraction Des Données : Basic. 
+Fichier JSON à créer : PRJ-ECOBALYSE-TEXTILES_basic.json
 
 Avertissement:
 --------------
@@ -115,10 +128,34 @@ Soyez attentif et vigilant à la récupération des données Ecobalyse obtenues,
 Consultez dans le répertoire /logs, le fichier .log : (manual|docker)_webscraping_(aaaa-mm-jj_hh-mn).log.
 Vérifiez qu'aucune description de textile (colonne 'description') ne soit de type : NaN
 
-DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
+
+DataFrame, fichiers 'log' et 'json' PRJ-ECOBALYSE-TEXTILES_basic.json créés avec succès, en mode basic.
 ```
 
-### <a name="tdm-03-02" />[(Ré)Initialiser](#tdm-03)
+###### Mode Complet
+
+```bash
+--------------------------------------------------------------
+ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
+--------------------------------------------------------------
+VM utilisée, à l'adresse IP / SSH publique : 54.154.13.241
+
+Mode d'Extraction Des Données : Complet, avec ajout et transformation de données aléatoires. 
+Fichier JSON à créer : PRJ-ECOBALYSE-TEXTILES_full.json
+
+Avertissement:
+--------------
+L'API d'Ecobalyse est actuellement non finalisée, toujours en cours de développement.
+Ce projet se base sur l'API d'Ecobalyse : v2.4.0 pour récupérer les données.
+Soyez attentif et vigilant à la récupération des données Ecobalyse obtenues, via l'API.
+Consultez dans le répertoire /logs, le fichier .log : (manual|docker)_webscraping_(aaaa-mm-jj_hh-mn).log.
+Vérifiez qu'aucune description de textile (colonne 'description') ne soit de type : NaN
+
+
+DataFrame, fichiers 'log' et 'json' PRJ-ECOBALYSE-TEXTILES_full.json créés avec succès, en mode complet.
+```
+
+### <a name="tdm-03-02" />[(Ré)Initialiser (`./init.sh`)](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -130,7 +167,7 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 - lancer le script `./init.sh` pour supprimer toutes les données (*logs* et *json*), et tous les conteneurs, images, volumes, réseaux inutilisés.
 
-### <a name="tdm-03-03" />[(Re)Configurer](#tdm-03)
+### <a name="tdm-03-03" />[(Re)Configurer (`./setup.sh`)](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
@@ -161,7 +198,7 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 - au besoin, lancer le script `./setup.sh -json` pour supprimer les fichiers *.log*, **les fichiers *.json*,** et (re)lancer les différents conteneurs du projet
 
 
-### <a name="tdm-03-04" />[(Re)Charger](#tdm-03)
+### <a name="tdm-03-04" />[(Re)Charger (`./load.sh`)](#tdm-03)
 
 > **Résumé du(des) script(s) utile(s)**
 >
