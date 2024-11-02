@@ -61,6 +61,10 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 |----------|
 | Pour (ré)installer, ou mettre à jour le client **Docker**, consulter le fichier [lisezMoi.txt](./lisezMoi.txt). | 
 
+> 💬 **Nota : action préalable possible à l'initialisation du projet** <br />
+> Une fois le dépôt GitHub recopié, vous pouvez modifier le **mode d'extration des données** (Basic | Complet) depuis la constante :
+> [PROG_FULL_MODE](./etl/constants.py) (False | True).
+
 > **Résumé du(des) script(s) utile(s)**
 >
 > - `./info.sh -v` # affiche la version du client Docker installé (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
