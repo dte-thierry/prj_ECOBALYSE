@@ -93,7 +93,9 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 #### 💬 Facultatif 
 
-- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"manuelle"</i> (hors conteneur **Docker**) des données Ecobalyse.
+- au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester une extraction <i>"standard"</i> (hors conteneur **Docker**) des données Ecobalyse.
+  
+- Le mode d'extraction des données (Basic | Complet) **peut être choisi au préalable**, en modifiant la constante [PROG_FULL_MODE](./etl/constants.py) (False | True).
 
 - via [VS Code](https://code.visualstudio.com/), depuis le répertoire */logs*, consulter le contenu du fichier `'manual_webscraping_(date).log'`, pour vérifier le résultat obtenu.
 
@@ -101,13 +103,18 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 Vous pouvez lancer le script `./starter.sh`, <b>sans aucune option</b>. 
 
-En lançant le script `./starter.sh -i`, vous obtiendrez le message d'avertissement :
+En lançant le script `./starter.sh -i`, en fonction du **mode d'extraction des données** (Basic | Complet), vous obtiendrez les messages d'avertissement suivants :
+
+###### Mode Basic
 
 ```bash
 --------------------------------------------------------------
 ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
 --------------------------------------------------------------
-VM en cours, à l'adresse IP / SSH publique : 18.201.106.14
+VM utilisée, à l'adresse IP / SSH publique : 54.154.13.241
+
+Mode d'Extraction Des Données : Basic. 
+Fichier JSON à créer : PRJ-ECOBALYSE-TEXTILES_basic.json
 
 Avertissement:
 --------------
@@ -117,7 +124,31 @@ Soyez attentif et vigilant à la récupération des données Ecobalyse obtenues,
 Consultez dans le répertoire /logs, le fichier .log : (manual|docker)_webscraping_(aaaa-mm-jj_hh-mn).log.
 Vérifiez qu'aucune description de textile (colonne 'description') ne soit de type : NaN
 
-DataFrame, fichiers 'log' et 'json' créés avec succès, manuellement.
+
+DataFrame, fichiers 'log' et 'json' PRJ-ECOBALYSE-TEXTILES_basic.json créés avec succès, en mode basic.
+```
+
+###### Mode Complet
+
+```bash
+--------------------------------------------------------------
+ETAPE 01 : Récupération des Données via l'API Ecobalyse v2.4.0
+--------------------------------------------------------------
+VM utilisée, à l'adresse IP / SSH publique : 54.154.13.241
+
+Mode d'Extraction Des Données : Complet, avec ajout et transformation de données aléatoires. 
+Fichier JSON à créer : PRJ-ECOBALYSE-TEXTILES_full.json
+
+Avertissement:
+--------------
+L'API d'Ecobalyse est actuellement non finalisée, toujours en cours de développement.
+Ce projet se base sur l'API d'Ecobalyse : v2.4.0 pour récupérer les données.
+Soyez attentif et vigilant à la récupération des données Ecobalyse obtenues, via l'API.
+Consultez dans le répertoire /logs, le fichier .log : (manual|docker)_webscraping_(aaaa-mm-jj_hh-mn).log.
+Vérifiez qu'aucune description de textile (colonne 'description') ne soit de type : NaN
+
+
+DataFrame, fichiers 'log' et 'json' PRJ-ECOBALYSE-TEXTILES_full.json créés avec succès, en mode complet.
 ```
 
 ### <a name="tdm-03-02" />[(Ré)Initialiser (`./init.sh`)](#tdm-03)
