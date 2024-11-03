@@ -12,18 +12,6 @@ function show_containers {
     docker ps
 }
 
-# [-logs] : affiche les logs des conteneurs 'etl'
-function show_logs {
-    echo -e "\nAffichage des logs du conteneur : ecblwebscraping..."
-    docker-compose logs ecblwebscraping
-    echo -e "\nAffichage des logs du conteneur : ecblmongodb..."
-    docker-compose logs ecblmongodb
-    echo -e "\nAffichage des logs du conteneur : ecblredis..."
-    docker-compose logs ecblredis
-    # echo -e "\nAffichage des logs du conteneur : ecblflask..."
-    # docker-compose logs ecblflask
-}
-
 # [-i] affiche la liste des images Docker présentes
 function show_images {
     echo -e "\nListe des images Docker présentes..."
@@ -51,20 +39,68 @@ function show_all {
     show_logs
 }
 
+# [-df] : affiche l'espace disque disponible
+function show_df {
+    echo "Espace disque disponible : "
+    df -h | egrep '(Filesystem|/dev/root)' | while read line; do
+        echo -e "\t$line"
+    done
+}
+
+# [-logs] : affiche les logs des conteneurs 'etl'
+function show_logs {
+    echo -e "\nAffichage des logs du conteneur : ecblwebscraping..."
+    docker-compose logs ecblwebscraping
+    echo -e "\nAffichage des logs du conteneur : ecblmongodb..."
+    docker-compose logs ecblmongodb
+    echo -e "\nAffichage des logs du conteneur : ecblredis..."
+    docker-compose logs ecblredis
+    # echo -e "\nAffichage des logs du conteneur : ecblflask..."
+    # docker-compose logs ecblflask
+}
+
 # Récupérer l'adresse IP publique de la VM
 Public_IP=$(curl -s http://checkip.amazonaws.com)
 Username=$(whoami)
 SSH_Address="$Public_IP"
 
+# Récupérer les constantes ETL
+ECOBALYSE_VER=$(python3 etl/get_constants.py ECOBALYSE_VER)
+PROG_FULL_MODE=$(python3 etl/get_constants.py PROG_FULL_MODE)
+PROG_NB_ITERATIONS=$(python3 etl/get_constants.py PROG_NB_ITERATIONS)
+JSON_BASIC_FILE=$(python3 etl/get_constants.py JSON_BASIC_FILE)
+JSON_FULL_FILE=$(python3 etl/get_constants.py JSON_FULL_FILE)
+
+# Exporter les constantes pour qu'elles soient accessibles
+export ECOBALYSE_VER
+export PROG_FULL_MODE
+export PROG_NB_ITERATIONS
+export JSON_BASIC_FILE
+export JSON_FULL_FILE
+
 # Afficher le message d'accueil
-echo -e "-----------------------------------------------------"
-echo -e "./info.sh : Informations sur les conteneurs Docker..."
-echo -e "-----------------------------------------------------"
+echo -e "-----------------------------------------------------------"
+echo -e "./info.sh : Informations diverses, et sur les conteneurs..."
+echo -e "-----------------------------------------------------------"
 echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
+
+# Vérifier la valeur de PROG_FULL_MODE et préciser le fichier JSON à créer
+if [ "$PROG_FULL_MODE" = "False" ]; then
+    echo -e "\nMode d'Extraction Des Données Ecocalyse $ECOBALYSE_VER : Basic. \nFichier JSON utilisé : $JSON_BASIC_FILE"
+elif [ "$PROG_FULL_MODE" = "True" ]; then
+    echo -e "\nMode d'Extraction Des Données Ecocalyse $ECOBALYSE_VER : Complet. \nAjout et transformation de $PROG_NB_ITERATIONS donnée(s) aléatoire(s), par catégorie(s) de textile(s). \nFichier JSON utilisé : $JSON_FULL_FILE"
+else
+    echo -e "\nLa valeur de PROG_FULL_MODE n'est pas valide. Veuillez vérifier votre paramétrage ETL, avec la commande : ./mode.sh"
+fi
 
 # Analyser les options de ligne de commande
 if [ "$1" == "-all" ]; then
     show_all
+    exit 0
+fi
+
+if [ "$1" == "-df" ]; then
+    show_df
     exit 0
 fi
 
@@ -88,12 +124,12 @@ while getopts "vai" opt; do
             exit 0
             ;;
         *)
-            echo "Usage: $0 [-v] [-a] [-i] [-all] [-logs]"
+            echo "Usage: $0 [-v] [-a] [-i] [-all] [-df] [-logs]"
             exit 1
             ;;
     esac
 done
 
 # Si aucune option valide n'est fournie
-echo "Usage: $0 [-v] [-a] [-i] [-all] [-logs]"
+echo "Usage: $0 [-v] [-a] [-i] [-all] [-df] [-logs]"
 exit 1

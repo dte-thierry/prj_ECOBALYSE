@@ -43,7 +43,7 @@ echo "Mémoire vive disponible : "
 sudo free -h
 
 # Afficher l'espace disque disponible
-echo "Espace disque maintenant disponible : "
+echo "Espace disque disponible : "
 df -h | egrep '(Filesystem|/dev/root)' | while read line; do
     echo -e "\t$line"
 done

@@ -29,7 +29,7 @@ function docker_up {
     docker-compose down
     docker-compose up -d --build
     # Afficher l'espace disque disponible
-    echo -e "\nEspace disque maintenant disponible : "
+    echo -e "\nEspace disque disponible : "
     df -h | egrep '(Filesystem|/dev/root)' | while read line; do
         echo -e "\t$line"
     done

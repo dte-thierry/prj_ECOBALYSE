@@ -1,1 +1,3 @@
 2024-11-02 17:54:43,095 INFO: Application Flask active. [in /app/test_flask.py:43]
+2024-11-02 18:11:49,182 INFO: Page d'accueil affichée [in /app/test_flask.py:48]
+2024-11-02 18:12:06,572 INFO: Page d'accueil affichée [in /app/test_flask.py:48]
