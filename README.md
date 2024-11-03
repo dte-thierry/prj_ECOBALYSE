@@ -47,16 +47,16 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
-- Etape 01 : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) (mode `Basic`), [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb) (mode `Complet`)
+- **Etape 01** : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) (mode `Basic`), [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb) (mode `Complet`)
 
 ##### 💬 Nota
 **Par défaut, la récolte des données se fait en mode `Basic`.** <br />
 Lancer le script `./mode.sh -f` pour définir une récolte des données en mode `Complet`.
 
-- Etape 02 : architecture des données
-- Etape 03 : consommation des données - [Visualisations](notebooks/PRJ-ECOBALYSE-03-ETAPE-03-VISU_v0-20.ipynb) , [Prédictions](notebooks/PRJ-ECOBALYSE-04-ETAPE-03-ML_v0-20.ipynb)
-- Etape 04 : mise en production
-- Etape 05 : automatisation des flux
+- **Etape 02** : architecture des données
+- **Etape 03** : consommation des données - `Visualisations` (mode: [Basic](notebooks/PRJ-ECOBALYSE-03-ETAPE-03-VISU-BASIC_v0-20.ipynb) | [Complet](notebooks/PRJ-ECOBALYSE-04-ETAPE-03-VISU-FULL_v0-20.ipynb)) , `Prédictions` (mode: [Basic](notebooks/PRJ-ECOBALYSE-05-ETAPE-03-ML-BASIC_v0-20.ipynb) | [Complet](notebooks/PRJ-ECOBALYSE-06-ETAPE-03-ML-FULL_v0-20.ipynb))
+- **Etape 04** : mise en production
+- **Etape 05** : automatisation des flux
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
