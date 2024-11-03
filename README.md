@@ -5,14 +5,14 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Sam. 02/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Dim. 03/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
 - [Présentation](#tdm-02)
     - [Etapes du projet](#tdm-02-01)
 - [Mode d'emploi](#tdm-03)
-    - [Pré-requis (`./info.sh` | `./starter.sh`)](#tdm-03-01)
+    - [Pré-requis (`./info.sh` | `./mode.sh` | `./starter.sh`)](#tdm-03-01)
     - [(Ré)Initialiser (`./init.sh`)](#tdm-03-02)
     - [(Re)Configurer (`./setup.sh`)](#tdm-03-03)
     - [(Re)Charger (`./load.sh`)](#tdm-03-04)
@@ -47,7 +47,12 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
-- Etape 01 : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) , [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb)
+- Etape 01 : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) (mode `Basic`), [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb) (mode `Complet`)
+
+##### 💬 Nota
+**Par défaut, la récolte des données se fait en mode `Basic`.** <br />
+Lancer le script `./mode.sh -f` pour définir une récolte des données en mode `Complet`.
+
 - Etape 02 : architecture des données
 - Etape 03 : consommation des données - [Visualisations](notebooks/PRJ-ECOBALYSE-03-ETAPE-03-VISU_v0-20.ipynb) , [Prédictions](notebooks/PRJ-ECOBALYSE-04-ETAPE-03-ML_v0-20.ipynb)
 - Etape 04 : mise en production
@@ -55,24 +60,27 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
-### <a name="tdm-03-01" />[Pré-requis (`./info.sh` | `./starter.sh`)](#tdm-03)
+### <a name="tdm-03-01" />[Pré-requis (`./info.sh` | `./mode.sh` | `./starter.sh`)](#tdm-03)
 
 | 💬 Avertissement ! Le client Docker doit être installé sur la machine virtuelle. |
 |----------|
 | Pour (ré)installer, ou mettre à jour le client **Docker**, consulter le fichier [lisezMoi.txt](./lisezMoi.txt). | 
 
-> 💬 **Nota : action préalable possible à l'extraction des données Ecobalyse** <br />
-> Une fois le dépôt GitHub recopié, vous pouvez modifier le **mode d'extraction des données** (Basic | Complet) depuis la constante :
-> [PROG_FULL_MODE](./etl/constants.py) (False | True).
+> 💬 **Nota : action préalable facultative à l'extraction des données Ecobalyse** <br />
+> Une fois le dépôt GitHub recopié, vous pouvez spécifier le **mode d'extraction des données** *(Basic | Complet)* depuis le script :
+> `./mode.sh`.
 
 > **Résumé du(des) script(s) utile(s)**
 >
 > - `./info.sh -v` # affiche la version du client Docker installé (nota: ./info.sh <b>-?</b> renvoie les options disponibles)
 > - `./info.sh -i` # affiche la liste des images Docker présentes 
 > - `./info.sh -a` # affiche la liste des conteneurs Docker actifs
+> - `./info.sh -df` # affiche l'espace disque disponible
 >
 > **Résumé du(des) script(s) facultatif(s)**
 >
+> - `./mode.sh -f` # configure le mode d'extraction **(Complet)** des données Ecobalyse. Fixe le nombre de données aléatoires, par catégories de textiles.
+> - `./mode.sh` # configure le mode d'extraction **(Basic)** des données Ecobalyse. 
 > - `./starter.sh -i` # vérifie l'extraction des Données Ecobalyse (nota: ./starter.sh <b>-?</b> renvoie les options disponibles)
 > - `./starter.sh` # idem : vérifie l'extraction des Données Ecobalyse
 
@@ -90,14 +98,14 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 - recopier le dépôt GitHub sur la machine virtuelle, par la commande : <br /> `git clone https://github.com/dte-thierry/prj_ECOBALYSE.git`
 
-#### Vérifier la version Docker
+#### Vérifier la version  
 
 - au besoin, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, une fois le dépôt GitHub recopié, lancer le script : <br />
 `./info.sh -v`, pour vérifier la version du client Docker installé. (nota: `./info.sh -?` renvoie les options disponibles)
 
 #### 💬 Facultatif 
 
-- Le mode d'extraction des données (Basic | Complet) **peut être choisi au préalable** de l'extraction <i>"standard" des données</i>, en modifiant la constante [PROG_FULL_MODE](./etl/constants.py) (False | True).
+- Le mode d'extraction des données (Basic | Complet) **peut être choisi au préalable** de l'extraction <i>"standard" des données</i> Ecobalyse. Lancer le script `./mode.sh`, pour préciser votre choix. (nota: `./mode.sh -?` renvoie les options disponibles)
 
 - puis, depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b>, lancer le script `./starter.sh -i` pour tester l'extraction <i>"standard"</i> (hors conteneur **Docker**) des données Ecobalyse.
   
