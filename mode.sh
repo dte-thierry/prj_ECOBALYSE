@@ -51,8 +51,19 @@ echo -e "./mode.sh : Définit le mode d'extraction des données Ecobalyse..."
 echo -e "-----------------------------------------------------------------"
 echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
 
+# Afficher les options possibles
+function show_usage {
+    echo "Usage: $0 [-f] [-?]"
+    echo "Options:"
+    echo "  -f    Activer le mode complet et demander le nombre d'itérations"
+    echo "  -?    Afficher ce message d'aide"
+}
+
 # Vérification des options
-if [ "$1" == "-f" ]; then
+if [ -z "$1" ]; then
+    modify_prog_full_mode "False"
+    show_mode
+elif [ "$1" == "-f" ]; then
     modify_prog_full_mode "True"
 
     echo -e "Pour le mode d'extraction \"complet\", avec création de 'n' données aléatoires... \n\tveuillez saisir un nombre 'n' (entre 1 et 30000) : "
@@ -65,7 +76,9 @@ if [ "$1" == "-f" ]; then
         echo -e "\nErreur : Veuillez saisir un nombre 'n' valide, entre 1 et 30000."
         modify_prog_nb_iterations "1"
     fi
+elif [ "$1" == "-?" ]; then
+    show_usage
 else
-    modify_prog_full_mode "False"
-    show_mode
+    echo "Option invalide."
+    show_usage
 fi
