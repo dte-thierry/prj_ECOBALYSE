@@ -1,0 +1,25 @@
+# Utiliser l'image Python slim
+FROM python:3.9-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Installer curl et autres dépendances système
+RUN apt-get update && apt-get install -y curl
+
+# Copier le fichier requirements.txt dans l'image Docker
+COPY dash/requirements.txt /app/requirements.txt
+
+# Installer les dépendances Python
+RUN pip install --no-cache-dir -r /app/requirements.txt 
+
+# Copier tous les fichiers du répertoire flask dans l'image Docker
+COPY dash/ /app/
+
+RUN mkdir -p logs
+
+# Rendre le script init_flask.sh exécutable
+RUN chmod +x /app/init_dash.sh
+
+# Définir la commande par défaut pour exécuter le script init_flask.sh
+CMD ["/app/init_dash.sh"]

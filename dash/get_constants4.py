@@ -1,13 +1,13 @@
-# get_constants3.py
+# get_constants4.py
 import sys
-import constants3
+import constants4
 
 def get_constant(constant_name):
-    return getattr(constants3, constant_name, None)
+    return getattr(constants4, constant_name, None)
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python get_constants3.py <CONSTANT_NAME>")
+        print("Usage: python get_constants4.py <CONSTANT_NAME>")
         sys.exit(1)
     
     constant_name = sys.argv[1]

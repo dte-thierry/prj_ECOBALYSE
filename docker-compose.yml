@@ -64,6 +64,20 @@ services:
     networks:
       - my_ecobalyse_network
 
+  ecbldash:
+    build:
+      context: . # contexte de construction à la racine du projet
+      dockerfile: dash/Dockerfile.dash # chemin relatif vers le Dockerfile pour Dash
+    container_name: ecbldash
+    ports:
+      - 8050:8050
+    depends_on:
+      - ecblflask
+    volumes:
+      - ./logs:/app/logs # répertoire logs de l’hôte dans le conteneur
+    networks:
+      - my_ecobalyse_network
+
 networks:
   my_ecobalyse_network:
     name: my_ecobalyse_network
