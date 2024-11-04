@@ -11,6 +11,20 @@ echo -e "./load.sh : Accès au Framework Web Flask..."
 echo -e "------------------------------------------"
 echo -e "VM en cours, à l'adresse IP / SSH publique : $SSH_Address"
 
-# Lancement de Flask 
-echo -e "\nAffichage des logs du conteneur : ecblflask..."
-docker-compose logs ecblflask
+# Vérifier les arguments
+case "$1" in
+    -adm)
+        echo -e "\nAffichage des logs du conteneur : ecblflask..."
+        docker-compose logs ecblflask
+        ;;
+    -?)
+        echo -e "Usage: ./load.sh [-adm] [-?]"
+        echo -e "Options:"
+        echo -e "  -adm    Affiche les logs du conteneur ecblflask"
+        echo -e "  -?      Affiche cette aide"
+        ;;
+    *)
+        echo -e "\nAffichage des logs du conteneur : ecbldash..."
+        docker-compose logs ecbldash
+        ;;
+esac

@@ -5,8 +5,17 @@ import dash
 from dash import dcc  # import dash_core_components as dcc, is deprecated
 from dash import html  # import dash_html_components as html, is deprecated
 
+# Importer le layout de page0.py
+from page0 import create_page0_layout
+
+
+# Choisir des feuilles de style CSS
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
+                        'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css']
+# external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
 # Initialiser l'application Dash
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
 
 # Récupérer la variable d'environnement
 dash_log_namefile = os.getenv('DASH_LOG_NAMEFILE', 'default_log_name')
@@ -24,28 +33,10 @@ if not app.server.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info("Application Dash active.")
 
-# Définir la mise en page de l'application
-app.layout = html.Div(children=[
-    html.H1(children='Dash'),
-
-    html.Div(children='''
-        Bienvenue sur la page d'accueil de votre application Dash !
-    '''),
-
-    dcc.Graph(
-        id='example-graph',
-        figure={
-            'data': [
-                {'x': [1, 2, 3, 4, 5], 'y': [4, 1, 3, 5, 2], 'type': 'line', 'name': 'SF'},
-                {'x': [1, 2, 3, 4, 5], 'y': [2, 4, 5, 3, 1], 'type': 'bar', 'name': 'NYC'},
-            ],
-            'layout': {
-                'title': 'Exemple de Visualisation de Données'
-            }
-        }
-    )
-])
+# Définir la mise en page de l'application en utilisant le layout de page0.py
+app.layout = create_page0_layout()
 
 # Définir le point d'entrée de l'application
 if __name__ == '__main__':
     app.run_server(debug=True, host='0.0.0.0', port=8050)
+
