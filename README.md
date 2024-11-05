@@ -30,10 +30,10 @@ Dernière Mise A Jour du Document : Mar. 05/11/2024 - Version : v0.2.0
 - [A propos d'Ecobalyse](#tdm-06)
 
 ## <a name="tdm-01" />[Contexte](#debut)
-Ce projet a été réalisé dans le cadre de la <b>formation de Data Engineer</b>, proposée par :  
+Ce projet a été réalisé dans le cadre de la <b>formation Data Engineer</b>, proposée par :  
 <a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest, et l'Ecole des Mines ParisTech</a>.
 
-Cette <b>formation de Data Engineer</b> s'inscrit dans le cadre de la **[certification n°RNCP36129](https://www.francecompetences.fr/recherche/rncp/36129/)** :  
+Le *[cursus pédagogique](./img/DATASCIENTEST_ParcoursPedagogique.png)* de la <b>formation Data Engineer</b> s'inscrit dans le cadre de la **[certification n°RNCP36129](https://www.francecompetences.fr/recherche/rncp/36129/)** :  
 *“Chef de projet en intelligence artificielle / (Machine Learning Engineer)”, Niveau 7 (bac + 5)*.  
 
 L'équipe ayant réalisé ce projet se compose de :
