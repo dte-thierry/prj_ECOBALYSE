@@ -53,8 +53,7 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 
 ### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
 
-> 💬 Nota
-> **Par défaut, la récolte des données se fait en mode `Basic`.** <br />
+> 💬 **Nota : Par défaut, la récolte des données se fait en mode `Basic`.** <br />
 > Lancer le script `./mode.sh -f` pour définir une récolte des données en mode `Complet`.
 
 - **Etape 01 : récolte des données** <br />
