@@ -1,13 +1,16 @@
 import os
 import logging
 from datetime import datetime
+
 import dash
 from dash import dcc  # import dash_core_components as dcc, is deprecated
 from dash import html  # import dash_html_components as html, is deprecated
+from dash.dependencies import Input, Output
 
-# Importer le layout de page0.py
+# Importer le(s) layout(s) de page(s)
 from page0 import create_page0_layout
-
+from page20 import create_page20_layout
+import page31
 
 # Choisir des feuilles de style CSS
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
@@ -16,6 +19,10 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
 
 # Initialiser l'application Dash
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
+
+# Enregistrer les pages après l'instanciation de l'application
+dash.register_page('page20', path='/page-2')
+dash.register_page('page31', path='/page-31')
 
 # Récupérer la variable d'environnement
 dash_log_namefile = os.getenv('DASH_LOG_NAMEFILE', 'default_log_name')
@@ -33,8 +40,21 @@ if not app.server.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info("Application Dash active.")
 
-# Définir la mise en page de l'application en utilisant le layout de page0.py
-app.layout = create_page0_layout()
+# Définir la mise en page de l'application 
+app.layout = html.Div([
+    dcc.Location(id='url', refresh=False),
+    html.Div(id='page-content')
+])
+
+@app.callback(Output('page-content', 'children'),
+              [Input('url', 'pathname')])
+def display_page(pathname):
+    if pathname == '/page-2':
+        return create_page20_layout()
+    elif pathname == '/page-31':
+        return page31.create_page31_layout()
+    else:
+        return create_page0_layout()
 
 # Définir le point d'entrée de l'application
 if __name__ == '__main__':

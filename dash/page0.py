@@ -1,6 +1,8 @@
 # Importer les bibliothèques nécessaires
 from dash import html, dcc
 
+from components import create_header, create_footer
+
 # créer le 'layout' de la page d'accueil - page 0 -
 def create_page0_layout():
     return html.Div([
@@ -52,13 +54,14 @@ def create_page0_layout():
 
         html.Div([
             html.Button(
-                dcc.Link('Visualisations', 
-                         href='/page-1', style={'fontSize': 15})
+                dcc.Link('Visualisation(s)', 
+                         href='/page-10', style={'fontSize': 15})
             ),
         
             html.Button(
-                dcc.Link('Prédictions', 
-                         href='/page-2', style={'fontSize': 15})
+                dcc.Link('Prédiction(s)', 
+                         href='/page-20', style={'fontSize': 15})
             )
-        ], style={'display': 'flex', 'justify-content': 'center', 'gap': '2em'})
+        ], style={'display': 'flex', 'justify-content': 'center', 'gap': '2em'}),
+        create_footer(),
     ], style={'background' : 'beige', 'alignItems': 'center'})
