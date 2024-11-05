@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Lun. 04/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Mar. 05/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -30,13 +30,18 @@ Dernière Mise A Jour du Document : Lun. 04/11/2024 - Version : v0.2.0
 - [A propos d'Ecobalyse](#tdm-06)
 
 ## <a name="tdm-01" />[Contexte](#debut)
-Ce projet a été réalisé dans le cadre de la formation de Data Engineer, proposée par :  
-<a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest et l'Ecole des Mines ParisTech</a>.
+Ce projet a été réalisé dans le cadre de la <b>formation de Data Engineer</b>, proposée par :  
+<a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest, et l'Ecole des Mines ParisTech</a>.
+
+Cette <b>formation de Data Engineer</b> s'inscrit dans le cadre de la **certification n°RNCP36129** :  
+*“Chef de projet en intelligence artificielle / (Machine Learning Engineer)”, Niveau 7 (bac + 5)*.  
 
 L'équipe ayant réalisé ce projet se compose de :
 * SERDYUK Alexandra
 * BENALLEGUE Anis
 * DELIGNE Thierry
+
+Le **Rapport Final**, expliquant tout le workflow décisionnel du projet, est disponible : [ici](./ecblRapport.pdf).
 
 ## <a name="tdm-02" />[Présentation](#debut)
 Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet doit permettre : 
