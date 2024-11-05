@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Lun. 04/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Mar. 05/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -30,13 +30,18 @@ Dernière Mise A Jour du Document : Lun. 04/11/2024 - Version : v0.2.0
 - [A propos d'Ecobalyse](#tdm-06)
 
 ## <a name="tdm-01" />[Contexte](#debut)
-Ce projet a été réalisé dans le cadre de la formation de Data Engineer, proposée par :  
-<a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest et l'Ecole des Mines ParisTech</a>.
+Ce projet a été réalisé dans le cadre de la <b>formation Data Engineer</b>, proposée par :  
+<a href="https://datascientest.com/formation-data-engineer" target="_blank">Datascientest, et l'Ecole des Mines ParisTech</a>.
+
+Le *[cursus pédagogique](./img/DATASCIENTEST_ParcoursPedagogique.png)* de la <b>formation Data Engineer</b> s'inscrit dans le cadre de la **[certification n°RNCP36129](https://www.francecompetences.fr/recherche/rncp/36129/)** :  
+*“Chef de projet en intelligence artificielle / (Machine Learning Engineer)”, Niveau 7 (bac + 5)*.  
 
 L'équipe ayant réalisé ce projet se compose de :
 * SERDYUK Alexandra
 * BENALLEGUE Anis
 * DELIGNE Thierry
+
+Le **Rapport Final**, expliquant tout le workflow décisionnel du projet, est disponible : [ici](./ecblRapport.pdf).
 
 ## <a name="tdm-02" />[Présentation](#debut)
 Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet doit permettre : 
@@ -47,16 +52,34 @@ Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Eco
 <img src="img/PRJ-ECOBALYSE-00-IMG2.jpg" alt="Présentation" style="width:750px;height:auto;">
 
 ### <a name="tdm-02-01" />[Etapes du projet](#tdm-02)
-- **Etape 01** : récolte des données - [Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) (mode `Basic`), [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb) (mode `Complet`)
 
-##### 💬 Nota
-**Par défaut, la récolte des données se fait en mode `Basic`.** <br />
-Lancer le script `./mode.sh -f` pour définir une récolte des données en mode `Complet`.
+> 💬 **Nota : Par défaut, la récolte des données se fait en mode `Basic`.** <br />
+> Lancer le script `./mode.sh -f` pour définir une récolte des données en mode `Complet`.
 
-- **Etape 02** : architecture des données
-- **Etape 03** : consommation des données - `Visualisations` (mode: [Basic](notebooks/PRJ-ECOBALYSE-03-ETAPE-03-VISU-BASIC_v0-20.ipynb) | [Complet](notebooks/PRJ-ECOBALYSE-04-ETAPE-03-VISU-FULL_v0-20.ipynb)) , `Prédictions` (mode: [Basic](notebooks/PRJ-ECOBALYSE-05-ETAPE-03-ML-BASIC_v0-20.ipynb) | [Complet](notebooks/PRJ-ECOBALYSE-06-ETAPE-03-ML-FULL_v0-20.ipynb))
-- **Etape 04** : mise en production
-- **Etape 05** : automatisation des flux
+- **Etape 01 : récolte des données** <br />
+[Extraction](notebooks/PRJ-ECOBALYSE-01-ETAPE-01-BASIC_v0-20.ipynb) (mode `Basic`), [Transformation](notebooks/PRJ-ECOBALYSE-02-ETAPE-01-FULL_v0-20.ipynb) (mode `Complet`)
+
+    - Identification de la source de données
+    - Connexion et importation des données
+
+- **Etape 02 : architecture & stockage**
+
+    - Choix d'un SGBD adapté au problème
+    - Modélisation des tables/collections/index
+
+- **Etape 03 : consommation des données** <br />
+`Visualisations` (mode: [Basic](notebooks/PRJ-ECOBALYSE-03-ETAPE-03-VISU-BASIC_v0-20.ipynb) | [Complet](notebooks/PRJ-ECOBALYSE-04-ETAPE-03-VISU-FULL_v0-20.ipynb)) , `Prédictions` (mode: [Basic](notebooks/PRJ-ECOBALYSE-05-ETAPE-03-ML-BASIC_v0-20.ipynb) | [Complet](notebooks/PRJ-ECOBALYSE-06-ETAPE-03-ML-FULL_v0-20.ipynb))
+
+    - Dashboard ou Algorithme de Machine Learning (périmètre du *Data Scientist/Analyst*)
+
+- **Etape 04 : mise en production**
+
+    - Création de l'API du projet
+    - Dockerisation de tout le projet
+
+- **Etape 05 : automatisation des flux (<i>Etape facultative</i>)**
+
+    - Automatisation des tâches avec AirFlow
 
 ## <a name="tdm-03" />[Mode d'emploi](#debut)
 
