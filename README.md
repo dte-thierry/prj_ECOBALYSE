@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Mar. 05/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Mer. 06/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -233,13 +233,34 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 > **Résumé du(des) script(s) utile(s)**
 >
-> - `./load.sh` # accède via un *navigateur Web* au Framework **Flask** 
+> - `./load.sh` # accède via un *navigateur Web* au Framework **Dash** 
+> - `./load.sh -adm` # accède via un *navigateur Web* au Framework **Flask** 
+
+#### Lancer Dash
+
+- lancer le script `./load.sh` pour lancer `Dash` via un *navigateur Web*. <br />
+
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Dash` est active. <br />
+    - `'docker_testdash_(date).log'` 
+
+<br />
+
+La page d'accueil `Dash` s'affiche avec les informations suivantes :
+
+...
+
+##### 💬 Nota 
+
+Lorsque le Framework Web `Dash` est démarré, via le conteneur *ecbldash*, on peut y accéder depuis un navigateur Web : <br />
+
+- soit par l'adresse locale : 127.0.0.1:8050/
+- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:8050/
 
 #### Lancer Flask
 
-- lancer le script `./load.sh` pour lancer `Flask` via un *navigateur Web*. <br />
+- lancer le script `./load.sh -adm` pour lancer `Flask` via un *navigateur Web*. <br />
 
-- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Flask` est active. <br />
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Dash` est active. <br />
     - `'docker_testflask_(date).log'` 
 
 <br />
@@ -261,13 +282,8 @@ Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
 
 Lorsque le Framework Web `Flask` est démarré, via le conteneur *ecblflask*, on peut y accéder depuis un navigateur Web : <br />
 
-- soit par l'adresse locale : 127.0.0.1:5000/
-- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5000/
-
-#### Accéder à Dash
-
-Dash ...
-
+- soit par l'adresse locale : 127.0.0.1:5050/
+- soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:5050/
 
 ## <a name="tdm-05" />[Solution technique](#debut)
 
