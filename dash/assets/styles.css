@@ -1,0 +1,7 @@
+/* assets/styles.css */
+.custom-tooltip {
+    width: 300px;
+    height: 200px;
+    white-space: pre-wrap;
+    text-align: left;
+}

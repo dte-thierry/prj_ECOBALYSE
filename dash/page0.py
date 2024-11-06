@@ -55,12 +55,12 @@ def create_page0_layout():
         html.Div([
             html.Button(
                 dcc.Link('Visualisation(s)', 
-                         href='/page-10', style={'fontSize': 15})
+                         href='/page-1', style={'fontSize': 15})
             ),
         
             html.Button(
                 dcc.Link('Prédiction(s)', 
-                         href='/page-20', style={'fontSize': 15})
+                         href='/page-2', style={'fontSize': 15})
             )
         ], style={'display': 'flex', 'justify-content': 'center', 'gap': '2em'}),
         create_footer(),

@@ -1,0 +1,5 @@
+Mode - Information de Paramètre Ecobalyse. 
+Source : https://ecobalyse.beta.gouv.fr/#/api
+Liste des procédés de fabrication du produit. 
+Intervient sur les paramètres : pays, countrySpinning, countryFabric, countryDyeing, countryMaking.
+Mode fast fashion | Mode ultra fast fashion | Majorant par defaut | Mode ethique | Mode traditionnelle

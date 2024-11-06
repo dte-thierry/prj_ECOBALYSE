@@ -23,7 +23,8 @@ def create_page20_layout():
         create_message(["---"], style={'fontSize': 20}),
         create_message([
                 "Pour chaque catégorie, le modèle utilisé de *prédiction en Machine Learning* est : **la régression linéaire**.",
-                "Les variables à saisir sont : ",
+                "Les paramètres à saisir sont : ",
+                "*Libellé, Masse, Matière, Mode, Pays, product, countrySpinning, countryFabric, countryDyeing, countryMaking, airTransportRatio, business, numberOfReferences, price, traceability*.",
                 "La variable estimée par prédiction *(indépendamment d'un calcul via l'API Ecobalyse)* est **l'écoscore ('ecs')**."
             ], style={'fontSize': 20}),
         create_message(["---"], style={'fontSize': 20}),
