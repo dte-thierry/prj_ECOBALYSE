@@ -1,0 +1,5 @@
+countryDyeing, (Code pays pour l'étape de Teinture)  
+Source : https://ecobalyse.beta.gouv.fr/#/explore/textile/countries
+RAF | AL | DE | RNA | RLA | RAS | BD | BE | KH | CN | EG | ES | 
+ET | REE | REO | FR | GR | HU | IN | IT | MA | RME | MM | ROC | PK | 
+PL | PT | NL | --- | RO | GB | LK | CH | TW | CZ | TN | TR | VN 

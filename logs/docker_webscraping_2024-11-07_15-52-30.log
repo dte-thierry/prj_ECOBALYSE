@@ -2,15 +2,15 @@ Les informations relatives à ces exemples de textiles sont disponibles depuis l
 https://fabrique-numerique.gitbook.io/ecobalyse/textile/exemples
 
 Récupérer les données de l'Explorateur Ecobalyse ...
-DataFrame créé avec succès au bout de : 5.47 secondes.
+DataFrame créé avec succès au bout de : 6.11 secondes.
                                              Libelle      Categorie   ecs  \
-0  Tshirt coton (150g) - Chine - Mode "fast fashion"  Tshirt / Polo  1162   
+0  Tshirt coton (150g) - Chine - Mode "fast fashion"  Tshirt / Polo  1119   
 1  Tshirt synthétique (150g) - Asie - Mode "ultra...  Tshirt / Polo  1191   
-2          Tshirt coton (150g) - Majorant par défaut  Tshirt / Polo  1851   
-3        Tshirt lin (150g) - France - Mode "éthique"  Tshirt / Polo   419   
+2          Tshirt coton (150g) - Majorant par défaut  Tshirt / Polo  1800   
+3        Tshirt lin (150g) - France - Mode "éthique"  Tshirt / Polo   420   
 4  Tshirt coton bio (150g) - France - Mode "éthique"  Tshirt / Polo   482   
-5                Tshirt coton (150g) - Remanufacturé  Tshirt / Polo   558   
-6  Tshirt coton (150g) - France - Mode "tradition...  Tshirt / Polo   748   
+5                Tshirt coton (150g) - Remanufacturé  Tshirt / Polo   573   
+6  Tshirt coton (150g) - France - Mode "tradition...  Tshirt / Polo   718   
 
            Pays                       Mode  Masse      Matiere  
 0         Chine        Mode "fast fashion"   0.15        coton  
@@ -24,15 +24,15 @@ DataFrame créé avec succès au bout de : 5.47 secondes.
 DataFrame sauvegardé en fichier json, avec succès.
 
 Ajouter les descriptions des différents textiles ...
-DataFrame mis à jour avec succès au bout de : 2.92 secondes.
+DataFrame mis à jour avec succès au bout de : 3.18 secondes.
                                              Libelle      Categorie   ecs  \
-0          Tshirt coton 150g Chine Mode fast fashion  Tshirt / Polo  1162   
+0          Tshirt coton 150g Chine Mode fast fashion  Tshirt / Polo  1119   
 1  Tshirt synthetique 150g Asie Mode ultra fast f...  Tshirt / Polo  1191   
-2              Tshirt coton 150g Majorant par defaut  Tshirt / Polo  1851   
-3                Tshirt lin 150g France Mode ethique  Tshirt / Polo   419   
+2              Tshirt coton 150g Majorant par defaut  Tshirt / Polo  1800   
+3                Tshirt lin 150g France Mode ethique  Tshirt / Polo   420   
 4          Tshirt coton bio 150g France Mode ethique  Tshirt / Polo   482   
-6       Tshirt coton 150g France Mode traditionnelle  Tshirt / Polo   748   
-7     Tshirt coton 150g Pakistan Mode traditionnelle  Tshirt / Polo   931   
+6       Tshirt coton 150g France Mode traditionnelle  Tshirt / Polo   718   
+7     Tshirt coton 150g Pakistan Mode traditionnelle  Tshirt / Polo   903   
 
            Pays                     Mode  Masse      Matiere  \
 0         Chine        Mode fast fashion   0.15        coton   
@@ -55,15 +55,15 @@ DataFrame mis à jour avec succès au bout de : 2.92 secondes.
 DataFrame sauvegardé en fichier json, avec succès.
 
 Calculer les impacts détaillés des différents textiles ...
-DataFrame mis à jour avec succès au bout de : 3.78 secondes.
+DataFrame mis à jour avec succès au bout de : 3.85 secondes.
                                              Libelle      Categorie   ecs  \
-0          Tshirt coton 150g Chine Mode fast fashion  Tshirt / Polo  1161   
-1  Tshirt synthetique 150g Asie Mode ultra fast f...  Tshirt / Polo  1546   
-2              Tshirt coton 150g Majorant par defaut  Tshirt / Polo  1905   
-3                Tshirt lin 150g France Mode ethique  Tshirt / Polo   445   
-4          Tshirt coton bio 150g France Mode ethique  Tshirt / Polo   508   
-6       Tshirt coton 150g France Mode traditionnelle  Tshirt / Polo   782   
-7     Tshirt coton 150g Pakistan Mode traditionnelle  Tshirt / Polo  1749   
+0          Tshirt coton 150g Chine Mode fast fashion  Tshirt / Polo  1118   
+1  Tshirt synthetique 150g Asie Mode ultra fast f...  Tshirt / Polo  1547   
+2              Tshirt coton 150g Majorant par defaut  Tshirt / Polo  1855   
+3                Tshirt lin 150g France Mode ethique  Tshirt / Polo   446   
+4          Tshirt coton bio 150g France Mode ethique  Tshirt / Polo   507   
+6       Tshirt coton 150g France Mode traditionnelle  Tshirt / Polo   751   
+7     Tshirt coton 150g Pakistan Mode traditionnelle  Tshirt / Polo  1714   
 
            Pays                     Mode  Masse      Matiere  \
 0         Chine        Mode fast fashion   0.15        coton   
@@ -111,30 +111,30 @@ DataFrame mis à jour avec succès au bout de : 3.78 secondes.
 7                     {'id': 'ei-coton', 'share': 1}             ---   
 
   countryFabric countryDyeing countryMaking  durability  ecs_materials  \
-0            CN            CN            CN        0.92         391.32   
-1           RAS           RAS           RAS        0.67         184.03   
-2           ---           ---           ---        0.67         484.58   
-3            FR            FR            FR        1.45         101.44   
+0            CN            CN            CN        0.92         361.29   
+1           RAS           RAS           RAS        0.67         185.39   
+2           ---           ---           ---        0.67         445.82   
+3            FR            FR            FR        1.45         102.70   
 4            FR            FR            FR        1.45         191.94   
-6            FR            FR            FR        1.29         484.58   
-7           ---           ---           ---        0.77         484.58   
+6            FR            FR            FR        1.29         445.82   
+7           ---           ---           ---        0.77         445.82   
 
    ecs_transformation  ecs_complementsImpacts  ecs_transport  ecs_utilisation  \
-0              398.60                   80.71          82.46           155.21   
-1              323.14                  319.03          81.24           113.57   
-2              525.62                  110.82          74.69           113.57   
-3              204.25                   51.21          17.17           246.07   
-4              204.25                   51.21          18.05           246.07   
-6              204.25                   57.56          18.05           219.57   
-7              639.92                   47.73          66.24           132.50   
+0              388.93                   80.71          82.30           155.68   
+1              321.98                  319.03          81.08           113.91   
+2              530.02                  110.82          74.55           113.91   
+3              203.39                   51.21          17.10           246.81   
+4              203.39                   51.21          17.99           246.81   
+6              203.39                   57.56          17.99           220.23   
+7              651.45                   47.73          66.13           132.90   
 
    ecs_fin_de_vie                                             Etapes  
-0           41.73  {'matieres_premieres': 36.64, 'transformation'...  
-1           95.73  {'matieres_premieres': 17.77, 'transformation'...  
-2           41.73  {'matieres_premieres': 37.97, 'transformation'...  
-3           41.73  {'matieres_premieres': 15.72, 'transformation'...  
-4           41.73  {'matieres_premieres': 26.06, 'transformation'...  
-6           41.73  {'matieres_premieres': 48.04, 'transformation'...  
-7           41.73  {'matieres_premieres': 35.98, 'transformation'...  
+0           41.73  {'matieres_premieres': 35.13, 'transformation'...  
+1           95.73  {'matieres_premieres': 17.89, 'transformation'...  
+2           41.73  {'matieres_premieres': 35.87, 'transformation'...  
+3           41.73  {'matieres_premieres': 15.88, 'transformation'...  
+4           41.73  {'matieres_premieres': 26.11, 'transformation'...  
+6           41.73  {'matieres_premieres': 46.02, 'transformation'...  
+7           41.73  {'matieres_premieres': 33.78, 'transformation'...  
 
 DataFrame sauvegardé en fichier json, avec succès.

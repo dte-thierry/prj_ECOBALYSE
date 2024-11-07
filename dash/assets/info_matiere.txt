@@ -1,4 +1,4 @@
-Matière - Information de Paramètre Ecobalyse. 
+Matière  
 Source : https://ecobalyse.beta.gouv.fr/#/api
-Liste des matières composant le produit. 
+Liste des matières composant le textile. 
 coton | synthetique | lin | coton bio | laine paysane | viscose | laine | polyester

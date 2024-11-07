@@ -1,0 +1,9 @@
+Pays, pour les étapes de transformation (filature, tissage/tricotage, ennoblissement et confection)  
+Source : https://ecobalyse.beta.gouv.fr/#/api
+Intervient sur les paramètres : countrySpinning, countryFabric, countryDyeing, countryMaking.
+RAF : Afrique | AL : Albanie | DE : Allemagne | RNA : Amérique du Nord | RLA : Amérique Latine | 
+RAS : Asie | BD : Bangladesh | BE : Belgique | KH : Cambodge | CN : Chine | EG : Egypte | ES : Espagne | 
+ET : Ethiopie | REE : Europe de l'Est | REO : Europe de l'Ouest | FR : France | GR : Grèce | HU : Hongrie | 
+IN : Inde | IT : Italie | MA : Maroc | RME : Moyen-Orient | MM : Myanmar | ROC : Océanie | PK : Pakistan | 
+PL : Pologne | PT : Portugal | NL : Pays-Bas | --- : Pays inconnu | RO : Roumanie | GB : Royaume-Uni |  
+LK : Sri Lanka | CH : Suisse | TW :Taiwan | CZ : Tchéquie | TN : Tunisie | TR : Turquie | VN : Vietnam

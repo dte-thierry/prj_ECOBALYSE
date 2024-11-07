@@ -1,4 +1,4 @@
-Mode - Information de Paramètre Ecobalyse. 
+Mode  
 Source : https://ecobalyse.beta.gouv.fr/#/api
 Liste des procédés de fabrication du produit. 
 Intervient sur les paramètres : pays, countrySpinning, countryFabric, countryDyeing, countryMaking.

@@ -1,0 +1,3 @@
+product, (Identifiant du produit)
+source : https://ecobalyse.beta.gouv.fr/#/explore/textile/products
+calecon | chaussettes | chemise | jean | jupe | maillot-de-bain | manteau | pantalon | pull | slip | tshirt 
