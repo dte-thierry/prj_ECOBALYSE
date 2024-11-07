@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Mer. 06/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Jeu. 07/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -247,7 +247,7 @@ Depuis le répertoire <i><b>~/prj_ECOBALYSE</i></b> :
 
 La page d'accueil `Dash` s'affiche avec les informations suivantes :
 
-...
+<img src="img/PRJ-ECOBALYSE-00-IMG4.png" alt="Page Accueil Dash" style="width:750px;height:auto;">
 
 ##### 💬 Nota 
 
@@ -255,6 +255,8 @@ Lorsque le Framework Web `Dash` est démarré, via le conteneur *ecbldash*, on p
 
 - soit par l'adresse locale : 127.0.0.1:8050/
 - soit par l'adresse IP / SSH publique de la VM, par exemple : 3.252.141.140:8050/
+
+<br />
 
 #### Lancer Flask
 
