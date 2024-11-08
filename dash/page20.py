@@ -32,5 +32,10 @@ def create_page20_layout():
         html.Ul([
             html.Li(dcc.Link(category, href=f'/page-{index+21}')) for index, category in enumerate(categories)
         ], style={'fontSize': 20}),
+        html.Br(),  # Ajoutez un espace avant le bouton de retour
+        html.Button(
+            dcc.Link('Retour', href='/'),  # Ajoutez ce bouton pour revenir à la page d'accueil
+            style={'fontSize': 20, 'margin': '10px'}
+        ),
         create_footer()
     ], style={'background': 'beige', 'padding': '20px'})
