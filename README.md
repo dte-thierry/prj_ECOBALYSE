@@ -253,6 +253,14 @@ Deux boutons sont disponibles : `[Visualisation(s)]` , `[Prédiction(s)]`.
 
 Cliquer sur l'un ou l'autre des boutons, selon l'utilisation désirée.
 
+##### **💬 Exemple de `[Visualisation(s)]`**
+
+...
+
+##### **💬 Exemple de `[Prédiction(s)]`**
+
+<img src="img/PRJ-ECOBALYSE-00-IMG5.png" alt="Exemple de Page de Prédiction Dash" style="width:750px;height:auto;">
+
 ##### 💬 Nota 
 
 Lorsque le Framework Web `Dash` est démarré, via le conteneur *ecbldash*, on peut y accéder depuis un navigateur Web : <br />
