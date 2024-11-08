@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Jeu. 07/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Ven. 08/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -253,6 +253,14 @@ Deux boutons sont disponibles : `[Visualisation(s)]` , `[Prédiction(s)]`.
 
 Cliquer sur l'un ou l'autre des boutons, selon l'utilisation désirée.
 
+##### **💬 Exemple de `[Visualisation(s)]`**
+
+...
+
+##### **💬 Exemple de `[Prédiction(s)]`**
+
+<img src="img/PRJ-ECOBALYSE-00-IMG5.png" alt="Exemple de Page de Prédiction Dash" style="width:750px;height:auto;">
+
 ##### 💬 Nota 
 
 Lorsque le Framework Web `Dash` est démarré, via le conteneur *ecbldash*, on peut y accéder depuis un navigateur Web : <br />
@@ -266,7 +274,7 @@ Lorsque le Framework Web `Dash` est démarré, via le conteneur *ecbldash*, on p
 
 - lancer le script `./load.sh -adm` pour lancer `Flask` via un *navigateur Web*. <br />
 
-- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Dash` est active. <br />
+- via [VS Code](https://code.visualstudio.com/), consulter le contenu du fichier .log, pour vérifier que l'application `Flask` est active. <br />
     - `'docker_testflask_(date).log'` 
 
 <br />
