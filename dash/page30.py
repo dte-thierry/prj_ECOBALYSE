@@ -1,4 +1,4 @@
-# page31.py - tshirt
+# page30.py - pull
 from dash import html, dcc, callback, Input, Output, State, no_update
 import dash
 import pandas as pd
@@ -29,20 +29,20 @@ with open('./assets/info_countryDyeing.txt', 'r') as file:
 with open('./assets/info_countryMaking.txt', 'r') as file:
     info_countryMaking_content = file.read()
 
-# Créer la mise en page de la page 31
-def create_page31_layout():
+# Créer la mise en page de la page 30
+def create_page30_layout():
     return html.Div([
-        html.H1("Prédiction d'ecoscore 'ecs', pour la catégorie : Tshirt / Polo", className='text-center my-4'),
+        html.H1("Prédiction d'ecoscore 'ecs', pour la catégorie : Pull", className='text-center my-4'),
         
         html.Div([
             html.Div([
                 html.Label('Libelle', className='form-label'),
-                dcc.Input(id='libelle', type='text', value="Tshirt / Polo (exemple ML)", className='form-control', readOnly=True),
+                dcc.Input(id='libelle', type='text', value='Pull (exemple ML)', className='form-control', readOnly=True),
             ], className='mb-3'),
             
             html.Div([ 
-                html.Label('Masse (en kg. Min 0.06 | Max 0.15)', className='form-label'),
-                dcc.Input(id='masse', type='number', value=0.15, min=0.06, max=0.15, step=0.01, className='form-control'),
+                html.Label('Masse (en kg. Min 0.50 | Max 1.00)', className='form-label'),
+                dcc.Input(id='masse', type='number', value=0.55, min=0.50, max=1.00, step=0.05, className='form-control'),
                 dbc.Tooltip(
                     info_masse_content,
                     target="masse",
@@ -97,7 +97,7 @@ def create_page31_layout():
                       # {'label': 'Turquie | TR', 'value': 'Turquie'},
                       # {'label': 'Vietnam | VN', 'value': 'Vietnam'}                      
                     ],
-                    value='Pays inconnu',
+                    value='France',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -118,13 +118,13 @@ def create_page31_layout():
                         {'label': 'coton', 'value': 'coton'},
                         {'label': 'coton bio', 'value': 'coton bio'},
                       # {'label': 'laine', 'value': 'laine'},
-                      # {'label': 'laine paysanne', 'value': 'laine paysane'},
+                        {'label': 'laine paysanne', 'value': 'laine paysane'},
                         {'label': 'lin', 'value': 'lin'},
                         {'label': 'polyester', 'value': 'polyester'},
                         {'label': 'synthétique', 'value': 'synthetique'}
                       # {'label': 'viscose', 'value': 'viscose'}
                     ],
-                    value='coton',
+                    value='laine paysane',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -148,7 +148,7 @@ def create_page31_layout():
                         {'label': 'Mode traditionnelle', 'value': 'Mode traditionnelle'},
                         {'label': 'Mode ultra fast fashion', 'value': 'Mode ultra fast fashion'}
                     ],
-                    value='Majorant par defaut',
+                    value='Mode ethique',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -162,7 +162,7 @@ def create_page31_layout():
             
             html.Div([
                 html.Label('product, (Identifiant du produit)', className='form-label'),
-                dcc.Input(id='product', type='text', value='tshirt', className='form-control', readOnly=True),
+                dcc.Input(id='product', type='text', value='pull', className='form-control', readOnly=True),
                 dbc.Tooltip(
                     info_product_content,
                     target="product",
@@ -217,7 +217,7 @@ def create_page31_layout():
                         {'label': 'TR', 'value': 'TR'}
                       # {'label': 'VN', 'value': 'VN'}                      
                     ],
-                    value='---',
+                    value='FR',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -274,7 +274,7 @@ def create_page31_layout():
                       # {'label': 'TR', 'value': 'TR'},
                       # {'label': 'VN', 'value': 'VN'}                      
                     ],
-                    value='---',
+                    value='FR',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -331,7 +331,7 @@ def create_page31_layout():
                       # {'label': 'TR', 'value': 'TR'},
                       # {'label': 'VN', 'value': 'VN'}                      
                     ],
-                    value='---',
+                    value='FR',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -388,7 +388,7 @@ def create_page31_layout():
                       # {'label': 'TR', 'value': 'TR'},
                       # {'label': 'VN', 'value': 'VN'}                      
                     ],
-                    value='---',
+                    value='FR',
                     className='form-control'
                 ),
                 dbc.Tooltip(
@@ -414,19 +414,19 @@ def create_page31_layout():
                         {'label': 'Large Business with Services', 'value': 'large-business-with-services'},
                         {'label': 'Large Business without Services', 'value': 'large-business-without-services'}
                     ],
-                    value='large-business-without-services',
+                    value='small-business',
                     className='form-control'
                 ),
             ], className='mb-3'),
             
             html.Div([
                 html.Label("Number of References (Min 1 | Max 999999. Nombre de références au catalogue de la marque)", className='form-label'),
-                dcc.Input(id='numberOfReferences', type='number', value=100000, min=1, max=999999, step=1, className='form-control'),
+                dcc.Input(id='numberOfReferences', type='number', value=200, min=1, max=999999, step=1, className='form-control'),
             ], className='mb-3'),
             
             html.Div([
-                html.Label("Price (Min 10€ | Max 50€. Prix du produit, en Euros)", className='form-label'),
-                dcc.Input(id='price', type='number', value=10.0, min=10.0, max=50.0, step=1.0, className='form-control'),
+                html.Label("Price (Min 20€ | Max 200€. Prix du produit, en Euros)", className='form-label'),
+                dcc.Input(id='price', type='number', value=95.0, min=20.0, max=200.0, step=1.0, className='form-control'),
             ], className='mb-3'),
             
             html.Div([
@@ -437,7 +437,7 @@ def create_page31_layout():
                         {'label': 'True', 'value': 'True'},
                         {'label': 'False', 'value': 'False'}
                     ],
-                    value='False',
+                    value='True',
                     className='form-control'
                 ),
             ], className='mb-3'),

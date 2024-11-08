@@ -1,4 +1,4 @@
-# page31.py - tshirt
+# page24.py - chemise
 from dash import html, dcc, callback, Input, Output, State, no_update
 import dash
 import pandas as pd
@@ -29,20 +29,20 @@ with open('./assets/info_countryDyeing.txt', 'r') as file:
 with open('./assets/info_countryMaking.txt', 'r') as file:
     info_countryMaking_content = file.read()
 
-# Créer la mise en page de la page 31
-def create_page31_layout():
+# Créer la mise en page de la page 24
+def create_page24_layout():
     return html.Div([
-        html.H1("Prédiction d'ecoscore 'ecs', pour la catégorie : Tshirt / Polo", className='text-center my-4'),
+        html.H1("Prédiction d'ecoscore 'ecs', pour la catégorie : Chemise", className='text-center my-4'),
         
         html.Div([
             html.Div([
                 html.Label('Libelle', className='form-label'),
-                dcc.Input(id='libelle', type='text', value="Tshirt / Polo (exemple ML)", className='form-control', readOnly=True),
+                dcc.Input(id='libelle', type='text', value='Chemise (exemple ML)', className='form-control', readOnly=True),
             ], className='mb-3'),
             
             html.Div([ 
-                html.Label('Masse (en kg. Min 0.06 | Max 0.15)', className='form-label'),
-                dcc.Input(id='masse', type='number', value=0.15, min=0.06, max=0.15, step=0.01, className='form-control'),
+                html.Label('Masse (en kg. Min 0.15 | Max 0.30)', className='form-label'),
+                dcc.Input(id='masse', type='number', value=0.25, min=0.15, max=0.30, step=0.05, className='form-control'),
                 dbc.Tooltip(
                     info_masse_content,
                     target="masse",
@@ -118,7 +118,7 @@ def create_page31_layout():
                         {'label': 'coton', 'value': 'coton'},
                         {'label': 'coton bio', 'value': 'coton bio'},
                       # {'label': 'laine', 'value': 'laine'},
-                      # {'label': 'laine paysanne', 'value': 'laine paysane'},
+                        {'label': 'laine paysanne', 'value': 'laine paysane'},
                         {'label': 'lin', 'value': 'lin'},
                         {'label': 'polyester', 'value': 'polyester'},
                         {'label': 'synthétique', 'value': 'synthetique'}
@@ -162,7 +162,7 @@ def create_page31_layout():
             
             html.Div([
                 html.Label('product, (Identifiant du produit)', className='form-label'),
-                dcc.Input(id='product', type='text', value='tshirt', className='form-control', readOnly=True),
+                dcc.Input(id='product', type='text', value='chemise', className='form-control', readOnly=True),
                 dbc.Tooltip(
                     info_product_content,
                     target="product",
@@ -425,8 +425,8 @@ def create_page31_layout():
             ], className='mb-3'),
             
             html.Div([
-                html.Label("Price (Min 10€ | Max 50€. Prix du produit, en Euros)", className='form-label'),
-                dcc.Input(id='price', type='number', value=10.0, min=10.0, max=50.0, step=1.0, className='form-control'),
+                html.Label("Price (Min 15€ | Max 50€. Prix du produit, en Euros)", className='form-label'),
+                dcc.Input(id='price', type='number', value=15.0, min=15.0, max=50.0, step=1.0, className='form-control'),
             ], className='mb-3'),
             
             html.Div([
@@ -442,7 +442,7 @@ def create_page31_layout():
                 ),
             ], className='mb-3'),
             
-            html.Button('Prédire', id='predict-button', n_clicks=0, className='btn btn-primary mt-3'),
+            html.Button('Prédire', id='predict-button', n_clicks=0, className='btn btn-primary mt-3', disabled=False),
             html.Div(id='error-message', className='text-danger mt-3')
         ], className='container'),
         
