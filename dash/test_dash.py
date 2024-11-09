@@ -12,7 +12,9 @@ from dash import no_update
 # Importer le(s) layout(s) de page(s)
 from page0 import create_page0_layout
 from page20 import create_page20_layout
+from page10 import create_page10_layout
 import page31, page30, page29, page28, page27, page26, page25, page24, page23, page22, page21
+import page12, page11
 
 # Choisir des feuilles de style CSS
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
@@ -36,6 +38,10 @@ dash.register_page('page23', path='/page-23')
 dash.register_page('page22', path='/page-22')
 dash.register_page('page21', path='/page-21')
 
+dash.register_page('page10', path='/page-1')
+dash.register_page('page12', path='/page-12')
+dash.register_page('page11', path='/page-11')
+
 # Récupérer la variable d'environnement
 dash_log_namefile = os.getenv('DASH_LOG_NAMEFILE', 'default_log_name')
 
@@ -58,33 +64,44 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
+
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == '/page-2':
-        return create_page20_layout()
-    elif pathname == '/page-31':
-        return page31.create_page31_layout()
+    if pathname.startswith('/page-2'):
+        if pathname == '/page-2':
+            return create_page20_layout()
+        elif pathname == '/page-21':
+            return page21.create_page21_layout()
+        elif pathname == '/page-22':
+            return page22.create_page22_layout()
+        elif pathname == '/page-23':
+            return page23.create_page23_layout()
+        elif pathname == '/page-24':
+            return page24.create_page24_layout()
+        elif pathname == '/page-25':
+            return page25.create_page25_layout()
+        elif pathname == '/page-26':
+            return page26.create_page26_layout()
+        elif pathname == '/page-27':
+            return page27.create_page27_layout()
+        elif pathname == '/page-28':
+            return page28.create_page28_layout()
+        elif pathname == '/page-29':
+            return page29.create_page29_layout()
+    elif pathname.startswith('/page-1'):
+        if pathname == '/page-1':
+            return create_page10_layout()  
+        elif pathname == '/page-11':
+            return page11.create_page11_layout()
+        elif pathname == '/page-12':
+            return page12.create_page12_layout()
+        # elif pathname == '/page-13':
+            # return page13.create_page13_layout()
     elif pathname == '/page-30':
         return page30.create_page30_layout()
-    elif pathname == '/page-29':
-        return page29.create_page29_layout()
-    elif pathname == '/page-28':
-        return page28.create_page28_layout()
-    elif pathname == '/page-27':
-        return page27.create_page27_layout()
-    elif pathname == '/page-26':
-        return page26.create_page26_layout()
-    elif pathname == '/page-25':
-        return page25.create_page25_layout()
-    elif pathname == '/page-24':
-        return page24.create_page24_layout()
-    elif pathname == '/page-23':
-        return page23.create_page23_layout()
-    elif pathname == '/page-22':
-        return page22.create_page22_layout()
-    elif pathname == '/page-21':
-        return page21.create_page21_layout()
+    elif pathname == '/page-31':
+        return page31.create_page31_layout()
     else:
         return create_page0_layout()
 

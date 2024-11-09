@@ -23,6 +23,7 @@ def create_page20_layout():
         create_header("Prédiction(s) pour les catégories de textiles"),
         create_message(["---"], style={'fontSize': 20}),
         create_message([
+                "Le menu ci-dessous permet de prédire l'impact environnemental de produits non couverts [par l'API d'Ecobalyse](https://ecobalyse.beta.gouv.fr/#/api).",
                 "Pour chaque catégorie, le modèle utilisé de *prédiction en Machine Learning* est : **la régression linéaire**.",
                 "Les paramètres à saisir, pour de nouvelles données textiles, sont : ",
                 "*Masse, Matière, Mode, Pays, countrySpinning, countryFabric, countryDyeing, countryMaking, airTransportRatio, business, numberOfReferences, price, traceability*.",
