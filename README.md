@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Ven. 08/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Sam. 09/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -255,7 +255,7 @@ Cliquer sur l'un ou l'autre des boutons, selon l'utilisation désirée.
 
 ##### **💬 Exemple de `[Visualisation(s)]`**
 
-...
+<img src="img/PRJ-ECOBALYSE-00-IMG6.png" alt="Exemple de Page de Visualisation Dash" style="width:750px;height:auto;">
 
 ##### **💬 Exemple de `[Prédiction(s)]`**
 
