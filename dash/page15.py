@@ -4,56 +4,64 @@ import dash
 import dash_bootstrap_components as dbc
 import pandas as pd
 import redis
+import plotly.express as px
 
-# import json
-
-# import plotly.express as px
-# import plotly.graph_objects as go
+from components import create_message
 
 # Initialiser la connexion Redis
 r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
 print("page-15 : Redis fonctionne et le fichier JSON est bien récupéré : ", r.ping())
 
+# Lire les données depuis Redis et les convertir en DataFrame
+keys = r.keys('textile:*')
+data = []
+for key in keys:
+    textile_info = r.hgetall(key)
+    data.append(textile_info)
+
+# Convertir les données en DataFrame pour faciliter l'analyse
+df = pd.DataFrame(data)
+
+# Afficher les premières lignes du DataFrame pour vérifier les données
+print(df.head())
+
+# Afficher les colonnes du DataFrame pour vérifier la présence de 'ecs'
+print("Colonnes du DataFrame :", df.columns)
+
+# Convertir 'ecs' en numérique si la colonne existe
+if 'ecs' in df.columns:
+    df['ecs'] = pd.to_numeric(df['ecs'], errors='coerce')
+else:
+    print("La colonne 'ecs' n'existe pas dans le DataFrame.")
+
 # Créer la mise en page de la page 15
 def create_page15_layout():
     return html.Div([
         html.H1("Boxplot : mode / ecs", className='text-center my-4'),
-        # dcc.Graph(id='density-graph')
+        dcc.Graph(id='boxplot-graph'),
+
+        create_message(["---"], style={'fontSize': 20}),
+        create_message([
+            "Ce Box Plot permet de voir les tendances centrales, la dispersion et les valeurs aberrantes, afin d'analyser l'impact environnemental des différents types de modes.",
+            "La ligne horizontale à l'intérieur de chaque boîte représente la **médiane** des valeurs 'ecs' pour chaque catégorie.",
+            "Les extrémités de la boîte représentent le **premier quartile (Q1)** et le **troisième quartile (Q3)**.",
+            "La distance entre **Q1** et **Q3**, l'**étendue interquartile (IRQ)** donne une idée de la variabilité des valeurs 'ecs' pour chaque type de mode.",
+            "Les points situés en dehors des *moustaches* sont des valeurs aberrantes (**outliers**)."                       
+        ], style={'fontSize': 20}),
+        create_message(["---"], style={'fontSize': 20})
+
     ], className='container', style={'background': 'beige', 'padding': '20px'})
 
-"""
+# Callback pour mettre à jour le boxplot
 @callback(
-    Output('density-graph', 'figure'),
-    [Input('density-graph', 'id')]
+    Output('boxplot-graph', 'figure'),
+    Input('boxplot-graph', 'id')
 )
-def display_graph(_):
-    keys = r.keys('textile:*')
-    data = []
-    for key in keys:
-        textile_info = r.hgetall(key)
-        data.append(textile_info)
-    
-    # Convertir les données en DataFrame pour faciliter l'analyse
-    df = pd.DataFrame(data)
-    df['ecs'] = pd.to_numeric(df['ecs'], errors='coerce')  # Convertir 'ecs' en numérique
-    
-    # Créer le graphique de la courbe d'estimation de densité de la variable 'ecs'
-    fig = go.Figure()
-    
-    # Ajouter l'histogramme
-    fig.add_trace(go.Histogram(x=df['ecs'], nbinsx=10, name='Histogramme'))
-    
-    # Ajouter la courbe d'estimation de densité
-    fig.add_trace(go.Histogram(x=df['ecs'], nbinsx=10, histnorm='probability density', name='Densité', marker_color='red'))
-    
-    # Ajouter le rug plot
-    fig.add_trace(go.Scatter(x=df['ecs'], y=[0]*len(df), mode='markers', marker=dict(color='red'), name='Rug Plot'))
-    
-    # Mettre à jour les titres et les étiquettes
-    fig.update_layout(title="Courbe d'estimation de densité de la variable 'ecs'",
-                      xaxis_title="Ecoscore 'ecs' (Pts)",
-                      yaxis_title="Densité",
-                      barmode='overlay')
-    
+def update_boxplot_graph(_):
+    # Créer le boxplot avec Plotly Express
+    fig = px.box(df, x='Mode', y='ecs', points="all", color='Mode',
+                 title="Boxplot : Mode / ecs",
+                 labels={'Mode': 'Mode', 'ecs': "Valeur de l'écoscore 'ecs' (Pts)"},
+                 template='plotly_white')
+
     return fig
-"""

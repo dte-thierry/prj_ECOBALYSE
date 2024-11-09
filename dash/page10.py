@@ -9,7 +9,9 @@ def create_page10_layout():
         "Listing & Description des Données",
         "Nombre de Textiles par Catégories",
         "Distribution cumulée de l'ecoscore 'ecs' par Catégories de Textiles",
-        "Densité estimée & répartition cumulée de la variable 'ecs'"                
+        "Densité estimée & répartition cumulée de la variable 'ecs'",
+        "Boxplot : mode / ecs",
+        "Boxplot : pays / ecs"                
     ]
 
     return html.Div([

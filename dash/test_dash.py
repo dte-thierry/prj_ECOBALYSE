@@ -19,7 +19,7 @@ from page0 import create_page0_layout
 from page20 import create_page20_layout
 from page10 import create_page10_layout
 import page31, page30, page29, page28, page27, page26, page25, page24, page23, page22, page21
-import page14, page13, page12, page11
+import page16, page15, page14, page13, page12, page11
 
 # Choisir des feuilles de style CSS
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
@@ -53,7 +53,8 @@ dash.register_page('page22', path='/page-22')
 dash.register_page('page21', path='/page-21')
 
 dash.register_page('page10', path='/page-1')
-# dash.register_page('page15', path='/page-15')
+dash.register_page('page16', path='/page-16')
+dash.register_page('page15', path='/page-15')
 dash.register_page('page14', path='/page-14')
 dash.register_page('page13', path='/page-13')
 dash.register_page('page12', path='/page-12')
@@ -119,8 +120,10 @@ def display_page(pathname):
             return page13.create_page13_layout()
         elif pathname == '/page-14':
             return page14.create_page14_layout()
-        # elif pathname == '/page-15':
-            # return page13.create_page15_layout()
+        elif pathname == '/page-15':
+            return page15.create_page15_layout()
+        elif pathname == '/page-16':
+            return page16.create_page16_layout()
     
     elif pathname == '/page-30':
         return page30.create_page30_layout()
