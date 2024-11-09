@@ -8,9 +8,8 @@ def create_page10_layout():
     queries = [
         "Listing & Description des Données",
         "Nombre de Textiles par Catégories",
-        "Courbe d'estimation de densité de la variable 'ecs'",
-        "Densité estimée & répartition cumulée de la variable 'ecs'",
-        "Distribution de l'ecoscore 'ecs' par Catégories"        
+        "Distribution de l'ecoscore 'ecs' par Catégories",
+        "Densité estimée & répartition cumulée de la variable 'ecs'"                
     ]
 
     return html.Div([

@@ -1,14 +1,14 @@
-# page13.py - Courbe d'estimation de densité de la variable 'ecs'
+# page13.py - Distribution de l'ecoscore 'ecs' par Catégories
 from dash import html, dcc, callback, Input, Output, State, no_update
 import dash
 import dash_bootstrap_components as dbc
 import pandas as pd
 import redis
 
-import plotly.express as px
-import plotly.graph_objects as go
+# import json
 
-from components import create_message
+# import plotly.express as px
+# import plotly.graph_objects as go
 
 # Initialiser la connexion Redis
 r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
@@ -17,18 +17,11 @@ print("page-13 : Redis fonctionne et le fichier JSON est bien récupéré : ", r
 # Créer la mise en page de la page 13
 def create_page13_layout():
     return html.Div([
-        html.H1("Courbe d'estimation de densité de la variable 'ecs'", className='text-center my-4'),
-        dcc.Graph(id='density-graph'),
-        create_message(["---"], style={'fontSize': 20}),
-        create_message([
-            "Ce graphique montre : *la distribution de la variable 'ecs'*.",
-            "On observe une concentration élevée de valeurs, autour d'un *'ecoscore'* de 2000 Pts.",
-            "Ce qui signifie qu'une grande majorité de textiles, dans ce jeu de données, a un impact environnemental <= 2000 Pts."
-        ], style={'fontSize': 20}),
-        create_message(["---"], style={'fontSize': 20})
+        html.H1("Distribution de l'ecoscore 'ecs' par Catégories", className='text-center my-4'),
+        # dcc.Graph(id='density-graph')
     ], className='container', style={'background': 'beige', 'padding': '20px'})
 
-# """
+"""
 @callback(
     Output('density-graph', 'figure'),
     [Input('density-graph', 'id')]
@@ -56,13 +49,6 @@ def display_graph(_):
     # Ajouter le rug plot
     fig.add_trace(go.Scatter(x=df['ecs'], y=[0]*len(df), mode='markers', marker=dict(color='red'), name='Rug Plot'))
     
-    """
-    # Utiliser Plotly Express pour créer une courbe KDE et l'ajouter à la figure
-    kde_fig = px.histogram(df, x='ecs', nbins=10, histnorm='density', marginal='rug')
-    for trace in kde_fig.data:
-        fig.add_trace(trace)
-    """
-
     # Mettre à jour les titres et les étiquettes
     fig.update_layout(title="Courbe d'estimation de densité de la variable 'ecs'",
                       xaxis_title="Ecoscore 'ecs' (Pts)",
@@ -70,4 +56,4 @@ def display_graph(_):
                       barmode='overlay')
     
     return fig
-# """
+"""

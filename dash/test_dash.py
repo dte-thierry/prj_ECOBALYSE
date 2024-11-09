@@ -6,15 +6,20 @@ import dash
 from dash import dcc  # import dash_core_components as dcc, is deprecated
 from dash import html  # import dash_html_components as html, is deprecated
 from dash.dependencies import Input, Output, State
-
 from dash import no_update
+
+import redis
+import pandas as pd
+
+import plotly.express as px
+import plotly.graph_objects as go
 
 # Importer le(s) layout(s) de page(s)
 from page0 import create_page0_layout
 from page20 import create_page20_layout
 from page10 import create_page10_layout
 import page31, page30, page29, page28, page27, page26, page25, page24, page23, page22, page21
-import page15, page14, page13, page12, page11
+import page14, page13, page12, page11
 
 # Choisir des feuilles de style CSS
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
@@ -22,6 +27,10 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
 # external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 logging.basicConfig(level=logging.DEBUG)
+
+# Initialiser la connexion Redis
+r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
+print("test_dash : Redis fonctionne et le fichier JSON est bien récupéré : ", r.ping())
 
 # Initialiser l'application Dash
 logging.debug("Avant l'initialisation de l'application Dash")
@@ -44,7 +53,7 @@ dash.register_page('page22', path='/page-22')
 dash.register_page('page21', path='/page-21')
 
 dash.register_page('page10', path='/page-1')
-dash.register_page('page15', path='/page-15')
+# dash.register_page('page15', path='/page-15')
 dash.register_page('page14', path='/page-14')
 dash.register_page('page13', path='/page-13')
 dash.register_page('page12', path='/page-12')
@@ -110,8 +119,8 @@ def display_page(pathname):
             return page13.create_page13_layout()
         elif pathname == '/page-14':
             return page14.create_page14_layout()
-        elif pathname == '/page-15':
-            return page15.create_page15_layout()
+        # elif pathname == '/page-15':
+            # return page13.create_page15_layout()
     
     elif pathname == '/page-30':
         return page30.create_page30_layout()
@@ -210,6 +219,79 @@ def predict_ecoscore(n_clicks_predict, n_clicks_close, pathname, libelle, masse,
         return page21.predict_ecoscore(n_clicks_predict, n_clicks_close, libelle, masse, matiere, mode, pays, product, countrySpinning, countryFabric, countryDyeing, countryMaking, airTransportRatio, business, numberOfReferences, price, traceability, is_open)
 
     return is_open, "", ""
+
+# Définir les callbacks pour les pages spécifiques
+@app.callback(
+    Output('density-graph', 'figure'),
+    [Input('url', 'pathname')]
+)
+def display_density_graph(pathname):
+    if pathname != '/page-13':
+        return no_update
+    
+    keys = r.keys('textile:*')
+    data = []
+    for key in keys:
+        textile_info = r.hgetall(key)
+        data.append(textile_info)
+    
+    # Convertir les données en DataFrame pour faciliter l'analyse
+    df = pd.DataFrame(data)
+    df['ecs'] = pd.to_numeric(df['ecs'], errors='coerce')  # Convertir 'ecs' en numérique
+    
+    # Créer le graphique de la courbe d'estimation de densité de la variable 'ecs'
+    fig = go.Figure()
+
+    # Ajouter l'histogramme
+    fig.add_trace(go.Histogram(x=df['ecs'], nbinsx=10, name='Histogramme'))
+
+    # Ajouter la courbe d'estimation de densité
+    kde_fig = px.histogram(df, x='ecs', nbins=10, histnorm='density', marginal='rug')
+    for trace in kde_fig.data:
+        fig.add_trace(trace)
+
+    # Mettre à jour les titres et les étiquettes
+    fig.update_layout(title="Courbe d'estimation de densité de la variable 'ecs'",
+                      xaxis_title="Ecoscore 'ecs' (Pts)",
+                      yaxis_title="Densité",
+                      barmode='overlay')
+    
+    return fig
+
+
+@app.callback(
+    [Output('density-graph-14', 'figure'),
+     Output('ecdf-graph', 'figure')],
+    [Input('url', 'pathname')]
+)
+def display_graph(pathname):
+    if pathname != '/page-14':
+        return no_update, no_update
+    
+    keys = r.keys('textile:*')
+    data = []
+    for key in keys:
+        textile_info = r.hgetall(key)
+        data.append(textile_info)
+    
+    # Convertir les données en DataFrame pour faciliter l'analyse
+    df = pd.DataFrame(data)
+    df['ecs'] = pd.to_numeric(df['ecs'], errors='coerce')  # Convertir 'ecs' en numérique
+    
+    # Créer le graphique de l'estimation de densité par noyaux (KDE)
+    kde_fig = px.histogram(df, x='ecs', nbins=10, histnorm='density', marginal='rug')
+    kde_fig.update_layout(title="Estimation de la densité par noyaux (KDE)",
+                          xaxis_title="Ecoscore 'ecs' (Pts)",
+                          yaxis_title="Densité")
+    
+    # Créer le graphique de la répartition cumulée empirique (ECDF)
+    ecdf_fig = px.ecdf(df, x='ecs')
+    ecdf_fig.update_layout(title="Répartition cumulée de la variable 'ecs'",
+                           xaxis_title="Ecoscore 'ecs' (Pts)",
+                           yaxis_title="Proportion")
+    
+    return kde_fig, ecdf_fig
+
 
 # Définir le point d'entrée de l'application
 if __name__ == '__main__':
