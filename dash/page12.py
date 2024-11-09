@@ -9,6 +9,7 @@ import plotly.express as px
 
 # Initialiser la connexion Redis
 r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
+print("page-12 : Redis fonctionne et le fichier JSON est bien récupéré : ", r.ping())
 
 # Créer la mise en page de la page 12
 def create_page12_layout():

@@ -7,10 +7,10 @@ from components import create_header, create_footer, create_message
 def create_page10_layout():
     queries = [
         "Listing & Description des Données",
-        "Nombre de textiles par catégories",
+        "Nombre de Textiles par Catégories",
         "Courbe d'estimation de densité de la variable 'ecs'",
         "Densité estimée & répartition cumulée de la variable 'ecs'",
-        "Distribution de l'ecoscore 'ecs' par catégories"        
+        "Distribution de l'ecoscore 'ecs' par Catégories"        
     ]
 
     return html.Div([

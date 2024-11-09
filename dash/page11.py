@@ -1,7 +1,7 @@
 # page11.py - Listing des données
 from dash import html, dcc, callback, Input, Output, State, no_update
 import dash
-import dash_table
+from dash import dash_table # import dash_table deprecated
 import dash_bootstrap_components as dbc
 import pandas as pd
 import redis
@@ -9,6 +9,7 @@ import json
 
 # Initialiser la connexion Redis
 r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
+print("page-11 : Redis fonctionne et le fichier JSON est bien récupéré : ", r.ping())
 
 # Créer la mise en page de la page 11
 def create_page11_layout():

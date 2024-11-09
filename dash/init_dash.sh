@@ -30,4 +30,5 @@ echo -e "Framework Web Dash démarré. Accessible depuis les adresses : 127.0.0.
 echo -e "Fichier 'log' créé avec succès, par le conteneur.\n"
 
 # Lancer Dash
+# python /app/helloDash.py
 python /app/test_dash.py

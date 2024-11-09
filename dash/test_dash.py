@@ -14,20 +14,25 @@ from page0 import create_page0_layout
 from page20 import create_page20_layout
 from page10 import create_page10_layout
 import page31, page30, page29, page28, page27, page26, page25, page24, page23, page22, page21
-import page12, page11
+import page15, page14, page13, page12, page11
 
 # Choisir des feuilles de style CSS
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', \
                         'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css']
 # external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
+logging.basicConfig(level=logging.DEBUG)
+
 # Initialiser l'application Dash
+logging.debug("Avant l'initialisation de l'application Dash")
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
+logging.debug("Après l'initialisation de l'application Dash")
 
 # Enregistrer les pages après l'instanciation de l'application
-dash.register_page('page20', path='/page-2')
-dash.register_page('page31', path='/page-31')
 dash.register_page('page30', path='/page-30')
+dash.register_page('page31', path='/page-31')
+
+dash.register_page('page20', path='/page-2')
 dash.register_page('page29', path='/page-29')
 dash.register_page('page28', path='/page-28')
 dash.register_page('page27', path='/page-27')
@@ -39,6 +44,9 @@ dash.register_page('page22', path='/page-22')
 dash.register_page('page21', path='/page-21')
 
 dash.register_page('page10', path='/page-1')
+dash.register_page('page15', path='/page-15')
+dash.register_page('page14', path='/page-14')
+dash.register_page('page13', path='/page-13')
 dash.register_page('page12', path='/page-12')
 dash.register_page('page11', path='/page-11')
 
@@ -68,6 +76,7 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
+    
     if pathname.startswith('/page-2'):
         if pathname == '/page-2':
             return create_page20_layout()
@@ -89,6 +98,7 @@ def display_page(pathname):
             return page28.create_page28_layout()
         elif pathname == '/page-29':
             return page29.create_page29_layout()
+    
     elif pathname.startswith('/page-1'):
         if pathname == '/page-1':
             return create_page10_layout()  
@@ -96,8 +106,13 @@ def display_page(pathname):
             return page11.create_page11_layout()
         elif pathname == '/page-12':
             return page12.create_page12_layout()
-        # elif pathname == '/page-13':
-            # return page13.create_page13_layout()
+        elif pathname == '/page-13':
+            return page13.create_page13_layout()
+        elif pathname == '/page-14':
+            return page14.create_page14_layout()
+        elif pathname == '/page-15':
+            return page15.create_page15_layout()
+    
     elif pathname == '/page-30':
         return page30.create_page30_layout()
     elif pathname == '/page-31':
