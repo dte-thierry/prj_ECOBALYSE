@@ -7,6 +7,8 @@ import redis
 import json
 import plotly.express as px
 
+from components import create_message
+
 # Initialiser la connexion Redis
 r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
 print("page-12 : Redis fonctionne et le fichier JSON est bien récupéré : ", r.ping())
@@ -15,7 +17,15 @@ print("page-12 : Redis fonctionne et le fichier JSON est bien récupéré : ", r
 def create_page12_layout():
     return html.Div([
         html.H1("Nombre de Textiles par Catégories", className='text-center my-4'),
-        dcc.Graph(id='category-count-graph')
+        dcc.Graph(id='category-count-graph'),
+        create_message(["---"], style={'fontSize': 20}),
+        create_message([
+            "Nota : ",
+            "====",
+            "Par défaut, [l'Explorateur Ecobalyse](https://ecobalyse.beta.gouv.fr/#/explore/textile) propose **un jeu de données très restreint**.",
+            "Ce jeu de données peut être *insuffisant*, pour entraîner correctement un **modèle de Machine Learning**."
+        ], style={'fontSize': 20}),
+        create_message(["---"], style={'fontSize': 20})
     ], className='container', style={'background': 'beige', 'padding': '20px'})
 
 @callback(
@@ -39,6 +49,7 @@ def display_graph(_):
     fig = px.bar(count_df, x='Categorie', y='Nombre de textiles',
                  title='Nombre de Textiles par Catégories',
                  labels={'Categorie': 'Catégorie', 'Nombre de textiles': 'Nombre de Textiles'},
-                 text_auto=True)
+                 text_auto=True,
+                 color='Categorie')  # Ajouter la couleur par catégorie
     
     return fig
