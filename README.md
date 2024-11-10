@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Sam. 09/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Dim. 10/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -260,6 +260,10 @@ Cliquer sur l'un ou l'autre des boutons, selon l'utilisation désirée.
 ##### **💬 Exemple de `[Prédiction(s)]`**
 
 <img src="img/PRJ-ECOBALYSE-00-IMG5.png" alt="Exemple de Page de Prédiction Dash" style="width:750px;height:auto;">
+
+En comparaison, pour ce même textile, la valeur 'ecs' calculée et retournée par [l'API Ecobalyse](https://ecobalyse.beta.gouv.fr/#/api) est :
+
+<img src="img/PRJ-ECOBALYSE-00-IMG7.png" alt="Comparaison API Ecobalyse et Exemple de Prédiction Dash" style="width:750px;height:auto;">
 
 ##### 💬 Nota 
 
