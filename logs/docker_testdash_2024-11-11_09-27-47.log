@@ -1,3 +1,0 @@
-2024-11-11 09:27:47,281 INFO: Application Dash active. [in /app/test_dash.py:79]
-2024-11-11 09:27:47,286 INFO: Dash is running on http://0.0.0.0:8050/
- [in /usr/local/lib/python3.9/site-packages/dash/dash.py:1983]

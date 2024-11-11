@@ -4,9 +4,16 @@ from pymongo import MongoClient
 from bson import ObjectId
 import json
 import time
+import pandas as pd
 import redis
 import os
+
 from datetime import datetime
+from utils import impact_metrics, get_data_from_mongodb, get_data_from_redis, create_bar
+
+# Configurer le logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 # Récupérer la variable d'environnement
 flask_log_namefile = os.getenv('FLASK_LOG_NAMEFILE', 'default_log_name')
@@ -32,7 +39,6 @@ class JSONEncoder(json.JSONEncoder):
 if not app.debug:
     if not os.path.exists('logs'):
         os.mkdir('logs')
-    # log_filename = f"logs/docker_testflask_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
     log_filename = f"logs/{flask_log_namefile}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
     file_handler = logging.FileHandler(log_filename)
     file_handler.setLevel(logging.INFO)
@@ -99,6 +105,62 @@ def get_redis_data():
             response=json.dumps(response, ensure_ascii=False),
             mimetype='application/json'
         ), 404
+
+
+@app.route("/impact_metrics", methods=["GET", "POST"])
+def display_impact_metrics():
+    if request.method == "POST":
+        # Gérer le formulaire POST si nécessaire
+        pass
+    
+    # Récupérer les données de MongoDB et mesurer le temps de chargement
+    df_mongodb, mongodb_time = get_data_from_mongodb()
+    if df_mongodb is None:
+        flash("Erreur: ensemble de données vide pour MongoDB.")
+        return render_template("undone.html")
+    
+    # Récupérer les données de Redis et mesurer le temps de chargement
+    df_redis, redis_time = get_data_from_redis()
+    if df_redis is None:
+        flash("Erreur: ensemble de données vide pour Redis.")
+        return render_template("undone.html")
+    
+    # Flasher les temps de chargement
+    flash(f"Temps de chargement des données via MongoDB : {mongodb_time:.2f} milliseconds")
+    flash(f"Temps de chargement des données via Redis : {redis_time:.2f} milliseconds")
+    
+    metrics = impact_metrics()
+    
+    # Générer les données des graphiques en barres
+    bar_chart_data_category = create_bar(
+        list(metrics['avg_ecs_per_category'].keys()),
+        list(metrics['avg_ecs_per_category'].values()),
+        "EcoScore Moyen par Catégorie"
+    )
+    bar_chart_data_mode = create_bar(
+        list(metrics['avg_ecs_per_mode'].keys()),
+        list(metrics['avg_ecs_per_mode'].values()),
+        "EcoScore Moyen par Mode"
+    )
+    bar_chart_data_country = create_bar(
+        list(metrics['avg_ecs_per_country'].keys()),
+        list(metrics['avg_ecs_per_country'].values()),
+        "EcoScore Moyen par Pays"
+    )
+    
+    # Vérification des données JSON avec logging
+    logging.debug("bar_chart_data_category: %s", bar_chart_data_category)
+    logging.debug("bar_chart_data_mode: %s", bar_chart_data_mode)
+    logging.debug("bar_chart_data_country: %s", bar_chart_data_country)
+    
+    return render_template(
+        "impact_metrics.html",
+        metrics=metrics,
+        bar_chart_data_category=bar_chart_data_category,
+        bar_chart_data_mode=bar_chart_data_mode,
+        bar_chart_data_country=bar_chart_data_country
+    )
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

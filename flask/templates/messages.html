@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Messages{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    
+    {% block content %}
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>
+            console.log("Messages flashés : {{ messages|tojson }}");
+        </script>
+        <div class="popup-overlay"></div>
+        <div class="popup">
+            <span class="close-btn">X</span>
+            <ul>
+            {% for message in messages|reverse %}
+              <li>{{ message|safe }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% endblock %}
+
+    <script>
+        // JavaScript pour gérer la pop-up
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("JavaScript chargé et exécuté");
+            var popup = document.querySelector('.popup');
+            var overlay = document.querySelector('.popup-overlay');
+            var closeBtn = document.querySelector('.close-btn');
+
+            if (popup) {
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+
+                closeBtn.addEventListener('click', function() {
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+
+                overlay.addEventListener('click', function() {
+                    popup.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

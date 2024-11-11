@@ -1,0 +1,273 @@
+Redis fonctionne et le fichier JSON est bien récupéré :  True
+
+
+Libelle: Tshirt coton 150g Pakistan Mode traditionnelle, ecs: 1714, autres colonnes: {'durability': '0.77', 'ecs_materials': '445.82', 'price': '10.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '41.73', 'description': 'T-shirt / Polo remanufacturé\xa0: 0,150kg, confection\xa0: Pays inconnu (par défaut) (complexité de confection Elevée, 100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '66.13', 'Etapes': "{'matieres_premieres': 33.78, 'transformation': 49.36, 'emballage': 0.0, 'transports': 5.01, 'distribution': 0.0, 'utilisation': 10.07, 'fin_de_vie': 3.16}", 'Matiere': 'coton', 'ecs': '1714', 'Libelle': 'Tshirt coton 150g Pakistan Mode traditionnelle', 'ecs_complementsImpacts': '47.73', 'ecs_transformation': '651.45', 'Masse': '0.15', 'traceability': 'False', 'business': 'large-business-with-services', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '132.9', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Tshirt / Polo', 'Pays': 'Pakistan', 'Mode': 'Mode traditionnelle', 'numberOfReferences': '100000.0'}
+Libelle: Pull coton 550g Pakistan Mode traditionnelle, ecs: 3325, autres colonnes: {'durability': '1.19', 'ecs_materials': '1728.24', 'price': '70.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': 'PK', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Pakistan, Tricotage moyen (par défaut)\xa0: Pakistan, ennoblissement\xa0: Pakistan, impression\xa0: non, confection\xa0: Pakistan (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'PK', 'ecs_transport': '236.85', 'Etapes': "{'matieres_premieres': 43.68, 'transformation': 40.68, 'emballage': 0.0, 'transports': 5.99, 'distribution': 0.0, 'utilisation': 5.97, 'fin_de_vie': 3.87}", 'Matiere': 'coton', 'ecs': '3325', 'Libelle': 'Pull coton 550g Pakistan Mode traditionnelle', 'ecs_complementsImpacts': '228.78', 'ecs_transformation': '1609.5', 'Masse': '0.55', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '236.12', 'countryFabric': 'PK', 'countryDyeing': 'PK', 'Categorie': 'Pull', 'Pays': 'Pakistan', 'Mode': 'Mode traditionnelle', 'numberOfReferences': '2500.0'}
+Libelle: Tshirt lin 150g France Mode ethique, ecs: 446, autres colonnes: {'durability': '1.45', 'ecs_materials': '102.7', 'price': '30.0', 'materials': "{'id': 'ei-lin', 'share': 1}", 'countrySpinning': 'TR', 'ecs_fin_de_vie': '41.73', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Lin provenance  par défaut (Europe), filature\xa0: Turquie, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'FR', 'ecs_transport': '17.1', 'Etapes': "{'matieres_premieres': 15.88, 'transformation': 31.45, 'emballage': 0.0, 'transports': 2.64, 'distribution': 0.0, 'utilisation': 38.16, 'fin_de_vie': 6.45}", 'Matiere': 'lin', 'ecs': '446', 'Libelle': 'Tshirt lin 150g France Mode ethique', 'ecs_complementsImpacts': '51.21', 'ecs_transformation': '203.39', 'Masse': '0.15', 'traceability': 'True', 'business': 'small-business', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '246.81', 'countryFabric': 'FR', 'countryDyeing': 'FR', 'Categorie': 'Tshirt / Polo', 'Pays': 'France', 'Mode': 'Mode ethique', 'numberOfReferences': '200.0'}
+Libelle: Pull laine 550g France Mode ethique, ecs: 4524, autres colonnes: {'durability': '1.29', 'ecs_materials': '4358.47', 'price': '95.0', 'materials': "{'id': 'ei-laine-par-defaut', 'share': 1}", 'countrySpinning': 'CN', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Laine par défaut provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'FR', 'ecs_transport': '64.87', 'Etapes': "{'matieres_premieres': 74.68, 'transformation': 13.58, 'emballage': 0.0, 'transports': 1.11, 'distribution': 0.0, 'utilisation': 4.45, 'fin_de_vie': 2.62}", 'Matiere': 'laine', 'ecs': '4524', 'Libelle': 'Pull laine 550g France Mode ethique', 'ecs_complementsImpacts': '270.74', 'ecs_transformation': '792.72', 'Masse': '0.55', 'traceability': 'False', 'business': 'small-business', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '259.73', 'countryFabric': 'FR', 'countryDyeing': 'FR', 'Categorie': 'Pull', 'Pays': 'France', 'Mode': 'Mode ethique', 'numberOfReferences': '200.0'}
+Libelle: Tshirt coton bio 150g France Mode ethique, ecs: 507, autres colonnes: {'durability': '1.45', 'ecs_materials': '191.94', 'price': '30.0', 'materials': "{'id': 'ei-coton-organic', 'share': 1}", 'countrySpinning': 'TR', 'ecs_fin_de_vie': '41.73', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Coton biologique provenance  par défaut (Asie - Pacifique), filature\xa0: Turquie, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'FR', 'ecs_transport': '17.99', 'Etapes': "{'matieres_premieres': 26.11, 'transformation': 27.67, 'emballage': 0.0, 'transports': 2.45, 'distribution': 0.0, 'utilisation': 33.57, 'fin_de_vie': 5.68}", 'Matiere': 'coton bio', 'ecs': '507', 'Libelle': 'Tshirt coton bio 150g France Mode ethique', 'ecs_complementsImpacts': '51.21', 'ecs_transformation': '203.39', 'Masse': '0.15', 'traceability': 'True', 'business': 'small-business', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '246.81', 'countryFabric': 'FR', 'countryDyeing': 'FR', 'Categorie': 'Tshirt / Polo', 'Pays': 'France', 'Mode': 'Mode ethique', 'numberOfReferences': '200.0'}
+Libelle: Pull polyester 550g Asie Mode ultra fast fashion, ecs: 5248, autres colonnes: {'durability': '0.67', 'ecs_materials': '697.61', 'price': '15.0', 'materials': "{'id': 'ei-pet', 'share': 1}", 'countrySpinning': 'RAS', 'ecs_fin_de_vie': '351.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Polyester provenance  par défaut (Asie - Pacifique), filature\xa0: Région - Asie, Tricotage moyen (par défaut)\xa0: Région - Asie, ennoblissement\xa0: Région - Asie, impression\xa0: non, confection\xa0: Région - Asie (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'RAS', 'ecs_transport': '297.98', 'Etapes': "{'matieres_premieres': 19.84, 'transformation': 33.2, 'emballage': 0.0, 'transports': 8.47, 'distribution': 0.0, 'utilisation': 3.69, 'fin_de_vie': 9.98}", 'Matiere': 'polyester', 'ecs': '5248', 'Libelle': 'Pull polyester 550g Asie Mode ultra fast fashion', 'ecs_complementsImpacts': '1169.78', 'ecs_transformation': '1167.49', 'Masse': '0.55', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '129.86', 'countryFabric': 'RAS', 'countryDyeing': 'RAS', 'Categorie': 'Pull', 'Pays': 'Asie', 'Mode': 'Mode ultra fast fashion', 'numberOfReferences': '100000.0'}
+Libelle: Jean coton 450g Majorant par defaut, ecs: 6104, autres colonnes: {'durability': '0.71', 'ecs_materials': '1458.88', 'price': '20.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '125.19', 'description': 'Jean\xa0: 0,450kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien, délavé), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '226.05', 'Etapes': "{'matieres_premieres': 33.66, 'transformation': 52.09, 'emballage': 0.0, 'transports': 5.22, 'distribution': 0.0, 'utilisation': 4.12, 'fin_de_vie': 2.89}", 'Matiere': 'coton', 'ecs': '6104', 'Libelle': 'Jean coton 450g Majorant par defaut', 'ecs_complementsImpacts': '313.73', 'ecs_transformation': '2257.43', 'Masse': '0.45', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'jean', 'airTransportRatio': '1.0', 'ecs_utilisation': '178.61', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Jean', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Calecon coton 40g Majorant par defaut, ecs: 581, autres colonnes: {'durability': '0.67', 'ecs_materials': '119.82', 'price': '4.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '11.14', 'description': 'Caleçon (tissé)\xa0: 0,040kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '19.89', 'Etapes': "{'matieres_premieres': 30.78, 'transformation': 49.84, 'emballage': 0.0, 'transports': 5.11, 'distribution': 0.0, 'utilisation': 8.82, 'fin_de_vie': 2.86}", 'Matiere': 'coton', 'ecs': '581', 'Libelle': 'Calecon coton 40g Majorant par defaut', 'ecs_complementsImpacts': '29.55', 'ecs_transformation': '194.02', 'Masse': '0.04', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'calecon', 'airTransportRatio': '1.0', 'ecs_utilisation': '34.34', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Caleçon (tissé)', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Pull laine paysane 550g France Mode ethique, ecs: 1410, autres colonnes: {'durability': '1.45', 'ecs_materials': '662.5', 'price': '95.0', 'materials': "{'id': 'ei-laine-nouvelle-filiere', 'share': 1}", 'countrySpinning': 'FR', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Laine nouvelle filière provenance France, filature\xa0: France, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'FR', 'ecs_transport': '47.48', 'Etapes': "{'matieres_premieres': 32.4, 'transformation': 33.85, 'emballage': 0.0, 'transports': 2.32, 'distribution': 0.0, 'utilisation': 14.44, 'fin_de_vie': 7.49}", 'Matiere': 'laine paysane', 'ecs': '1410', 'Libelle': 'Pull laine paysane 550g France Mode ethique', 'ecs_complementsImpacts': '240.86', 'ecs_transformation': '692.03', 'Masse': '0.55', 'traceability': 'True', 'business': 'small-business', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '295.15', 'countryFabric': 'FR', 'countryDyeing': 'FR', 'Categorie': 'Pull', 'Pays': 'France', 'Mode': 'Mode ethique', 'numberOfReferences': '200.0'}
+Libelle: Pull coton bio 550g France Mode traditionnelle, ecs: 1543, autres colonnes: {'durability': '1.45', 'ecs_materials': '739.17', 'price': '70.0', 'materials': "{'id': 'ei-coton-organic', 'share': 1}", 'countrySpinning': 'IN', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton biologique provenance  par défaut (Asie - Pacifique), filature\xa0: Inde, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'FR', 'ecs_transport': '60.89', 'Etapes': "{'matieres_premieres': 33.04, 'transformation': 38.52, 'emballage': 0.0, 'transports': 2.72, 'distribution': 0.0, 'utilisation': 13.19, 'fin_de_vie': 6.84}", 'Matiere': 'coton bio', 'ecs': '1543', 'Libelle': 'Pull coton bio 550g France Mode traditionnelle', 'ecs_complementsImpacts': '187.76', 'ecs_transformation': '861.72', 'Masse': '0.55', 'traceability': 'True', 'business': 'large-business-with-services', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '295.15', 'countryFabric': 'FR', 'countryDyeing': 'FR', 'Categorie': 'Pull', 'Pays': 'France', 'Mode': 'Mode traditionnelle', 'numberOfReferences': '2500.0'}
+Libelle: Tshirt coton 150g France Mode traditionnelle, ecs: 751, autres colonnes: {'durability': '1.29', 'ecs_materials': '445.82', 'price': '30.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': 'TR', 'ecs_fin_de_vie': '41.73', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Turquie, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'FR', 'ecs_transport': '17.99', 'Etapes': "{'matieres_premieres': 46.02, 'transformation': 20.99, 'emballage': 0.0, 'transports': 1.86, 'distribution': 0.0, 'utilisation': 22.73, 'fin_de_vie': 4.31}", 'Matiere': 'coton', 'ecs': '751', 'Libelle': 'Tshirt coton 150g France Mode traditionnelle', 'ecs_complementsImpacts': '57.56', 'ecs_transformation': '203.39', 'Masse': '0.15', 'traceability': 'False', 'business': 'large-business-with-services', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '220.23', 'countryFabric': 'FR', 'countryDyeing': 'FR', 'Categorie': 'Tshirt / Polo', 'Pays': 'France', 'Mode': 'Mode traditionnelle', 'numberOfReferences': '2500.0'}
+Libelle: Manteau coton 950g Majorant par defaut, ecs: 10948, autres colonnes: {'durability': '0.7', 'ecs_materials': '3008.8', 'price': '40.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '264.35', 'description': 'Manteau / Veste\xa0: 0,950kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '475.76', 'Etapes': "{'matieres_premieres': 39.26, 'transformation': 47.47, 'emballage': 0.0, 'transports': 6.21, 'distribution': 0.0, 'utilisation': 1.05, 'fin_de_vie': 3.45}", 'Matiere': 'coton', 'ecs': '10948', 'Libelle': 'Manteau coton 950g Majorant par defaut', 'ecs_complementsImpacts': '671.79', 'ecs_transformation': '3638.0', 'Masse': '0.95', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'manteau', 'airTransportRatio': '1.0', 'ecs_utilisation': '80.6', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Manteau / Veste', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Pantalon coton 450g Majorant par defaut, ecs: 5488, autres colonnes: {'durability': '0.71', 'ecs_materials': '1425.22', 'price': '20.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '125.19', 'description': 'Pantalon / Short\xa0: 0,450kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '225.36', 'Etapes': "{'matieres_premieres': 36.58, 'transformation': 47.57, 'emballage': 0.0, 'transports': 5.78, 'distribution': 0.0, 'utilisation': 4.58, 'fin_de_vie': 3.21}", 'Matiere': 'coton', 'ecs': '5488', 'Libelle': 'Pantalon coton 450g Majorant par defaut', 'ecs_complementsImpacts': '313.73', 'ecs_transformation': '1853.46', 'Masse': '0.45', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'pantalon', 'airTransportRatio': '1.0', 'ecs_utilisation': '178.61', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Pantalon', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Tshirt coton 150g Chine Mode fast fashion, ecs: 1118, autres colonnes: {'durability': '0.92', 'ecs_materials': '361.29', 'price': '20.0', 'materials': "{'id': 'ei-coton', 'share': 0.75}, {'id': 'coton-rdp', 'share': 0.25}", 'countrySpinning': 'CN', 'ecs_fin_de_vie': '41.73', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 75% Coton provenance  par défaut (Asie - Pacifique), 25% Coton recyclé (déchets de production) provenance  par défaut (Espagne & France), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Chine, ennoblissement\xa0: Chine, impression\xa0: non, confection\xa0: Chine (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'CN', 'ecs_transport': '82.3', 'Etapes': "{'matieres_premieres': 35.13, 'transformation': 37.81, 'emballage': 0.0, 'transports': 8.0, 'distribution': 0.0, 'utilisation': 15.14, 'fin_de_vie': 4.06}", 'Matiere': 'coton', 'ecs': '1118', 'Libelle': 'Tshirt coton 150g Chine Mode fast fashion', 'ecs_complementsImpacts': '80.71', 'ecs_transformation': '388.93', 'Masse': '0.15', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '155.68', 'countryFabric': 'CN', 'countryDyeing': 'CN', 'Categorie': 'Tshirt / Polo', 'Pays': 'Chine', 'Mode': 'Mode fast fashion', 'numberOfReferences': '12000.0'}
+Libelle: Pull coton 550g Chine Mode fast fashion, ecs: 4107, autres colonnes: {'durability': '0.92', 'ecs_materials': '1728.24', 'price': '30.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': 'CN', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Chine, ennoblissement\xa0: Chine, impression\xa0: non, confection\xa0: Chine (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'CN', 'ecs_transport': '298.68', 'Etapes': "{'matieres_premieres': 45.74, 'transformation': 37.38, 'emballage': 0.0, 'transports': 7.9, 'distribution': 0.0, 'utilisation': 5.0, 'fin_de_vie': 4.05}", 'Matiere': 'coton', 'ecs': '4107', 'Libelle': 'Pull coton 550g Chine Mode fast fashion', 'ecs_complementsImpacts': '295.92', 'ecs_transformation': '1412.3', 'Masse': '0.55', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '188.89', 'countryFabric': 'CN', 'countryDyeing': 'CN', 'Categorie': 'Pull', 'Pays': 'Chine', 'Mode': 'Mode fast fashion', 'numberOfReferences': '12000.0'}
+Libelle: Chemise coton 250g Majorant par defaut, ecs: 2977, autres colonnes: {'durability': '0.72', 'ecs_materials': '791.79', 'price': '15.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '69.59', 'description': 'Chemise\xa0: 0,250kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '125.2', 'Etapes': "{'matieres_premieres': 36.94, 'transformation': 47.83, 'emballage': 0.0, 'transports': 5.84, 'distribution': 0.0, 'utilisation': 3.95, 'fin_de_vie': 3.25}", 'Matiere': 'coton', 'ecs': '2977', 'Libelle': 'Chemise coton 250g Majorant par defaut', 'ecs_complementsImpacts': '171.88', 'ecs_transformation': '1025.19', 'Masse': '0.25', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'chemise', 'airTransportRatio': '1.0', 'ecs_utilisation': '84.59', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Chemise', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Jupe coton 300g Majorant par defaut, ecs: 3469, autres colonnes: {'durability': '0.74', 'ecs_materials': '950.15', 'price': '15.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '83.5', 'description': 'Jupe / Robe\xa0: 0,300kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '150.24', 'Etapes': "{'matieres_premieres': 37.01, 'transformation': 47.61, 'emballage': 0.0, 'transports': 5.85, 'distribution': 0.0, 'utilisation': 4.3, 'fin_de_vie': 3.25}", 'Matiere': 'coton', 'ecs': '3469', 'Libelle': 'Jupe coton 300g Majorant par defaut', 'ecs_complementsImpacts': '200.68', 'ecs_transformation': '1222.15', 'Masse': '0.3', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'jupe', 'airTransportRatio': '1.0', 'ecs_utilisation': '110.29', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Jupe / Robe', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Tshirt coton 150g Majorant par defaut, ecs: 1855, autres colonnes: {'durability': '0.67', 'ecs_materials': '445.82', 'price': '10.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '41.73', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '74.55', 'Etapes': "{'matieres_premieres': 35.87, 'transformation': 42.65, 'emballage': 0.0, 'transports': 6.0, 'distribution': 0.0, 'utilisation': 9.17, 'fin_de_vie': 3.36}", 'Matiere': 'coton', 'ecs': '1855', 'Libelle': 'Tshirt coton 150g Majorant par defaut', 'ecs_complementsImpacts': '110.82', 'ecs_transformation': '530.02', 'Masse': '0.15', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '113.91', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Tshirt / Polo', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Pull coton 550g Majorant par defaut, ecs: 6483, autres colonnes: {'durability': '0.67', 'ecs_materials': '1728.24', 'price': '15.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '275.26', 'Etapes': "{'matieres_premieres': 39.79, 'transformation': 44.33, 'emballage': 0.0, 'transports': 6.34, 'distribution': 0.0, 'utilisation': 2.99, 'fin_de_vie': 3.52}", 'Matiere': 'coton', 'ecs': '6483', 'Libelle': 'Pull coton 550g Majorant par defaut', 'ecs_complementsImpacts': '406.34', 'ecs_transformation': '1925.68', 'Masse': '0.55', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '129.86', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Pull', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Tshirt synthetique 150g Asie Mode ultra fast fashion, ecs: 1547, autres colonnes: {'durability': '0.67', 'ecs_materials': '185.39', 'price': '10.0', 'materials': "{'id': 'ei-pet', 'share': 0.95}, {'id': 'ei-pp', 'share': 0.05}", 'countrySpinning': 'RAS', 'ecs_fin_de_vie': '95.73', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 95% Polyester provenance  par défaut (Asie - Pacifique), 5% Polypropylène provenance  par défaut (Europe), filature\xa0: Région - Asie, Tricotage moyen (par défaut)\xa0: Région - Asie, ennoblissement\xa0: Région - Asie, impression\xa0: non, confection\xa0: Région - Asie (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'RAS', 'ecs_transport': '81.08', 'Etapes': "{'matieres_premieres': 17.89, 'transformation': 31.06, 'emballage': 0.0, 'transports': 7.82, 'distribution': 0.0, 'utilisation': 10.99, 'fin_de_vie': 9.24}", 'Matiere': 'synthetique', 'ecs': '1547', 'Libelle': 'Tshirt synthetique 150g Asie Mode ultra fast fashion', 'ecs_complementsImpacts': '319.03', 'ecs_transformation': '321.98', 'Masse': '0.15', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'tshirt', 'airTransportRatio': '1.0', 'ecs_utilisation': '113.91', 'countryFabric': 'RAS', 'countryDyeing': 'RAS', 'Categorie': 'Tshirt / Polo', 'Pays': 'Asie', 'Mode': 'Mode ultra fast fashion', 'numberOfReferences': '100000.0'}
+Libelle: Slip coton 30g Majorant par defaut, ecs: 426, autres colonnes: {'durability': '0.67', 'ecs_materials': '89.16', 'price': '4.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '8.36', 'description': 'Boxer / Slip (tricoté)\xa0: 0,030kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '14.91', 'Etapes': "{'matieres_premieres': 31.24, 'transformation': 48.88, 'emballage': 0.0, 'transports': 5.22, 'distribution': 0.0, 'utilisation': 9.03, 'fin_de_vie': 2.93}", 'Matiere': 'coton', 'ecs': '426', 'Libelle': 'Slip coton 30g Majorant par defaut', 'ecs_complementsImpacts': '22.16', 'ecs_transformation': '139.51', 'Masse': '0.03', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'slip', 'airTransportRatio': '1.0', 'ecs_utilisation': '25.76', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Boxer / slip (tricoté)', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Maillot de bain polyester 100g Majorant par defaut, ecs: 927, autres colonnes: {'durability': '0.74', 'ecs_materials': '124.2', 'price': '15.0', 'materials': "{'id': 'ei-pet', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '63.85', 'description': 'Maillot de bain\xa0: 0,100kg, matière\xa0: 100% Polyester provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '49.58', 'Etapes': "{'matieres_premieres': 18.11, 'transformation': 37.56, 'emballage': 0.0, 'transports': 7.23, 'distribution': 0.0, 'utilisation': 6.88, 'fin_de_vie': 9.31}", 'Matiere': 'polyester', 'ecs': '927', 'Libelle': 'Maillot de bain polyester 100g Majorant par defaut', 'ecs_complementsImpacts': '192.57', 'ecs_transformation': '257.65', 'Masse': '0.1', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'maillot-de-bain', 'airTransportRatio': '1.0', 'ecs_utilisation': '47.22', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Maillot de bain', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Chaussettes coton 40g Majorant par defaut, ecs: 414, autres colonnes: {'durability': '0.67', 'ecs_materials': '99.75', 'price': '4.0', 'materials': "{'id': 'ei-coton', 'share': 1}", 'countrySpinning': '---', 'ecs_fin_de_vie': '11.14', 'description': 'Chaussettes\xa0: 0,040kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage Fully fashioned / Seamless\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': '---', 'ecs_transport': '19.52', 'Etapes': "{'matieres_premieres': 35.96, 'transformation': 43.9, 'emballage': 0.0, 'transports': 7.04, 'distribution': 0.0, 'utilisation': 5.26, 'fin_de_vie': 4.02}", 'Matiere': 'coton', 'ecs': '414', 'Libelle': 'Chaussettes coton 40g Majorant par defaut', 'ecs_complementsImpacts': '29.55', 'ecs_transformation': '121.76', 'Masse': '0.04', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'chaussettes', 'airTransportRatio': '1.0', 'ecs_utilisation': '14.6', 'countryFabric': '---', 'countryDyeing': '---', 'Categorie': 'Chaussettes', 'Pays': 'Pays inconnu', 'Mode': 'Majorant par defaut', 'numberOfReferences': '100000.0'}
+Libelle: Pull viscose 550g Chine Mode fast fashion, ecs: 2876, autres colonnes: {'durability': '0.92', 'ecs_materials': '576.42', 'price': '30.0', 'materials': "{'id': 'ei-viscose', 'share': 0.7}, {'id': 'ei-pet', 'share': 0.3}", 'countrySpinning': 'CN', 'ecs_fin_de_vie': '153.06', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 70% Viscose provenance  par défaut (Asie - Pacifique), 30% Polyester provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Chine, ennoblissement\xa0: Chine, impression\xa0: non, confection\xa0: Chine (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'countryMaking': 'CN', 'ecs_transport': '298.47', 'Etapes': "{'matieres_premieres': 21.79, 'transformation': 48.97, 'emballage': 0.0, 'transports': 11.28, 'distribution': 0.0, 'utilisation': 7.14, 'fin_de_vie': 5.78}", 'Matiere': 'viscose', 'ecs': '2876', 'Libelle': 'Pull viscose 550g Chine Mode fast fashion', 'ecs_complementsImpacts': '431.63', 'ecs_transformation': '1295.7', 'Masse': '0.55', 'traceability': 'False', 'business': 'large-business-without-services', 'product': 'pull', 'airTransportRatio': '1.0', 'ecs_utilisation': '188.89', 'countryFabric': 'CN', 'countryDyeing': 'CN', 'Categorie': 'Pull', 'Pays': 'Chine', 'Mode': 'Mode fast fashion', 'numberOfReferences': '12000.0'}
+
+Catégories de textiles avec le score ECS minimal :
+Categorie: Tshirt / Polo, Libelle: Tshirt lin 150g France Mode ethique, ecs minimal: 446.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 15.88 %
+  transformation: 31.45 %
+  emballage: 0.0 %
+  transports: 2.64 %
+  distribution: 0.0 %
+  utilisation: 38.16 %
+  fin_de_vie: 6.45 %
+
+
+Categorie: Pull, Libelle: Pull laine paysane 550g France Mode ethique, ecs minimal: 1410.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 32.4 %
+  transformation: 33.85 %
+  emballage: 0.0 %
+  transports: 2.32 %
+  distribution: 0.0 %
+  utilisation: 14.44 %
+  fin_de_vie: 7.49 %
+
+
+Categorie: Jean, Libelle: Jean coton 450g Majorant par defaut, ecs minimal: 6104.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 33.66 %
+  transformation: 52.09 %
+  emballage: 0.0 %
+  transports: 5.22 %
+  distribution: 0.0 %
+  utilisation: 4.12 %
+  fin_de_vie: 2.89 %
+
+
+Categorie: Caleçon (tissé), Libelle: Calecon coton 40g Majorant par defaut, ecs minimal: 581.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 30.78 %
+  transformation: 49.84 %
+  emballage: 0.0 %
+  transports: 5.11 %
+  distribution: 0.0 %
+  utilisation: 8.82 %
+  fin_de_vie: 2.86 %
+
+
+Categorie: Manteau / Veste, Libelle: Manteau coton 950g Majorant par defaut, ecs minimal: 10948.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 39.26 %
+  transformation: 47.47 %
+  emballage: 0.0 %
+  transports: 6.21 %
+  distribution: 0.0 %
+  utilisation: 1.05 %
+  fin_de_vie: 3.45 %
+
+
+Categorie: Pantalon, Libelle: Pantalon coton 450g Majorant par defaut, ecs minimal: 5488.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 36.58 %
+  transformation: 47.57 %
+  emballage: 0.0 %
+  transports: 5.78 %
+  distribution: 0.0 %
+  utilisation: 4.58 %
+  fin_de_vie: 3.21 %
+
+
+Categorie: Chemise, Libelle: Chemise coton 250g Majorant par defaut, ecs minimal: 2977.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 36.94 %
+  transformation: 47.83 %
+  emballage: 0.0 %
+  transports: 5.84 %
+  distribution: 0.0 %
+  utilisation: 3.95 %
+  fin_de_vie: 3.25 %
+
+
+Categorie: Jupe / Robe, Libelle: Jupe coton 300g Majorant par defaut, ecs minimal: 3469.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 37.01 %
+  transformation: 47.61 %
+  emballage: 0.0 %
+  transports: 5.85 %
+  distribution: 0.0 %
+  utilisation: 4.3 %
+  fin_de_vie: 3.25 %
+
+
+Categorie: Boxer / slip (tricoté), Libelle: Slip coton 30g Majorant par defaut, ecs minimal: 426.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 31.24 %
+  transformation: 48.88 %
+  emballage: 0.0 %
+  transports: 5.22 %
+  distribution: 0.0 %
+  utilisation: 9.03 %
+  fin_de_vie: 2.93 %
+
+
+Categorie: Maillot de bain, Libelle: Maillot de bain polyester 100g Majorant par defaut, ecs minimal: 927.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 18.11 %
+  transformation: 37.56 %
+  emballage: 0.0 %
+  transports: 7.23 %
+  distribution: 0.0 %
+  utilisation: 6.88 %
+  fin_de_vie: 9.31 %
+
+
+Categorie: Chaussettes, Libelle: Chaussettes coton 40g Majorant par defaut, ecs minimal: 414.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 35.96 %
+  transformation: 43.9 %
+  emballage: 0.0 %
+  transports: 7.04 %
+  distribution: 0.0 %
+  utilisation: 5.26 %
+  fin_de_vie: 4.02 %
+
+
+
+Catégories de textiles avec le score ECS maximal :
+Categorie: Tshirt / Polo, Libelle: Tshirt coton 150g Majorant par defaut, ecs maximal: 1855.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 35.87 %
+  transformation: 42.65 %
+  emballage: 0.0 %
+  transports: 6.0 %
+  distribution: 0.0 %
+  utilisation: 9.17 %
+  fin_de_vie: 3.36 %
+
+
+Categorie: Pull, Libelle: Pull coton 550g Majorant par defaut, ecs maximal: 6483.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 39.79 %
+  transformation: 44.33 %
+  emballage: 0.0 %
+  transports: 6.34 %
+  distribution: 0.0 %
+  utilisation: 2.99 %
+  fin_de_vie: 3.52 %
+
+
+Categorie: Jean, Libelle: Jean coton 450g Majorant par defaut, ecs maximal: 6104.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 33.66 %
+  transformation: 52.09 %
+  emballage: 0.0 %
+  transports: 5.22 %
+  distribution: 0.0 %
+  utilisation: 4.12 %
+  fin_de_vie: 2.89 %
+
+
+Categorie: Caleçon (tissé), Libelle: Calecon coton 40g Majorant par defaut, ecs maximal: 581.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 30.78 %
+  transformation: 49.84 %
+  emballage: 0.0 %
+  transports: 5.11 %
+  distribution: 0.0 %
+  utilisation: 8.82 %
+  fin_de_vie: 2.86 %
+
+
+Categorie: Manteau / Veste, Libelle: Manteau coton 950g Majorant par defaut, ecs maximal: 10948.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 39.26 %
+  transformation: 47.47 %
+  emballage: 0.0 %
+  transports: 6.21 %
+  distribution: 0.0 %
+  utilisation: 1.05 %
+  fin_de_vie: 3.45 %
+
+
+Categorie: Pantalon, Libelle: Pantalon coton 450g Majorant par defaut, ecs maximal: 5488.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 36.58 %
+  transformation: 47.57 %
+  emballage: 0.0 %
+  transports: 5.78 %
+  distribution: 0.0 %
+  utilisation: 4.58 %
+  fin_de_vie: 3.21 %
+
+
+Categorie: Chemise, Libelle: Chemise coton 250g Majorant par defaut, ecs maximal: 2977.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 36.94 %
+  transformation: 47.83 %
+  emballage: 0.0 %
+  transports: 5.84 %
+  distribution: 0.0 %
+  utilisation: 3.95 %
+  fin_de_vie: 3.25 %
+
+
+Categorie: Jupe / Robe, Libelle: Jupe coton 300g Majorant par defaut, ecs maximal: 3469.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 37.01 %
+  transformation: 47.61 %
+  emballage: 0.0 %
+  transports: 5.85 %
+  distribution: 0.0 %
+  utilisation: 4.3 %
+  fin_de_vie: 3.25 %
+
+
+Categorie: Boxer / slip (tricoté), Libelle: Slip coton 30g Majorant par defaut, ecs maximal: 426.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 31.24 %
+  transformation: 48.88 %
+  emballage: 0.0 %
+  transports: 5.22 %
+  distribution: 0.0 %
+  utilisation: 9.03 %
+  fin_de_vie: 2.93 %
+
+
+Categorie: Maillot de bain, Libelle: Maillot de bain polyester 100g Majorant par defaut, ecs maximal: 927.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 18.11 %
+  transformation: 37.56 %
+  emballage: 0.0 %
+  transports: 7.23 %
+  distribution: 0.0 %
+  utilisation: 6.88 %
+  fin_de_vie: 9.31 %
+
+
+Categorie: Chaussettes, Libelle: Chaussettes coton 40g Majorant par defaut, ecs maximal: 414.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+  matieres_premieres: 35.96 %
+  transformation: 43.9 %
+  emballage: 0.0 %
+  transports: 7.04 %
+  distribution: 0.0 %
+  utilisation: 5.26 %
+  fin_de_vie: 4.02 %
+
+

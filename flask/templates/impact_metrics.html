@@ -1,0 +1,61 @@
+{% extends "messages.html" %}
+
+{% block title %}Impact Metrics{% endblock %}
+
+{% block content %}
+<h1>Métriques Environnementales</h1>
+<p>Calcul du score environnemental moyen pour chaque catégorie de produit, mode, ou pays</p>
+
+<h3>EcoScore 'ecs' Moyen par Catégorie :</h3>
+<ul>
+    {% for category, avg_ecs in metrics.avg_ecs_per_category.items() %}
+        <li>{{ category }}: {{ avg_ecs }} Pts</li>
+    {% endfor %}
+</ul>
+<div id="bar-chart-category"></div>
+
+<h3>EcoScore 'ecs' Moyen par Mode :</h3>
+<ul>
+    {% for mode, avg_ecs in metrics.avg_ecs_per_mode.items() %}
+        <li>{{ mode }}: {{ avg_ecs }} Pts</li>
+    {% endfor %}
+</ul>
+<div id="bar-chart-mode"></div>
+
+<h3>EcoScore 'ecs' Moyen par Pays :</h3>
+<ul>
+    {% for country, avg_ecs in metrics.avg_ecs_per_country.items() %}
+        <li>{{ country }}: {{ avg_ecs }} Pts</li>
+    {% endfor %}
+</ul>
+<div id="bar-chart-country"></div>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+    // Données des graphiques en barres
+    var barChartDataCategory = {{ bar_chart_data_category|tojson|safe }};
+    var barChartDataMode = {{ bar_chart_data_mode|tojson|safe }};
+    var barChartDataCountry = {{ bar_chart_data_country|tojson|safe }};
+
+    // Affichage des données dans la console du navigateur
+    console.log("barChartDataCategory:", barChartDataCategory);
+    console.log("barChartDataMode:", barChartDataMode);
+    console.log("barChartDataCountry:", barChartDataCountry);
+
+    // Affichage des graphiques en barres
+    Plotly.newPlot('bar-chart-category', barChartDataCategory.data, barChartDataCategory.layout);
+    Plotly.newPlot('bar-chart-mode', barChartDataMode.data, barChartDataMode.layout);
+    Plotly.newPlot('bar-chart-country', barChartDataCountry.data, barChartDataCountry.layout);
+</script>
+
+{% endblock %}

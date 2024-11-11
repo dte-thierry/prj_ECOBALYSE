@@ -12,15 +12,8 @@
     {% block content %}
     {% endblock %}
 
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <ul>
-        {% for message in messages|reverse %}
-          <li>{{ message|safe }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+    {% block menu %}
+    {% endblock %}    
 
 </body>
 </html>

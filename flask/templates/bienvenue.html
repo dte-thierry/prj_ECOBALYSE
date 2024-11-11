@@ -2,10 +2,14 @@
 
 {% block content %}
     <p>Bienvenue sur la page d'accueil de votre application Flask !</p>
-    <p>Pour vérifier le bon fonctionnement de votre application, saisir les adresses :</p>
+    <p>Pour vérifier le bon fonctionnement de votre application, cliquez sur les liens suivants :</p>
     <ul>
-        <li>127.0.0.1:5000/testflask, afin de lister les BDD MongoDB</li>
-        <li>127.0.0.1:5000/testmongo, afin de vérifier le contenu Ecobalyse de la BDD MongoDB</li>
-        <li>127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis</li>
+        <li><a href="http://127.0.0.1:5000/testflask">Lister les BDD MongoDB</a></li>
+        <li><a href="http://127.0.0.1:5000/testmongo">Vérifier le contenu Ecobalyse de la BDD MongoDB</a></li>
+        <li><a href="http://127.0.0.1:5000/testredis">Vérifier le contenu Ecobalyse de la BDD Redis</a></li>        
     </ul>
+{% endblock %}
+
+{% block menu %}
+    {% include "menu.html" %}
 {% endblock %}
