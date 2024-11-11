@@ -261,7 +261,9 @@ Cliquer sur l'un ou l'autre des boutons, selon l'utilisation désirée.
 
 <img src="img/PRJ-ECOBALYSE-00-IMG5.png" alt="Exemple de Page de Prédiction Dash" style="width:750px;height:auto;">
 
-En comparaison, pour ce même textile, la valeur 'ecs' calculée et retournée par [l'API Ecobalyse](https://ecobalyse.beta.gouv.fr/#/api) est :
+La prédiction de l'impact environnemental 'ecs', déduite par le **modèle de régression linéaire** est : `1905 Pts`. 
+
+En comparaison, pour ce même textile, la valeur 'ecs' calculée par [l'API Ecobalyse](https://ecobalyse.beta.gouv.fr/#/api) est : `1855 Pts`.
 
 <img src="img/PRJ-ECOBALYSE-00-IMG7.png" alt="Comparaison API Ecobalyse et Exemple de Prédiction Dash" style="width:750px;height:auto;">
 
