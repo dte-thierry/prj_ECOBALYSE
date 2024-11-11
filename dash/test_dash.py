@@ -14,6 +14,8 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
+from components import create_boxplot
+
 # Importer le(s) layout(s) de page(s)
 from page0 import create_page0_layout
 from page20 import create_page20_layout
@@ -294,6 +296,28 @@ def display_graph(pathname):
                            yaxis_title="Proportion")
     
     return kde_fig, ecdf_fig
+
+
+@app.callback(
+    Output('boxplot-graph', 'figure'),
+    Input('url', 'pathname')
+)
+def update_boxplot_graph(pathname):
+    keys = r.keys('textile:*')
+    data = []
+    for key in keys:
+        textile_info = r.hgetall(key)
+        data.append(textile_info)
+    
+    # Convertir les données en DataFrame pour faciliter l'analyse
+    df = pd.DataFrame(data)
+    df['ecs'] = pd.to_numeric(df['ecs'], errors='coerce')  # Convertir 'ecs' en numérique
+    
+    if pathname == '/page-15':
+        return create_boxplot(df, 'Mode', 'ecs', "Boxplot : Mode / ecs", 'Mode', "Valeur de l'écoscore 'ecs' (Pts)")
+    elif pathname == '/page-16':
+        return create_boxplot(df, 'Pays', 'ecs', "Boxplot : Pays / ecs", 'Pays', "Valeur de l'écoscore 'ecs' (Pts)")
+    return no_update
 
 
 # Définir le point d'entrée de l'application

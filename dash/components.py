@@ -1,5 +1,6 @@
 # components.py
 from dash import html, dcc
+import plotly.express as px
 
 # composant(s) réutilisable(s) 
 def create_header(title):
@@ -16,3 +17,10 @@ def create_message(lines, style=None):
         dcc.Markdown(message, style=style)
     ], style={'whiteSpace': 'pre-line'})
 
+# mettre à jour un boxplot
+def create_boxplot(df, x_col, y_col, title, x_label, y_label):
+    fig = px.box(df, x=x_col, y=y_col, points="all", color=x_col,
+                 title=title,
+                 labels={x_col: x_label, y_col: y_label},
+                 template='plotly_white')
+    return fig

@@ -1,4 +1,4 @@
-# page15.py - Boxplot : mode / ecs
+# page15.py - Boxplot : Mode / ecs
 from dash import html, dcc, callback, Input, Output, State, no_update
 import dash
 import dash_bootstrap_components as dbc
@@ -6,7 +6,7 @@ import pandas as pd
 import redis
 import plotly.express as px
 
-from components import create_message
+from components import create_message, create_boxplot
 
 # Initialiser la connexion Redis
 r = redis.Redis(host='ecblredis', port=6379, decode_responses=True, health_check_interval=30)
@@ -37,7 +37,8 @@ else:
 # Créer la mise en page de la page 15
 def create_page15_layout():
     return html.Div([
-        html.H1("Boxplot : mode / ecs", className='text-center my-4'),
+        dcc.Store(id='page-id', data='page15'),
+        html.H1("Boxplot : Mode / ecs", className='text-center my-4'),
         dcc.Graph(id='boxplot-graph'),
 
         create_message(["---"], style={'fontSize': 20}),
@@ -51,17 +52,3 @@ def create_page15_layout():
         create_message(["---"], style={'fontSize': 20})
 
     ], className='container', style={'background': 'beige', 'padding': '20px'})
-
-# Callback pour mettre à jour le boxplot
-@callback(
-    Output('boxplot-graph', 'figure'),
-    Input('boxplot-graph', 'id')
-)
-def update_boxplot_graph(_):
-    # Créer le boxplot avec Plotly Express
-    fig = px.box(df, x='Mode', y='ecs', points="all", color='Mode',
-                 title="Boxplot : Mode / ecs",
-                 labels={'Mode': 'Mode', 'ecs': "Valeur de l'écoscore 'ecs' (Pts)"},
-                 template='plotly_white')
-
-    return fig
