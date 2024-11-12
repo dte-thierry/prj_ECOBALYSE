@@ -1,0 +1,119 @@
+Redis fonctionne et le fichier JSON est bien récupéré :  True
+
+
+Libelle: Slip coton 30g Majorant par defaut, ecs: 414, autres colonnes: {'ecs': '414', 'Pays': 'Pays inconnu', 'Categorie': 'Boxer / slip (tricoté)', 'description': 'Boxer / Slip (tricoté)\xa0: 0,030kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Slip coton 30g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.03'}
+Libelle: Jean coton 450g Majorant par defaut, ecs: 5981, autres colonnes: {'ecs': '5981', 'Pays': 'Pays inconnu', 'Categorie': 'Jean', 'description': 'Jean\xa0: 0,450kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien, délavé), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Jean coton 450g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.45'}
+Libelle: Pull coton bio 550g France Mode traditionnelle, ecs: 1447, autres colonnes: {'ecs': '1447', 'Pays': 'France', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton biologique provenance  par défaut (Asie - Pacifique), filature\xa0: Inde, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton bio', 'Libelle': 'Pull coton bio 550g France Mode traditionnelle', 'Mode': 'Mode traditionnelle', 'Masse': '0.55'}
+Libelle: Tshirt coton 150g France Mode traditionnelle, ecs: 718, autres colonnes: {'ecs': '718', 'Pays': 'France', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Turquie, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Tshirt coton 150g France Mode traditionnelle', 'Mode': 'Mode traditionnelle', 'Masse': '0.15'}
+Libelle: Tshirt coton 150g Pakistan Mode traditionnelle, ecs: 903, autres colonnes: {'ecs': '903', 'Pays': 'Pakistan', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo remanufacturé\xa0: 0,150kg, confection\xa0: Pays inconnu (par défaut) (complexité de confection Elevée, 100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Tshirt coton 150g Pakistan Mode traditionnelle', 'Mode': 'Mode traditionnelle', 'Masse': '0.15'}
+Libelle: Tshirt coton 150g Chine Mode fast fashion, ecs: 1119, autres colonnes: {'ecs': '1119', 'Pays': 'Chine', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 75% Coton provenance  par défaut (Asie - Pacifique), 25% Coton recyclé (déchets de production) provenance  par défaut (Espagne & France), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Chine, ennoblissement\xa0: Chine, impression\xa0: non, confection\xa0: Chine (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Tshirt coton 150g Chine Mode fast fashion', 'Mode': 'Mode fast fashion', 'Masse': '0.15'}
+Libelle: Chemise coton 250g Majorant par defaut, ecs: 2912, autres colonnes: {'ecs': '2912', 'Pays': 'Pays inconnu', 'Categorie': 'Chemise', 'description': 'Chemise\xa0: 0,250kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Chemise coton 250g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.25'}
+Libelle: Manteau coton 950g Majorant par defaut, ecs: 10668, autres colonnes: {'ecs': '10668', 'Pays': 'Pays inconnu', 'Categorie': 'Manteau / Veste', 'description': 'Manteau / Veste\xa0: 0,950kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Manteau coton 950g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.95'}
+Libelle: Pull laine 550g France Mode ethique, ecs: 3898, autres colonnes: {'ecs': '3898', 'Pays': 'France', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Laine par défaut provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'laine', 'Libelle': 'Pull laine 550g France Mode ethique', 'Mode': 'Mode ethique', 'Masse': '0.55'}
+Libelle: Pantalon coton 450g Majorant par defaut, ecs: 5363, autres colonnes: {'ecs': '5363', 'Pays': 'Pays inconnu', 'Categorie': 'Pantalon', 'description': 'Pantalon / Short\xa0: 0,450kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Pantalon coton 450g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.45'}
+Libelle: Calecon coton 40g Majorant par defaut, ecs: 566, autres colonnes: {'ecs': '566', 'Pays': 'Pays inconnu', 'Categorie': 'Caleçon (tissé)', 'description': 'Caleçon (tissé)\xa0: 0,040kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Calecon coton 40g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.04'}
+Libelle: Pull coton 550g Chine Mode fast fashion, ecs: 4110, autres colonnes: {'ecs': '4110', 'Pays': 'Chine', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Chine, ennoblissement\xa0: Chine, impression\xa0: non, confection\xa0: Chine (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Pull coton 550g Chine Mode fast fashion', 'Mode': 'Mode fast fashion', 'Masse': '0.55'}
+Libelle: Pull viscose 550g Chine Mode fast fashion, ecs: 2731, autres colonnes: {'ecs': '2731', 'Pays': 'Chine', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 70% Viscose provenance  par défaut (Asie - Pacifique), 30% Polyester provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Chine, ennoblissement\xa0: Chine, impression\xa0: non, confection\xa0: Chine (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'viscose', 'Libelle': 'Pull viscose 550g Chine Mode fast fashion', 'Mode': 'Mode fast fashion', 'Masse': '0.55'}
+Libelle: Maillot de bain polyester 100g Majorant par defaut, ecs: 733, autres colonnes: {'ecs': '733', 'Pays': 'Pays inconnu', 'Categorie': 'Maillot de bain', 'description': 'Maillot de bain\xa0: 0,100kg, matière\xa0: 100% Polyester provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'polyester', 'Libelle': 'Maillot de bain polyester 100g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.1'}
+Libelle: Tshirt lin 150g France Mode ethique, ecs: 420, autres colonnes: {'ecs': '420', 'Pays': 'France', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Lin provenance  par défaut (Europe), filature\xa0: Turquie, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'lin', 'Libelle': 'Tshirt lin 150g France Mode ethique', 'Mode': 'Mode ethique', 'Masse': '0.15'}
+Libelle: Chaussettes coton 40g Majorant par defaut, ecs: 398, autres colonnes: {'ecs': '398', 'Pays': 'Pays inconnu', 'Categorie': 'Chaussettes', 'description': 'Chaussettes\xa0: 0,040kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage Fully fashioned / Seamless\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Chaussettes coton 40g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.04'}
+Libelle: Pull coton 550g Majorant par defaut, ecs: 6287, autres colonnes: {'ecs': '6287', 'Pays': 'Pays inconnu', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Pull coton 550g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.55'}
+Libelle: Tshirt synthetique 150g Asie Mode ultra fast fashion, ecs: 1191, autres colonnes: {'ecs': '1191', 'Pays': 'Asie', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 95% Polyester provenance  par défaut (Asie - Pacifique), 5% Polypropylène provenance  par défaut (Europe), filature\xa0: Région - Asie, Tricotage moyen (par défaut)\xa0: Région - Asie, ennoblissement\xa0: Région - Asie, impression\xa0: non, confection\xa0: Région - Asie (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'synthetique', 'Libelle': 'Tshirt synthetique 150g Asie Mode ultra fast fashion', 'Mode': 'Mode ultra fast fashion', 'Masse': '0.15'}
+Libelle: Tshirt coton 150g Majorant par defaut, ecs: 1800, autres colonnes: {'ecs': '1800', 'Pays': 'Pays inconnu', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tricotage moyen (par défaut)\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Tshirt coton 150g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.15'}
+Libelle: Jupe coton 300g Majorant par defaut, ecs: 3400, autres colonnes: {'ecs': '3400', 'Pays': 'Pays inconnu', 'Categorie': 'Jupe / Robe', 'description': 'Jupe / Robe\xa0: 0,300kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Chine, Tissage\xa0: Pays inconnu (par défaut), ennoblissement\xa0: Pays inconnu (par défaut), impression\xa0: non, confection\xa0: Pays inconnu (par défaut) (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Jupe coton 300g Majorant par defaut', 'Mode': 'Majorant par defaut', 'Masse': '0.3'}
+Libelle: Pull laine paysane 550g France Mode ethique, ecs: 1268, autres colonnes: {'ecs': '1268', 'Pays': 'France', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Laine nouvelle filière provenance France, filature\xa0: France, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'laine paysane', 'Libelle': 'Pull laine paysane 550g France Mode ethique', 'Mode': 'Mode ethique', 'Masse': '0.55'}
+Libelle: Pull polyester 550g Asie Mode ultra fast fashion, ecs: 3946, autres colonnes: {'ecs': '3946', 'Pays': 'Asie', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Polyester provenance  par défaut (Asie - Pacifique), filature\xa0: Région - Asie, Tricotage moyen (par défaut)\xa0: Région - Asie, ennoblissement\xa0: Région - Asie, impression\xa0: non, confection\xa0: Région - Asie (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'polyester', 'Libelle': 'Pull polyester 550g Asie Mode ultra fast fashion', 'Mode': 'Mode ultra fast fashion', 'Masse': '0.55'}
+Libelle: Pull coton 550g Pakistan Mode traditionnelle, ecs: 3225, autres colonnes: {'ecs': '3225', 'Pays': 'Pakistan', 'Categorie': 'Pull', 'description': 'Pull\xa0: 0,550kg, matière\xa0: 100% Coton provenance  par défaut (Asie - Pacifique), filature\xa0: Pakistan, Tricotage moyen (par défaut)\xa0: Pakistan, ennoblissement\xa0: Pakistan, impression\xa0: non, confection\xa0: Pakistan (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton', 'Libelle': 'Pull coton 550g Pakistan Mode traditionnelle', 'Mode': 'Mode traditionnelle', 'Masse': '0.55'}
+Libelle: Tshirt coton bio 150g France Mode ethique, ecs: 482, autres colonnes: {'ecs': '482', 'Pays': 'France', 'Categorie': 'Tshirt / Polo', 'description': 'T-shirt / Polo\xa0: 0,150kg, matière\xa0: 100% Coton biologique provenance  par défaut (Asie - Pacifique), filature\xa0: Turquie, Tricotage moyen (par défaut)\xa0: France, ennoblissement\xa0: France, impression\xa0: non, confection\xa0: France (100 de transport aérien), distribution\xa0: France, utilisation\xa0: France, fin de vie\xa0: France', 'Matiere': 'coton bio', 'Libelle': 'Tshirt coton bio 150g France Mode ethique', 'Mode': 'Mode ethique', 'Masse': '0.15'}
+
+Catégories de textiles avec le score ECS minimal :
+Categorie: Boxer / slip (tricoté), Libelle: Slip coton 30g Majorant par defaut, ecs minimal: 414.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Jean, Libelle: Jean coton 450g Majorant par defaut, ecs minimal: 5981.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Pull, Libelle: Pull laine paysane 550g France Mode ethique, ecs minimal: 1268.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Tshirt / Polo, Libelle: Tshirt lin 150g France Mode ethique, ecs minimal: 420.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Chemise, Libelle: Chemise coton 250g Majorant par defaut, ecs minimal: 2912.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Manteau / Veste, Libelle: Manteau coton 950g Majorant par defaut, ecs minimal: 10668.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Pantalon, Libelle: Pantalon coton 450g Majorant par defaut, ecs minimal: 5363.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Caleçon (tissé), Libelle: Calecon coton 40g Majorant par defaut, ecs minimal: 566.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Maillot de bain, Libelle: Maillot de bain polyester 100g Majorant par defaut, ecs minimal: 733.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Chaussettes, Libelle: Chaussettes coton 40g Majorant par defaut, ecs minimal: 398.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Jupe / Robe, Libelle: Jupe coton 300g Majorant par defaut, ecs minimal: 3400.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+
+Catégories de textiles avec le score ECS maximal :
+Categorie: Boxer / slip (tricoté), Libelle: Slip coton 30g Majorant par defaut, ecs maximal: 414.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Jean, Libelle: Jean coton 450g Majorant par defaut, ecs maximal: 5981.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Pull, Libelle: Pull coton 550g Majorant par defaut, ecs maximal: 6287.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Tshirt / Polo, Libelle: Tshirt coton 150g Majorant par defaut, ecs maximal: 1800.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Chemise, Libelle: Chemise coton 250g Majorant par defaut, ecs maximal: 2912.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Manteau / Veste, Libelle: Manteau coton 950g Majorant par defaut, ecs maximal: 10668.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Pantalon, Libelle: Pantalon coton 450g Majorant par defaut, ecs maximal: 5363.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Caleçon (tissé), Libelle: Calecon coton 40g Majorant par defaut, ecs maximal: 566.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Maillot de bain, Libelle: Maillot de bain polyester 100g Majorant par defaut, ecs maximal: 733.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Chaussettes, Libelle: Chaussettes coton 40g Majorant par defaut, ecs maximal: 398.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+
+Categorie: Jupe / Robe, Libelle: Jupe coton 300g Majorant par defaut, ecs maximal: 3400.0
+Etapes montrant les impacts intermédiaires (en pourcentage) :
+
+

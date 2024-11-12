@@ -2,7 +2,7 @@ Les informations relatives à ces exemples de textiles sont disponibles depuis l
 https://fabrique-numerique.gitbook.io/ecobalyse/textile/exemples
 
 Récupérer les données de l'Explorateur Ecobalyse ...
-DataFrame créé avec succès au bout de : 4.73 secondes.
+DataFrame créé avec succès au bout de : 4.43 secondes.
                                              Libelle      Categorie   ecs  \
 0  Tshirt coton (150g) - Chine - Mode "fast fashion"  Tshirt / Polo  1119   
 1  Tshirt synthétique (150g) - Asie - Mode "ultra...  Tshirt / Polo  1191   
@@ -24,7 +24,7 @@ DataFrame créé avec succès au bout de : 4.73 secondes.
 DataFrame sauvegardé en fichier json, avec succès.
 
 Ajouter les descriptions des différents textiles ...
-DataFrame mis à jour avec succès au bout de : 2.56 secondes.
+DataFrame mis à jour avec succès au bout de : 2.72 secondes.
                                              Libelle      Categorie   ecs  \
 0          Tshirt coton 150g Chine Mode fast fashion  Tshirt / Polo  1119   
 1  Tshirt synthetique 150g Asie Mode ultra fast f...  Tshirt / Polo  1191   
@@ -55,7 +55,7 @@ DataFrame mis à jour avec succès au bout de : 2.56 secondes.
 DataFrame sauvegardé en fichier json, avec succès.
 
 Calculer les impacts détaillés des différents textiles ...
-DataFrame mis à jour avec succès au bout de : 3.13 secondes.
+DataFrame mis à jour avec succès au bout de : 3.37 secondes.
                                              Libelle      Categorie   ecs  \
 0          Tshirt coton 150g Chine Mode fast fashion  Tshirt / Polo  1118   
 1  Tshirt synthetique 150g Asie Mode ultra fast f...  Tshirt / Polo  1547   

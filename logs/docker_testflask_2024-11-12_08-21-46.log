@@ -1,5 +1,0 @@
-2024-11-12 08:21:46,947 INFO: Application Flask active. [in /app/test_flask.py:49]
-2024-11-12 08:21:51,513 INFO: Page d'accueil affichée [in /app/test_flask.py:54]
-2024-11-12 08:22:34,318 INFO: Liste des bases MongoDB récupérée [in /app/test_flask.py:63]
-2024-11-12 08:22:38,327 INFO: Données MongoDB récupérées [in /app/test_flask.py:75]
-2024-11-12 08:22:41,299 INFO: Données Redis récupérées [in /app/test_flask.py:93]
