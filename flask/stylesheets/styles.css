@@ -65,3 +65,37 @@ ul {
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
 }
+
+.metrics-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 9px; /* Taille de police plus petite */
+}
+
+.metrics-info h2 {
+    color: #333;
+    font-size: 1.2em; /* Taille de police ajustée */
+    margin-bottom: 10px;
+}
+
+.metrics-info h3 {
+    color: #555;
+    font-size: 1em; /* Taille de police ajustée */
+    margin-top: 15px;
+}
+
+.metrics-info ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.metrics-info ul ul {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.metrics-info li {
+    margin-bottom: 10px;
+}

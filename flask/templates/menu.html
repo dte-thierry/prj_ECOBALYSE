@@ -1,6 +1,5 @@
 {% block menu %}
-<br />
-<p>Pour obtenir quelques métriques sur les données récupérées, cliquez sur les boutons suivants :</p>
+<p>Pour obtenir quelques métriques sur les données récupérées, cliquez sur le(s) bouton(s) suivant(s) :</p>
 <div class="menu">
     <button onclick="location.href='http://127.0.0.1:5000/impact_metrics'">Métriques Environnementales</button>
     <button onclick="location.href='#'">Métriques Économiques</button>
@@ -9,5 +8,48 @@
     <button onclick="location.href='#'">Métriques de Traçabilité</button>
     <button onclick="location.href='#'">Métriques de Transformation</button>
 </div>
-<br />
+<div class="metrics-info">
+    <h2>A propos des métriques disponibles :</h2>
+    <ul>
+        <li>
+            <h3>Métriques Environnementales</h3>
+            <ul>
+                <li>Calculer le score environnemental moyen pour chaque catégorie de produit, mode, ou pays</li>
+                <li>Analyser la distribution des scores environnementaux pour identifier les produits avec des scores particulièrement élevés ou bas</li>
+                <li>Calculer l'impact moyen des matières premières sur le score environnemental</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Métriques Économiques</h3>
+            <ul>
+                <li>Calculer le prix moyen des produits par catégorie</li>
+                <li>Calculer le nombre moyen de références pour chaque mode</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Métriques de Durabilité</h3>
+            <ul>
+                <li>Calculer la durabilité moyenne des produits en fonction de la matière</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Métriques de Transport</h3>
+            <ul>
+                <li>Calculer le ratio moyen de transport aérien pour chaque catégorie de produit</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Métriques de Traçabilité</h3>
+            <ul>
+                <li>Calculer le pourcentage de produits pour lesquels la traçabilité est disponible</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Métriques de Transformation</h3>
+            <ul>
+                <li>Calculer l'impact moyen de la transformation sur le score environnemental</li>
+            </ul>
+        </li>
+    </ul>
+</div>
 {% endblock %}
