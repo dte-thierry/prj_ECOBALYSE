@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Lun. 11/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Mar. 12/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -287,16 +287,8 @@ Lorsque le Framework Web `Dash` est démarré, via le conteneur *ecbldash*, on p
 
 La page d'accueil `Flask` s'affiche avec les informations suivantes :
 
-```html
-Accueil
-Bienvenue sur la page d'accueil de votre application Flask !
+<img src="img/PRJ-ECOBALYSE-00-IMG9.png" alt="Page Accueil Flask" style="width:750px;height:auto;">
 
-Pour vérifier le bon fonctionnement de votre application, saisir les adresses :
-
-127.0.0.1:5000/testflask, afin de lister les BDD MongoDB
-127.0.0.1:5000/testmongo, afin de vérifier le contenu Ecobalyse de la BDD MongoDB
-127.0.0.1:5000/testredis, afin de vérifier le contenu Ecobalyse de la BDD Redis
-```
 
 ##### 💬 Nota 
 
