@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Dim. 17/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Mar. 19/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -19,6 +19,7 @@ Dernière Mise A Jour du Document : Dim. 17/11/2024 - Version : v0.2.0
 - [Solution technique](#tdm-05)
     - [Schéma de Principe](#tdm-05-01)
     - [Dossiers & Répertoires](#tdm-05-02)
+    - [Evolutions](#tdm-05-03)
 - [A propos d'Ecobalyse](#tdm-06)
 
 ## <a name="tdm-01" />[Contexte](#debut)
@@ -316,6 +317,10 @@ La solution proposée se compose de :
 ### <a name="tdm-05-02" />[Dossiers & Répertoires](#tdm-05)
 
 <img src="img/PRJ-ECOBALYSE-00-IMG10.png" alt="Dossiers & Répertoires" style="width:750px;height:auto;">
+
+### <a name="tdm-05-03" />[Evolutions](#tdm-05)
+
+<img src="img/PRJ-ECOBALYSE-00-IMG11.png" alt="Evolutions Flask" style="width:750px;height:auto;">
 
 ## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
