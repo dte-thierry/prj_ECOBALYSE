@@ -5,7 +5,7 @@
 # Datascientest: [projet EcoBalyse](./PRJ-ECOBALYSE-00-FICHE_PROJET.pdf) (Nov. 2024)
 > *Data Engineering End-to-End Project : AirFlow, Dash, Flask, Docker, Redis, MongoDB, Python* <br />
 
-Dernière Mise A Jour du Document : Mar. 12/11/2024 - Version : v0.2.0
+Dernière Mise A Jour du Document : Dim. 17/11/2024 - Version : v0.2.0
 
 ## [Sommaire](#debut)
 - [Contexte](#tdm-01)
@@ -42,6 +42,10 @@ L'équipe ayant réalisé ce projet se compose de :
 * DELIGNE Thierry
 
 Le **Rapport Final**, expliquant tout le workflow décisionnel du projet, est disponible : [ici](./ecblRapport.pdf).
+
+Les **Machines Virtuelles** (VM *DataScientest*) disponibles pour le projet sont :
+* VMa Ubuntu Server 20.04 LTS	 4Go RAM	16Go DD : https://learn.datascientest.com/lesson/801/2838	(Redis)
+* VMb Ubuntu Server 20.04 LTS	16Go RAM	25Go DD : https://learn.datascientest.com/lesson/349/3682	(AirFlow)
 
 ## <a name="tdm-02" />[Présentation](#debut)
 Basé sur les données, et l'`API` de calcul des impacts environnementaux d'[Ecobalyse v2.4.0](https://ecobalyse.beta.gouv.fr/), ce projet doit permettre : 
@@ -311,7 +315,7 @@ La solution proposée se compose de :
   
 * Une base de données `Redis` utilisée comme mémoire cache, afin d'accélérer les requêtes.
 
-* Un dashboard `Dash`.
+* Un dashboard `Dash` qui permet de visualiser des informations statistiques sur les données recueillies, et de prédire  .
 
 * Un Framework Web `Flask` qui sert d’intermédiaire (API) entre le dashboard `Dash`, les bases de données `MongoDB` / `Redis`, et un modèle `scikit-learn` entraîné pour des prédictions de <b>Machine Learning</b>.
 
