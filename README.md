@@ -315,11 +315,11 @@ La solution proposée se compose de :
   
 * Une base de données `Redis` utilisée comme mémoire cache, afin d'accélérer les requêtes.
 
-* Un dashboard `Dash` qui permet de visualiser des informations statistiques sur les données recueillies, et de prédire  .
+* Un dashboard `Dash` qui permet de *visualiser des informations statistiques* sur les données recueillies, et d'effectuer des *prédictions* de <b>Machine Learning</b>, à partir d'un modèle `scikit-learn` entraîné.
 
-* Un Framework Web `Flask` qui sert d’intermédiaire (API) entre le dashboard `Dash`, les bases de données `MongoDB` / `Redis`, et un modèle `scikit-learn` entraîné pour des prédictions de <b>Machine Learning</b>.
+* Un Framework Web `Flask` qui sert d’intermédiaire (API) entre les bases de données `MongoDB` / `Redis`, et qui propose quelques métriques sur les données (*certaines métriques n'ont pas été traitées en date, et restent à faire*).
 
-* Un DAG `Airflow` pour gérer l'orchestration de l'ETL.
+* Un DAG `Airflow` pour gérer l'orchestration de l'ETL (*cette partie n'a pas été traitée en date, et reste à faire*).
 
 ### <a name="tdm-05-02" />[Dossiers & Répertoires](#tdm-05)
 
