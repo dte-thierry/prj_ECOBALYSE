@@ -320,7 +320,38 @@ La solution proposée se compose de :
 
 ### <a name="tdm-05-03" />[Evolutions](#tdm-05)
 
+#### Flask
+
+Les métriques proposées par **Flask** sont les suivantes, mais toutes ne sont pas pour l'instant disponibles :
+
 <img src="img/PRJ-ECOBALYSE-00-IMG11.png" alt="Evolutions Flask" style="width:750px;height:auto;">
+
+- `Métriques Environnementales`
+
+    - Calculer le score environnemental moyen pour chaque catégorie de produit, mode, ou pays
+    - Analyser la distribution des scores environnementaux pour identifier les produits avec des scores particulièrement élevés ou bas
+    - Calculer l'impact moyen des matières premières sur le score environnemental
+
+- `Métriques Economiques`
+
+    - Calculer le prix moyen des produits par catégorie
+    - Calculer le nombre moyen de références pour chaque mode
+
+- `Métriques de Durabilité`
+
+    - Calculer la durabilité moyenne des produits en fonction de la matière
+
+- `Métriques de Transport`
+
+    - Calculer le ratio moyen de transport aérien pour chaque catégorie de produit
+
+- `Métriques de Traçabilité`
+
+    - Calculer le pourcentage de produits pour lesquels la traçabilité est disponible
+
+- `Métriques de Transformation`
+
+    - Calculer l'impact moyen de la transformation sur le score environnemental
 
 ## <a name="tdm-06" />[A propos d'Ecobalyse](#debut)
 __Écobalyse__ est un outil développé par l'État français pour calculer l'impact écologique des produits textiles et alimentaires distribués en France. Il vise à fournir des informations sur l'empreinte environnementale de ces produits, permettant ainsi aux consommateurs de prendre des décisions plus éclairées  et durables sur leurs choix de consommation. 
